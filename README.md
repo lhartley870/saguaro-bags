@@ -87,7 +87,7 @@ The entity relationship diagram for the project can be found [here]().
 * 
 
 ### Programs and Resources
-* 
+* [Gorgias Free SKU Generator](https://www.gorgias.com/tools/sku-generator) was used to generate the sku codes of the bags for sale. 
 
 ## Testing
 
@@ -167,6 +167,7 @@ With thanks, the photos appearing on the website were taken by the following pho
         * [The Maisie handbag](https://www.pexels.com/photo/woman-carrying-black-tote-bag-2090784/) by Godisable Jacob.
 
 ### Content
+* [This VeryWellFamily article entitled 'Top 1,000 Baby Girl Names in the U.S.'](https://www.verywellfamily.com/top-1000-baby-girl-names-2757832) was used to allocate names to the bags for sale.
 
 ### Acknowledgments
 
