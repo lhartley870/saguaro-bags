@@ -1,0 +1,105 @@
+body {
+    background-color: #FFF;
+    color: #00855D;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+/* --------------------------------------------------- Top Header */
+
+/* Cactus logo and store title logo */
+
+#cactus-logo-link {
+    height: 30px;
+    width: 30px;
+}
+
+#title-logo-link {
+    color: #E4117A;
+    font-family: 'Montez', cursive;
+    font-weight: 400;
+}
+
+/* Search form */
+
+.form-control {
+    border: 2px solid #00855D;
+}
+
+#search-button {
+    background-color: #00855D;
+}
+
+.fa-magnifying-glass {
+    color: #FFF;
+}
+
+.form-control,
+.form-control:focus,
+.form-control::placeholder {
+    color: #00855D;
+}
+
+/* Account dropdown menu */
+
+.account-link-container {
+    color: #00855D;
+}
+
+.dropdown-item {
+    color: #00855D;
+}
+
+/* 
+code for making the pink shopping bag icon within a navigation dropdown item visible only when 
+hovering over or focussing on that item adapted from an answer given by Curtis
+on this Stack Overflow post - 
+https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
+*/
+.dropdown-item span {
+    visibility: hidden;
+}
+
+.dropdown-item span {
+    color: #E4117A;
+}
+.dropdown-item:focus span, 
+.dropdown-item:hover span {
+    visibility: visible;
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+    background-color: #FFF;
+    color: #E4117A;
+}
+
+/* Shopping basket link */
+
+.basket-link-no-items {
+    color: #00855D;
+}
+
+.basket-link-items {
+    color: #E4117A;
+    font-weight: 500;
+}
+
+/* --------------------------------------------------- Media Queries */
+
+/* for large screen sizes of 992px and up */
+@media screen and (min-width:992px) {
+
+    #cactus-logo-link {
+        height: 100px;
+        width: 100px;
+    }
+
+    #title-logo-link {
+        font-size: 2.5em;
+    }
+
+    .header-container {
+        scroll-padding-top: 116px;
+    }
+}
