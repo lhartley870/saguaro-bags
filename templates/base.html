@@ -73,6 +73,73 @@
                     </div>
                 </form>
             </div>
+            <div class="col-12 col-lg-4 my-auto">
+                <ul class="list-inline list-unstyled text-center text-lg-end my-0">
+                    <li class="list-inline-item dropdown">
+                        <a href="#" id="account-options" data-bs-toggle="dropdown"
+                            aria-expanded="false" class="nav-link">
+                            <div class="text-center account-link-container">
+                                <div>
+                                    {% if request.user.is_authenticated %}
+                                    <i class="fa-solid fa-user-check fa-lg"></i>
+                                    {% else %}
+                                    <i class="fa-solid fa-user fa-lg"></i>
+                                    {% endif %}
+                                </div>
+                                {% if request.user.is_authenticated %}
+                                <p class="my-0">{{ user.username }}</p>
+                                {% else %}
+                                <p class="my-0">My Account</p>
+                                {% endif %}
+                            </div>
+                        </a>
+                        <div class="dropdown-menu border-0" aria-labelledby="account-options">
+                            {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                            <a href="#" class="dropdown-item">
+                                Product Management
+                                <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
+                            </a>
+                            {% endif %}
+                            <a href="#" class="dropdown-item">
+                                My Profile
+                                <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
+                            </a>
+                            <a href="{% url 'account_logout' %}" class="dropdown-item">
+                                Logout
+                                <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
+                            </a>
+                            {% else %}
+                            <a href="{% url 'account_signup' %}" class="dropdown-item">
+                                Register
+                                <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
+                            </a>
+                            <a href="{% url 'account_login' %}" class="dropdown-item">
+                                Login
+                                <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#"
+                            class="{% if grand_total %}basket-link-items{% else %}basket-link-no-items{% endif %} nav-link">
+                            <div class="text-center">
+                                <div>
+                                    <i class="fa-solid fa-basket-shopping fa-lg"></i>
+                                </div>
+                                <p class="my-0">
+                                    {% if grand_total %}
+                                    ${{ grand_total|floatformat:2 }}
+                                    {% else %}
+                                    $0.00
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
     {% if messages %}
