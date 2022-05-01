@@ -19,6 +19,13 @@
     {% endblock %}
 
     {% block corecss %}
+    <!-- Favicon -->
+    <!-- 
+        Code for adding a favicon to a Django project taken from an answer given by hanleyhansen and edited 
+        by FlipperPA on this Stack Overflow post -
+        https://stackoverflow.com/questions/21938028/how-can-i-get-a-favicon-to-show-up-in-my-django-app
+    -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon/favicon.ico' %}"/>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
