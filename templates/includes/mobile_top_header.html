@@ -39,25 +39,25 @@
     <div class="dropdown-menu border-0" aria-labelledby="account-options">
         {% if request.user.is_authenticated %}
         {% if request.user.is_superuser %}
-        <a href="#" class="dropdown-item">
+        <a href="#" class="dropdown-item account-item">
             Product Management
             <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
         </a>
         {% endif %}
-        <a href="#" class="dropdown-item">
+        <a href="#" class="dropdown-item account-item">
             My Profile
             <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
         </a>
-        <a href="{% url 'account_logout' %}" class="dropdown-item">
+        <a href="{% url 'account_logout' %}" class="dropdown-item account-item">
             Logout
             <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
         </a>
         {% else %}
-        <a href="{% url 'account_signup' %}" class="dropdown-item">
+        <a href="{% url 'account_signup' %}" class="dropdown-item account-item">
             Register
             <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
         </a>
-        <a href="{% url 'account_login' %}" class="dropdown-item">
+        <a href="{% url 'account_login' %}" class="dropdown-item account-item">
             Login
             <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
         </a>
