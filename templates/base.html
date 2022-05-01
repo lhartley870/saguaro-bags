@@ -125,9 +125,7 @@
                         <a href="#"
                             class="{% if grand_total %}basket-link-items{% else %}basket-link-no-items{% endif %} nav-link basket-link">
                             <div class="text-center">
-                                <div>
-                                    <i class="fa-solid fa-basket-shopping fa-lg"></i>
-                                </div>
+                                <div class="checkout-logo"></div>
                                 <p class="my-0">
                                     {% if grand_total %}
                                     ${{ grand_total|floatformat:2 }}
@@ -164,6 +162,7 @@
     {% endblock %}
 
     {% block postloadjs %}
+    <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
     {% endblock %}
     <noscript>
         Your browser does not support JavaScript!
