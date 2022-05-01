@@ -5,7 +5,22 @@ body {
     font-weight: 400;
 }
 
+/* --------------------------------------------------- Main Site Navigation */
+
+.navbar-light .navbar-toggler {
+    border-color: #00855D;
+    color: #6DBAA1;
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 133, 93, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
 /* --------------------------------------------------- Top Header */
+
+.list-inline-item:not(:last-child) {
+    margin-right: 0;
+}
 
 /* Cactus logo and store title logo */
 
@@ -26,12 +41,24 @@ body {
     border: 2px solid #00855D;
 }
 
-#search-button {
+.search-button {
     background-color: #00855D;
 }
 
-.fa-magnifying-glass {
+.search-button i {
     color: #FFF;
+}
+
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.fa-magnifying-glass {
+    color: #00855D;
 }
 
 .form-control,
@@ -40,14 +67,23 @@ body {
     color: #00855D;
 }
 
-/* Account dropdown menu */
-
-.account-link-container {
+.nav-link-container {
     color: #00855D;
 }
 
+.nav-link {
+    padding: 0.15rem;
+}
+
+.nav-link i.fa-lg {
+    font-size: 1rem;
+}
+
+/* Account dropdown menu */
+
 .dropdown-item {
     color: #00855D;
+    padding-left: 0;
 }
 
 /* 
@@ -63,6 +99,7 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
 .dropdown-item span {
     color: #E4117A;
 }
+
 .dropdown-item:focus span, 
 .dropdown-item:hover span {
     visibility: visible;
@@ -83,6 +120,11 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
 .basket-link-items {
     color: #E4117A;
     font-weight: 500;
+}
+
+.basket-link:hover,
+.basket-link:focus {
+    color: #6C6EC4;
 }
 
 /* --------------------------------------------------- Media Queries */
