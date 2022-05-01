@@ -16,6 +16,54 @@ body {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 133, 93, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
+.navbar-toggler {
+    padding: .6rem .6rem;
+    font-size: 1rem;
+}
+
+#main-nav .nav-link {
+    color: #00855D;
+    font-weight: 500;
+}
+
+.dropdown-item {
+    color: #00855D;
+}
+
+/* 
+code for making the pink shopping bag icon within a first tier navigation dropdown item
+and a purple tag icon within a second tier navigation dropdown item visible only when 
+hovering over or focussing on that item adapted from an answer given by Curtis on this 
+Stack Overflow post - 
+https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
+*/
+.dropdown-item span,
+#main-nav .nav-link span {
+    visibility: hidden;
+}
+
+#main-nav .nav-link span {
+    color: #E4117A;
+}
+
+#main-nav .dropdown-item,
+#main-nav .dropdown-item span {
+    color: #6C6EC4;
+}
+
+.dropdown-item:focus span, 
+.dropdown-item:hover span,
+#main-nav .nav-link:hover span,
+#main-nav .nav-link:focus span {
+    visibility: visible;
+}
+
+#main-nav .nav-link:focus,
+#main-nav .nav-link:hover {
+    background-color: #FFF;
+    color: #E4117A;
+}
+
 /* --------------------------------------------------- Top Header */
 
 .list-inline-item:not(:last-child) {
@@ -24,7 +72,7 @@ body {
 
 /* Cactus logo and store title logo */
 
-#cactus-logo-link {
+.cactus-logo-link {
     height: 30px;
     width: 30px;
 }
@@ -61,8 +109,14 @@ body {
     color: #00855D;
 }
 
-.form-control,
-.form-control:focus,
+.form-control {
+    color: #E4117A;
+}
+
+.form-control:focus {
+    color: #6C6EC4;
+}
+
 .form-control::placeholder {
     color: #00855D;
 }
@@ -81,28 +135,12 @@ body {
 
 /* Account dropdown menu */
 
-.dropdown-item {
-    color: #00855D;
+.account-item {
     padding-left: 0;
-}
-
-/* 
-code for making the pink shopping bag icon within a navigation dropdown item visible only when 
-hovering over or focussing on that item adapted from an answer given by Curtis
-on this Stack Overflow post - 
-https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
-*/
-.dropdown-item span {
-    visibility: hidden;
 }
 
 .dropdown-item span {
     color: #E4117A;
-}
-
-.dropdown-item:focus span, 
-.dropdown-item:hover span {
-    visibility: visible;
 }
 
 .dropdown-item:focus,
@@ -132,7 +170,7 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
 /* for large screen sizes of 992px and up */
 @media screen and (min-width:992px) {
 
-    #cactus-logo-link {
+    .cactus-logo-link {
         height: 100px;
         width: 100px;
     }
