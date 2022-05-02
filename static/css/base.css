@@ -11,6 +11,10 @@ body {
     max-width: 2500px;
 }
 
+.header-container {
+    padding-top: 94px;
+}
+
 /* --------------------------------------------------- Main Site Navigation */
 
 .navbar-light .navbar-toggler {
@@ -169,6 +173,18 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
     color: #6C6EC4;
 }
 
+/* --------------------------------------------------- Delivery Banner */
+
+#delivery-banner {
+    background-color: #E4117A;
+    color: #FFF;
+}
+
+#delivery-banner h4 {
+    font-size: .9rem;
+    text-transform: uppercase;
+}
+
 /* --------------------------------------------------- Media Queries */
 
 /* for small screen sizes of 500px and up */
@@ -202,6 +218,11 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
     .nav-link i.fa-lg {
         font-size: 1.25em;
     }
+
+    .header-container {
+        padding-top: 121px;
+    }
+    
 }
 
 /* for medium screen sizes of 768px and up */
@@ -210,11 +231,20 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
     .search-bar-container {
         width: 50%;
     }
+
+    .header-container {
+        padding-top: 133px;
+    }
+    
 }
 
 /* for large screen sizes of 992px and up */
 @media screen and (min-width:992px) {
 
+    .header-container {
+        padding-top: 192px;
+    }
+    
     .cactus-logo-link {
         height: 100px;
         width: 100px;
@@ -235,6 +265,15 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
     .navbar-nav li {
         margin: 0 1.5em;
     }
+
+    .navbar {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    #delivery-banner h4 {
+        font-size: 1.5rem;
+    }
 }
 
 /* for extra large screen sizes of 1200px and up */
@@ -253,8 +292,8 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
    }
 
    .header-container {
-    padding-top: 221px;
-}
+        padding-top: 225px;
+    }
 }
 
 /* for extra extra large screen sizes of 1400px and up */
@@ -274,8 +313,8 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
    }
 
    .header-container {
-    padding-top: 224px;
-}
+        padding-top: 228px;
+    }
 }
 
 /* for extra extra large screen sizes of 1700px and up */
@@ -308,6 +347,6 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
    }
 
    .header-container {
-    padding-top: 280px;
-}
+        padding-top: 284px;
+    }
 }
