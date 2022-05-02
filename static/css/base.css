@@ -229,7 +229,7 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
     }
 
     .header-container {
-        padding-top: 116px;
+        padding-top: 188px;
     }
 
     .navbar-nav li {
@@ -251,6 +251,10 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
     .nav-link {
         padding: 0.5rem 1.5rem;
    }
+
+   .header-container {
+    padding-top: 221px;
+}
 }
 
 /* for extra extra large screen sizes of 1400px and up */
@@ -268,6 +272,10 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
    .form-control {
        font-size: 1.2rem;
    }
+
+   .header-container {
+    padding-top: 224px;
+}
 }
 
 /* for extra extra large screen sizes of 1700px and up */
@@ -298,4 +306,8 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
    .form-control {
        font-size: 1.5rem;
    }
+
+   .header-container {
+    padding-top: 280px;
+}
 }
