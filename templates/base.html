@@ -60,12 +60,12 @@
 </head>
 
 <body>
-    <header class="container-fluid fixed-top">
+    <header class="container-fluid fixed-top max-page-width">
         <div class="row d-none d-lg-flex">
             <div class="col-12 col-lg-4">
                 <a href="{% url 'home' %}" class="d-flex align-items-center py-2 text-decoration-none nav-link">
                     <img src="media/cactus-logo-large-screens.svg" alt="saguaro bags logo of a green cactus" class="cactus-logo-link">
-                    <h2 id="title-logo-link">Saguaro Bags</h2>
+                    <h2 class="title-logo-link">Saguaro Bags</h2>
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto d-flex justify-content-center">
@@ -81,7 +81,7 @@
                 </form>
             </div>
             <div class="col-12 col-lg-4 my-auto">
-                <ul class="list-inline list-unstyled text-center text-lg-end my-0">
+                <ul class="list-inline list-unstyled text-center my-0">
                     <li class="list-inline-item dropdown">
                         <a href="#" id="account-options" data-bs-toggle="dropdown"
                             aria-expanded="false" class="nav-link">
@@ -105,25 +105,25 @@
                             {% if request.user.is_superuser %}
                             <a href="#" class="dropdown-item">
                                 Product Management
-                                <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
+                                <span><i class="fa-solid fa-bag-shopping ps-1 ps-lg-2"></i></span>
                             </a>
                             {% endif %}
                             <a href="#" class="dropdown-item">
                                 My Profile
-                                <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
+                                <span><i class="fa-solid fa-bag-shopping ps-1 ps-lg-2"></i></span>
                             </a>
                             <a href="{% url 'account_logout' %}" class="dropdown-item">
                                 Logout
-                                <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
+                                <span><i class="fa-solid fa-bag-shopping ps-1 ps-lg-2"></i></span>
                             </a>
                             {% else %}
                             <a href="{% url 'account_signup' %}" class="dropdown-item">
                                 Register
-                                <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
+                                <span><i class="fa-solid fa-bag-shopping ps-1 ps-lg-2"></i></span>
                             </a>
                             <a href="{% url 'account_login' %}" class="dropdown-item">
                                 Login
-                                <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
+                                <span><i class="fa-solid fa-bag-shopping ps-1 ps-lg-2"></i></span>
                             </a>
                             {% endif %}
                         </div>
@@ -148,7 +148,7 @@
         </div>
         <div class="row gx-0">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container-fluid">
+                <div class="container-fluid px-sm-3 py-sm-2">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
                         aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
