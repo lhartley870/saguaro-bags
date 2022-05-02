@@ -5,6 +5,12 @@ body {
     font-weight: 400;
 }
 
+.max-page-width {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 2500px;
+}
+
 /* --------------------------------------------------- Main Site Navigation */
 
 .navbar-light .navbar-toggler {
@@ -24,6 +30,7 @@ body {
 #main-nav .nav-link {
     color: #00855D;
     font-weight: 500;
+    text-transform: uppercase;
 }
 
 .dropdown-item {
@@ -77,9 +84,10 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
     width: 30px;
 }
 
-#title-logo-link {
+.title-logo-link {
     color: #E4117A;
     font-family: 'Montez', cursive;
+    font-size: 2.5em;
     font-weight: 400;
 }
 
@@ -135,10 +143,6 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
 
 /* Account dropdown menu */
 
-.account-item {
-    padding-left: 0;
-}
-
 .dropdown-item span {
     color: #E4117A;
 }
@@ -167,6 +171,47 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
 
 /* --------------------------------------------------- Media Queries */
 
+/* for small screen sizes of 500px and up */
+@media screen and (min-width:500px) {
+
+    .search-bar-container {
+        width: 70%;
+    }
+}
+
+/* for small screen sizes of 625px and up */
+@media screen and (min-width:625px) {
+
+    .search-bar-container {
+        width: 60%;
+    }
+}
+
+/* for small screen sizes of 576px and up */
+@media screen and (min-width:576px) {
+
+    .navbar-toggler {
+        padding: .25rem .75rem;
+        font-size: 1.25rem;
+    }
+
+    .nav-link {
+         padding: 0.5rem 1rem;
+    }
+   
+    .nav-link i.fa-lg {
+        font-size: 1.25em;
+    }
+}
+
+/* for medium screen sizes of 768px and up */
+@media screen and (min-width:768px) {
+
+    .search-bar-container {
+        width: 50%;
+    }
+}
+
 /* for large screen sizes of 992px and up */
 @media screen and (min-width:992px) {
 
@@ -175,11 +220,82 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
         width: 100px;
     }
 
-    #title-logo-link {
+    .title-logo-link {
         font-size: 2.5em;
     }
 
-    .header-container {
-        scroll-padding-top: 116px;
+    .search-bar-container {
+        width: 100%;
     }
+
+    .header-container {
+        padding-top: 116px;
+    }
+
+    .navbar-nav li {
+        margin: 0 1.5em;
+    }
+}
+
+/* for extra large screen sizes of 1200px and up */
+@media screen and (min-width:1200px) {
+    body {
+        font-size: 18px;
+    }
+
+    .cactus-logo-link {
+        height: 130px;
+        width: 130px;
+    }
+
+    .nav-link {
+        padding: 0.5rem 1.5rem;
+   }
+}
+
+/* for extra extra large screen sizes of 1400px and up */
+@media screen and (min-width:1400px) {
+
+    body {
+        font-size: 20px;
+    }
+
+    .nav-link {
+        padding: 0.5rem 2.5rem;
+   }
+
+   .dropdown-item, 
+   .form-control {
+       font-size: 1.2rem;
+   }
+}
+
+/* for extra extra large screen sizes of 1700px and up */
+@media screen and (min-width:1700px) {
+    
+    .search-bar-container {
+        width: 80%;
+    }
+}
+
+/* for extra extra extra large screen sizes of 2500px and up */
+@media screen and (min-width:2500px) {
+
+    body {
+        font-size: 24px;
+    }
+
+    .cactus-logo-link {
+        height: 180px;
+        width: 180px;
+    }
+
+    .nav-link {
+        padding: 0.5rem 3.5rem;
+   }
+
+   .dropdown-item, 
+   .form-control {
+       font-size: 1.5rem;
+   }
 }
