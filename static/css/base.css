@@ -11,10 +11,6 @@ body {
     max-width: 2500px;
 }
 
-.header-container {
-    padding-top: 94px;
-}
-
 /* --------------------------------------------------- Main Site Navigation */
 
 .navbar-light .navbar-toggler {
@@ -218,11 +214,6 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
     .nav-link i.fa-lg {
         font-size: 1.25em;
     }
-
-    .header-container {
-        padding-top: 121px;
-    }
-    
 }
 
 /* for medium screen sizes of 768px and up */
@@ -230,16 +221,19 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
 
     .search-bar-container {
         width: 50%;
-    }
-
-    .header-container {
-        padding-top: 133px;
-    }
-    
+    }   
 }
 
 /* for large screen sizes of 992px and up */
 @media screen and (min-width:992px) {
+
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
 
     .header-container {
         padding-top: 192px;
@@ -256,10 +250,6 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
 
     .search-bar-container {
         width: 100%;
-    }
-
-    .header-container {
-        padding-top: 188px;
     }
 
     .navbar-nav li {
