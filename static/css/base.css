@@ -181,6 +181,37 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
     text-transform: uppercase;
 }
 
+/* --------------------------------------------------- Home Page */
+
+#hero-container {
+    background: #FFF url('/media/cactus-hero-image.jpg') center center / cover no-repeat;
+    height: 600px;
+}
+
+#cover-text-outer {
+    background-color: rgba(0, 133, 93, 0.5);  
+}
+
+#hero-container h1,
+#hero-container h2 {
+    color: #FFF;
+}
+
+h1 {
+    font-family: 'Oregano', cursive;
+    font-weight: 400;
+}
+
+#hero-container h2 {
+    font-size: calc(1.1rem + .9vw);;
+} 
+
+#home-pg-button {
+    background-color: #E4117A;
+    color: #FFF;
+    font-weight: 500;
+}
+
 /* --------------------------------------------------- Media Queries */
 
 /* for small screen sizes of 500px and up */
@@ -263,6 +294,21 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
 
     #delivery-banner h4 {
         font-size: 1.5rem;
+    }
+
+    #hero-container {
+        padding: 0;
+    }
+
+    #cover-text-outer {
+        background-color: transparent;
+    }
+
+    #cover-text-inner {
+        background-color: rgba(0, 133, 93, 0.5);  
+        border-radius: .25rem;
+        padding: 2em;
+        width: 75%;
     }
 }
 
