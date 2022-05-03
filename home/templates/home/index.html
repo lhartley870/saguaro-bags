@@ -1,6 +1,34 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block content %}
+{% block page_header %}
+<!-- Blank header needed to apply top padding where there is a fixed header on desktop screens -->
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
 
+{% block content %}
+<!-- hero image and cover text -->
+<section class="max-page-width">
+    <div class="container-fluid" id="hero-container">
+        <div class="row h-100 gx-lg-0">
+            <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center" id="cover-text-outer">
+                <div class="text-center rounded-lg-2" id="cover-text-inner">
+                    <h1 class="display-4">
+                        Ethical Vegan Cactus Leather Bags
+                    </h1>
+                    <h2>
+                        Don't desert your ethics for style!
+                    </h2>
+                    <form action="#">
+                        <button type="submit" class="btn btn-lg rounded-1 text-uppercase py-3 mt-4" id="home-pg-button">Shop the Collection</button>
+                    </form> 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
