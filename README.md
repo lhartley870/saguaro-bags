@@ -105,11 +105,19 @@ The steps below set out how to create your own copy of this project and configur
 
 #### Illustrations
 
-All of the store logo illustrations used on the website were generated with a Canva Pro subscription at [Canva](https://www.canva.com/en_gb/).
+All of the store logo illustrations and the favicon used on the website were generated with a Canva Pro subscription at [Canva](https://www.canva.com/en_gb/).
 
 #### Photos
 
 With thanks, the photos appearing on the website were taken by the following photographers: 
+
+* Home page:
+    * From [Unsplash](https://unsplash.com/):
+        * [Hero image](https://unsplash.com/photos/FPhfi9O-qqI) by Miguel Bruna.
+        * ['Ethical philosophy' round-leaf cactus](https://unsplash.com/photos/SBKdiLOmylc) by Meritt Thomas.
+        * ['Ethical style' pink cactus in a white pot](https://unsplash.com/photos/pkeb1NqMILc) by Scott Webb.
+    * From [Pexels](https://www.pexels.com/):
+        * ['How Cactus Leather is Made' rolls of leather on a table](https://www.pexels.com/photo/brown-and-white-ceramic-mugs-on-brown-wooden-table-5962634/) by Anna Tarazevich.
 
 * Photos of the bags for sale:
     * From [Unsplash](https://unsplash.com/):
@@ -168,6 +176,7 @@ With thanks, the photos appearing on the website were taken by the following pho
 
 ### Content
 * [This VeryWellFamily article entitled 'Top 1,000 Baby Girl Names in the U.S.'](https://www.verywellfamily.com/top-1000-baby-girl-names-2757832) was used to allocate names to the bags for sale.
+* Details for the information section of the home page were taken from an article entitled ['Why Cactus Leather is the Hottest New Vegan Leather' by Sascha Camilli on The Immaculate Vegan website](https://immaculatevegan.com/blogs/magazine/cactus-leather-the-hottest-new-vegan-leather) and from the [Desserto website](https://desserto.com.mx/home).
 
 ### Acknowledgments
 
