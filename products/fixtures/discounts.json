@@ -1,0 +1,1 @@
+[{"pk":1,"model":"products.discount","fields":{"name":"Spring Discount","amount":10}},{"pk":2,"model":"products.discount","fields":{"name":"Summer Discount","amount":20}},{"pk":3,"model":"products.discount","fields":{"name":"Autumn Discount","amount":5}},{"pk":4,"model":"products.discount","fields":{"name":"Winter Discount","amount":15}}]

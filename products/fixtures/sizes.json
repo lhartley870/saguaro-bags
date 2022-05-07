@@ -1,0 +1,1 @@
+[{"pk":1,"model":"products.size","fields":{"name":"Small"}},{"pk":2,"model":"products.size","fields":{"name":"Medium"}},{"pk":3,"model":"products.size","fields":{"name":"Large"}}]
