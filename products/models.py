@@ -41,9 +41,6 @@ class Discount(models.Model):
     )
 
     def __str__(self):
-        return self.name
-
-    def get_discount_percentage(self):
         return f'{self.amount} %'
 
 
