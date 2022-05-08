@@ -1,0 +1,139 @@
+/* --------------------------------------------------- Bags Page */
+
+.lead {
+    font-weight: 500;
+}
+
+small {
+    color: #00855D;
+}
+
+
+/* --------------------------------------------------- Media Queries */
+
+/* for small screen sizes of 425px and up */
+@media screen and (min-width:425px) {
+
+    .card {
+        margin: 0 auto;
+        width: 80%;
+    }
+}
+
+/* for small screen sizes of 550px and up */
+@media screen and (min-width:550px) {
+
+    .card {
+        width: 70%;
+    }
+}
+
+/* for small screen sizes of 650px and up */
+@media screen and (min-width:650px) {
+
+    .card {
+        width: 60%;
+    }
+}
+
+/* for medium screen sizes of 768px and up */
+@media screen and (min-width:768px) {
+
+    .card {
+        width: 90%;
+    }
+
+    .card-img-top {
+        height: 30vw;
+        object-fit: cover;
+    } 
+
+    .bag-list-row {
+        margin: 0 3em;
+    }
+}
+
+/* for large screen sizes of 992px and up */
+@media screen and (min-width:992px) {
+
+    .card {
+        width: 80%;
+    }
+
+    .card-img-top {
+        height: 25vw;
+    } 
+
+    .bag-list-row {
+        margin: 0 4em;
+    }
+}
+
+/* for extra large screen sizes of 1200px and up */
+@media screen and (min-width:1200px) {
+
+    .card {
+        width: 100%;
+    }
+
+    .bag-list-row {
+        margin: 0 3em;
+    }
+}
+
+/* for extra extra large screen sizes of 1400px and up */
+@media screen and (min-width:1400px) {
+
+    .card {
+        width: 90%;
+    }
+
+    .card-img-top {
+        height: 20vw;
+    } 
+
+    .bag-list-row {
+        margin: 0 4em;
+    }
+}
+
+/* for extra extra large screen sizes of 1700px and up */
+@media screen and (min-width:1700px) {
+
+    .card-img-top {
+        height: 15vw;
+    } 
+
+    .bag-list-row {
+        margin: 0 12em;
+    }
+}
+
+/* for extra extra extra large screen sizes of 2000px and up */
+@media screen and (min-width:2000px) {
+
+    .card-img-top {
+        height: 15vw;
+    }     
+    
+    .bag-list-row {
+        margin: 0 15em;
+    }
+}
+
+
+/* for extra extra extra large screen sizes of 2501px and up */
+@media screen and (min-width:2501px) {
+
+    .card {
+        width: 505px;
+    }
+
+    .card-img-top {
+        height: 375px;
+    }     
+    
+    .bag-list-row {
+        margin: 0 360px;
+    }
+}
