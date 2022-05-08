@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+
 {% block page_header %}
 <!-- Blank header needed to apply top padding where there is a fixed header on desktop screens -->
 <div class="container header-container">
@@ -11,10 +15,53 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container-fluid max-page-width">
     <div class="row">
-        <div class="col">
-            {{ bags }}
+        <div class="col text-center mt-3">
+            <!-- Page heading -->
+            <h1>Bags</h1>
+            <hr class="w-50 mx-auto mb-3">
+            <div class="row bag-list-row">
+                <!-- Creates a card of information for each bag for sale -->
+                {% for bag in bags %}
+                <div class="mb-3 col-md-6 col-xl-4 col-xxl-4">
+                    <div class="card h-100 border-0">
+                        <!-- Bag image displayed or the default no image icon if there is no bag image -->
+                        {% if bag.image %}
+                        <a href="">
+                            <img src="{{ bag.image.url }}" alt="{{ bag.name }} - {{ bag.image_description }}" class="card-img-top img-fluid">
+                        </a>
+                        {% else %}
+                        <a href="">
+                            <img src="{{ MEDIA_URL }}no-image.png" alt="{{ bag.name }} - {{ bag.image_description }}" class="card-img-top img-fluid">
+                        </a>
+                        {% endif %}
+                        <!-- Bag name -->
+                        <div class="card-body pb-0">
+                            <h2 class="card-title">{{ bag.name }}</h2>
+                        </div>
+                        <div class="card-footer bg-white pt-0 border-0 ">
+                            <div class="row">
+                                <div class="col">
+                                    <!-- Bag price -->
+                                    <p class="lead mb-0">£{{ bag.original_price }}</p>
+                                    <!-- Bag category, if the bag has one -->
+                                    {% if bag.category %}
+                                    <small class="d-block"><i class="fa-solid fa-folder me-1"></i>{{ bag.category.friendly_name }}</small>
+                                    {% endif %}
+                                    <!-- Bag rating if the bag has one, or else 'No rating yet'-->
+                                    {% if bag.overall_rating != 0.0 %}
+                                    <small><i class="fa-solid fa-star me-1"></i>{{ bag.overall_rating }}</small>
+                                    {% else %}
+                                    <small><i class="fa-solid fa-star me-1"></i>No rating yet</small>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>                  
+                </div>
+                {% endfor %}  
+            </div>
         </div>
     </div>
 </div>
