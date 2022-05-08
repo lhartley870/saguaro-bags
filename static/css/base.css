@@ -202,6 +202,11 @@ h1 {
     font-weight: 400;
 }
 
+h2 {
+    color: #E4117A;
+    font-size: calc(1rem + .9vw);
+}
+
 #hero-container h2 {
     font-size: calc(1.1rem + .9vw);;
 } 
@@ -350,10 +355,6 @@ h3 {
         width: 100px;
     }
 
-    .title-logo-link {
-        font-size: 2.5em;
-    }
-
     .search-bar-container {
         width: 100%;
     }
@@ -426,6 +427,10 @@ h3 {
    .header-container {
         padding-top: 225px;
     }
+
+    h2 {
+        font-size: 1.5rem;
+    }
 }
 
 /* for extra extra large screen sizes of 1400px and up */
@@ -465,6 +470,10 @@ h3 {
         height: 400px; 
         padding: 25px; 
         width: 400px;
+    }
+
+    .title-logo-link {
+        font-size: 3.5em;
     }
 }
 
