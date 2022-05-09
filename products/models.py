@@ -1,4 +1,5 @@
 from decimal import Decimal
+import math
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 
@@ -80,7 +81,7 @@ class Bag(models.Model):
         discount is not None, the new price is calculated to 2 decimal places,
         otherwise the original_price is returned.
         """
-        if (self.discount) is not None:
+        if self.discount is not None:
             # Use of the Decimal module and the quantize method to calculate
             # the discounted price and return it to 2 decimal places taken from
             # the Python documentation -
@@ -93,3 +94,28 @@ class Bag(models.Model):
             return discounted_price.quantize(two_places)
         else:
             return self.original_price
+
+
+    def get_number_rating_stars(self):
+        """
+        Method to work out the number of full stars, half stars
+        and empty stars to be shown in the rating for each bag for sale.
+        """
+        rating = self.overall_rating
+        # Use of divmod to find out the integer and decimal
+        # parts of a float taken from an answer given by utdemir
+        # on this Stack Overflow post -
+        # https://stackoverflow.com/questions/6681743/splitting-a-
+        # number-into-the-integer-and-decimal-parts
+        i, d = divmod(rating, 1)
+        # If the decimal is less than .5, round down to the nearest
+        # whole number and return that.
+        if d < 0.5:
+            return math.floor(self.overall_rating)
+        # If the decimal is .5, return the integer in a list.
+        elif d == 0.5:
+            return [int(i)]
+        # If the decimal is more than .5, round up to the nearest
+        # whole number and return that.
+        elif d > 0.5:
+            return math.ceil(self.overall_rating)
