@@ -181,6 +181,25 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
     text-transform: uppercase;
 }
 
+/* --------------------------------------------------- Back to Top Link */
+
+.btt-button {
+    border: 2px solid #E4117A;
+    bottom: 10px;
+    height: 42px;
+    position: fixed;
+    right: 10px;
+    width: 42px;
+}
+
+.btt-button a {
+    color: #E4117A;  
+}
+
+.btt-link {
+    cursor: pointer;
+}
+
 /* --------------------------------------------------- Home Page */
 
 #hero-container {
