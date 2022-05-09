@@ -44,7 +44,11 @@
                             <div class="row">
                                 <div class="col">
                                     <!-- Bag price -->
+                                    {% if bag.on_sale and bag.discount != None %}
+                                    <p class="lead mb-0"><del>£{{ bag.original_price }}</del> £{{ bag.get_discounted_price }}</p>
+                                    {% else %}
                                     <p class="lead mb-0">£{{ bag.original_price }}</p>
+                                    {% endif %}
                                     <!-- Bag category, if the bag has one -->
                                     {% if bag.category %}
                                     <small class="d-block"><i class="fa-solid fa-folder me-1"></i>{{ bag.category.friendly_name }}</small>
