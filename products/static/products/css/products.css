@@ -8,6 +8,13 @@ small {
     color: #00855D;
 }
 
+.bag-detail-icon-container {
+    width: 35%;
+}
+
+.bag-detail-information-container {
+    width: 55%;
+}
 
 /* --------------------------------------------------- Media Queries */
 
@@ -18,6 +25,10 @@ small {
         margin: 0 auto;
         width: 80%;
     }
+
+    .bag-detail-row {
+        margin: 0 2em;
+    }
 }
 
 /* for small screen sizes of 550px and up */
@@ -26,6 +37,10 @@ small {
     .card {
         width: 70%;
     }
+
+    .bag-detail-row {
+        margin: 0 4em;
+    }
 }
 
 /* for small screen sizes of 650px and up */
@@ -33,6 +48,10 @@ small {
 
     .card {
         width: 60%;
+    }
+
+    .bag-detail-row {
+        margin: 0 6em;
     }
 }
 
@@ -48,13 +67,17 @@ small {
     taken from an answer given by sepuckett86 on this Stack Overflow post - 
     https://stackoverflow.com/questions/37287153/how-to-get-images-in-bootstraps-card-to-be-the-same-height-width 
     */
-    .card-img-top {
+    .bag-list-card .card-img-top {
         height: 30vw;
         object-fit: cover;
     } 
 
     .bag-list-row {
         margin: 0 3em;
+    }
+
+    .bag-detail-row {
+        margin: 0 2em;
     }
 }
 
@@ -65,12 +88,16 @@ small {
         width: 80%;
     }
 
-    .card-img-top {
+    .bag-list-card .card-img-top {
         height: 25vw;
     } 
 
     .bag-list-row {
         margin: 0 4em;
+    }
+
+    .bag-detail-row {
+        margin: 0 0;
     }
 }
 
@@ -93,7 +120,7 @@ small {
         width: 90%;
     }
 
-    .card-img-top {
+    .bag-list-card .card-img-top {
         height: 20vw;
     } 
 
@@ -105,7 +132,7 @@ small {
 /* for extra extra large screen sizes of 1700px and up */
 @media screen and (min-width:1700px) {
 
-    .card-img-top {
+    .bag-list-card .card-img-top {
         height: 15vw;
     } 
 
@@ -117,7 +144,7 @@ small {
 /* for extra extra extra large screen sizes of 2000px and up */
 @media screen and (min-width:2000px) {
 
-    .card-img-top {
+    .bag-list-card .card-img-top {
         height: 15vw;
     }     
     
@@ -134,7 +161,7 @@ small {
         width: 505px;
     }
 
-    .card-img-top {
+    .bag-list-card .card-img-top {
         height: 375px;
     }     
     
