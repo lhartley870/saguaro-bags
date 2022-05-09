@@ -43,6 +43,11 @@ small {
         width: 90%;
     }
 
+    /* 
+    Code to make all the bag images the same height within the cards
+    taken from an answer given by sepuckett86 on this Stack Overflow post - 
+    https://stackoverflow.com/questions/37287153/how-to-get-images-in-bootstraps-card-to-be-the-same-height-width 
+    */
     .card-img-top {
         height: 30vw;
         object-fit: cover;
