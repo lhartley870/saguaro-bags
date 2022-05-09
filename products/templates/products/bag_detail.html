@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<!-- Blank header needed to apply top padding where there is a fixed header on desktop screens -->
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid max-page-width">
+    <div class="row">
+        <!-- Page heading column -->
+        <div class="col text-center mt-3">
+            <h1>The Details</h1>
+            <hr class="w-50 mx-auto mb-3">
+            <div class="row bag-detail-row mt-xl-4 mt-xxl-5">
+                <!-- Bag image column -->
+                <div class="col-md-6 col-lg-4 offset-lg-2">
+                    <div class="my-3">
+                        <!-- Bag image displayed or the default no image icon if there is no bag image -->
+                        {% if bag.image %}
+                        <a href="{{ bag.image.url }}" target="_blank" aria-label="View {{ bag.name}} bag image in a new tab">
+                            <img src="{{ bag.image.url }}" alt="{{ bag.name }} - {{ bag.image_description }}" class="card-img-top img-fluid">
+                        </a>
+                        {% else %}
+                        <a href="">
+                            <img src="{{ MEDIA_URL }}no-image.png" alt="{{ bag.name }} - {{ bag.image_description }}" class="card-img-top img-fluid">
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+                <!-- Bag information column -->
+                <div class="col-12 col-md-6 col-lg-4 d-flex align-items-center justify-content-center">
+                    <div>
+                        <!-- Bag name -->
+                        <h2 class="card-title">{{ bag.name }}</h2>
+                        <!-- Bag price -->
+                        {% if bag.on_sale and bag.discount != None %}
+                        <p class="lead"><del>£{{ bag.original_price }}</del> £{{ bag.get_discounted_price }}</p>
+                        {% else %}
+                        <p class="lead">£{{ bag.original_price }}</p>
+                        {% endif %}
+                        <!-- Bag category, if the bag has one -->
+                        {% if bag.category %}
+                        <div class="d-inline-block bag-detail-icon-container text-end">
+                            <i class="fa-solid fa-folder fa-sm me-1"></i>
+                        </div>
+                        <div class="d-inline-block bag-detail-information-container text-start">
+                            <small >{{ bag.category.friendly_name }}</small> 
+                        </div>
+                        {% endif %}
+                        <!-- Bag size, if the bag has one -->
+                        {% if bag.size %}
+                        <div class="d-inline-block bag-detail-icon-container text-end">
+                            <i class="fa-solid fa-tape fa-sm me-1"></i>
+                        </div>
+                        <div class="d-inline-block bag-detail-information-container text-start">
+                            <small >{{ bag.size }}</small> 
+                        </div>
+                        {% endif %}
+                        <!-- Bag colour, if the bag has one -->
+                        {% if bag.colour %}
+                        <div class="d-inline-block bag-detail-icon-container text-end">
+                            <i class="fa-solid fa-palette fa-sm me-1"></i>
+                        </div>
+                        <div class="d-inline-block bag-detail-information-container text-start">
+                            <small >{{ bag.colour }}</small> 
+                        </div>
+                        {% endif %}            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
