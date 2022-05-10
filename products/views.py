@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
+from django.db.models import Q
 from .models import Bag, Category
 
 
@@ -9,13 +10,39 @@ def all_bags(request):
     bags = Bag.objects.all()
     query = None
     categories = None
+    sale = False
+    free_charm = True
 
     if request.GET:
+        # Filters the bags by category/style.
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             bags = bags.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
+        # If only the 'Special Offers' dropdown of 'Sale Items' has been
+        # selected
+        if 'sale' in request.GET:
+            # This ensures that if any store admin has accidentally
+            # marked a bag as on sale but has failed to fill in the discount,
+            # that bag will not show up as being on sale.
+            bags = bags.filter(on_sale=True).exclude(discount=None)
+            sale = True
+
+        # If only the 'Special Offers' dropdown of 'Free Charm' has been
+        # selected
+        if 'free_charm' in request.GET:
+            bags = bags.filter(has_charm_option=True)
+            free_charm = True
+
+        # If the 'All Special Offers' dropdown has been selected
+        if 'all_special_offers' in request.GET:
+            filters = Q(has_charm_option=True) | (Q(on_sale=True) & ~Q(discount=None))
+            bags = bags.filter(filters)
+            sale = True
+            free_charm = True
+
+        # Deals with search bar queries.
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -28,6 +55,8 @@ def all_bags(request):
         'bags': bags,
         'search_term': query,
         'current_categories': categories,
+        'sale': sale,
+        'free_charm': free_charm,
     }
 
     return render(request, 'products/bags.html', context)
