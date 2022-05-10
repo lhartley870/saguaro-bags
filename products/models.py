@@ -43,6 +43,12 @@ class Discount(models.Model):
     )
 
     def __str__(self):
+        return self.name
+
+    def discount_amount_as_percentage(self):
+        """
+        Shows the discount amount as a percentage.
+        """
         return f'{self.amount} %'
 
 
