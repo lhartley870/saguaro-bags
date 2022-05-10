@@ -30,6 +30,11 @@
                         {% if bag.image %}
                         <a href="{% url 'bag_detail' bag.id %}">
                             <img src="{{ bag.image.url }}" alt="{{ bag.name }} - {{ bag.image_description }}" class="card-img-top img-fluid">
+                            {% if bag.has_charm_option %}
+                            <div class="free-charm-banner banner text-center rounded-2">
+                                <p class="mb-0">Free Charm</p>
+                            </div>
+                            {% endif %}
                         </a>
                         {% else %}
                         <a href="{% url 'bag_detail' bag.id %}">
@@ -53,9 +58,13 @@
                                     {% if bag.category %}
                                     <small class="d-block"><i class="fa-solid fa-folder me-1"></i>{{ bag.category.friendly_name }}</small>
                                     {% endif %}
-                                    <!-- If the bag has a free charm, states 'Free Charm' -->
-                                    {% if bag.has_charm_option %}
-                                    <small class="d-block"><i class="fa-solid fa-clover me-1"></i>Free Charm</small>
+                                    <!-- Bag size, if the bag has one -->
+                                    {% if bag.size %}
+                                    <small class="d-block"><i class="fa-solid fa-tape me-1"></i>{{ bag.size }}</small>
+                                    {% endif %}
+                                    <!-- Bag colour, if the bag has one -->
+                                    {% if bag.colour %}
+                                    <small class="d-block"><i class="fa-solid fa-palette me-1"></i>{{ bag.colour }}</small>
                                     {% endif %}
                                     <!-- Bag rating if the bag has one, or else 'No rating yet'-->
                                     {% if bag.overall_rating != 0.0 %}
