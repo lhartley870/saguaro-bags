@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.contrib import messages
 from .models import Bag
 
 
@@ -6,8 +7,20 @@ from .models import Bag
 def all_bags(request):
     """ A view to show all bags, including sorting and search queries """
     bags = Bag.objects.all()
+    query = None
+
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request, "Please enter some search criteria")
+                return redirect(reverse('bags'))
+
+            bags = bags.filter(name__icontains=query)
+
     context = {
         'bags': bags,
+        'search_term': query,
     }
 
     return render(request, 'products/bags.html', context)
@@ -29,7 +42,7 @@ def bag_detail(request, bag_id):
         half_stars_list = []
         empty_stars = 5 - whole_stars
         empty_stars_list = list(range(1, empty_stars + 1))
-    
+
     context = {
         'bag': bag,
         'whole_stars': whole_stars_list,
