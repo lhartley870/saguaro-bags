@@ -30,6 +30,7 @@
                         {% if bag.image %}
                         <a href="{% url 'bag_detail' bag.id %}">
                             <img src="{{ bag.image.url }}" alt="{{ bag.name }} - {{ bag.image_description }}" class="card-img-top img-fluid">
+                            <!-- 'Free Charm' banner displayed in the corner of the image if the bag has a free charm -->
                             {% if bag.has_charm_option %}
                             <div class="free-charm-banner banner text-center rounded-2">
                                 <p class="mb-0">Free Charm</p>
@@ -39,6 +40,12 @@
                         {% else %}
                         <a href="{% url 'bag_detail' bag.id %}">
                             <img src="{{ MEDIA_URL }}no-image.png" alt="{{ bag.name }} - {{ bag.image_description }}" class="card-img-top img-fluid">
+                            <!-- 'Free Charm' banner displayed in the corner of the 'no image' image if the bag has a free charm -->
+                            {% if bag.has_charm_option %}
+                            <div class="free-charm-banner banner text-center rounded-2">
+                                <p class="mb-0">Free Charm</p>
+                            </div>
+                            {% endif %}
                         </a>
                         {% endif %}
                         <!-- Bag name -->
