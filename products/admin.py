@@ -44,12 +44,21 @@ class BagAdmin(admin.ModelAdmin):
         'has_charm_option',
         'overall_rating',
         'on_sale',
-        'discount',
+        'discount_amount',
     )
     list_filter = ('category', 'size', 'colour', 'has_charm_option', 'on_sale')
     search_fields = ['name']
 
     ordering = ('name',)
+
+    def discount_amount(self, obj):
+        """
+        Method to return the bag's discount amount if the bag
+        has a discount.
+        """
+        if obj.discount is not None:
+            discount_amount = obj.discount.amount
+            return f'{discount_amount} %'
 
 
 admin.site.register(Size)
