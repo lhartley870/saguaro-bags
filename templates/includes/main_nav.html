@@ -20,13 +20,13 @@
                         <i class="fa-solid fa-tag ps-1 ps-lg-2"></i>
                     </span>
                 </a>
-                <a href="#" class="dropdown-item ">
+                <a href="{% url 'bags' %}?sort=overall_rating&direction=desc" class="dropdown-item ">
                     By Rating
                     <span>
                         <i class="fa-solid fa-tag ps-1 ps-lg-2"></i>
                     </span>
                 </a>
-                <a href="#" class="dropdown-item ">
+                <a href="{% url 'bags' %}?sort=category&direction=asc" class="dropdown-item ">
                     By Style
                     <span>
                         <i class="fa-solid fa-tag ps-1 ps-lg-2"></i>
@@ -38,7 +38,7 @@
                         <i class="fa-solid fa-tag ps-1 ps-lg-2"></i>
                     </span>
                 </a>
-                <a href="#" class="dropdown-item ">
+                <a href="{% url 'bags' %}?sort=colour&direction=asc" class="dropdown-item ">
                     By Colour
                     <span>
                         <i class="fa-solid fa-tag ps-1 ps-lg-2"></i>
