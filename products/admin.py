@@ -9,6 +9,7 @@ class CategoryAdmin(admin.ModelAdmin):
         'friendly_name',
         'name',
     )
+    search_fields = ['name']
 
     ordering = ('friendly_name',)
 
@@ -17,14 +18,16 @@ class CategoryAdmin(admin.ModelAdmin):
 class ColourAdmin(admin.ModelAdmin):
 
     ordering = ('name',)
+    search_fields = ['name']
 
 
 @admin.register(Discount)
 class DiscountAdmin(admin.ModelAdmin):
     list_display = (
         'name',
-        '__str__',
+        'discount_amount_as_percentage',
     )
+    list_filter = ('amount',)
 
     ordering = ('amount',)
 
@@ -43,6 +46,8 @@ class BagAdmin(admin.ModelAdmin):
         'on_sale',
         'discount',
     )
+    list_filter = ('category', 'size', 'colour', 'has_charm_option', 'on_sale')
+    search_fields = ['name']
 
     ordering = ('name',)
 
