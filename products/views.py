@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
+from django.db.models.functions import Lower
 from .models import Bag, Category
 
 
@@ -12,8 +13,24 @@ def all_bags(request):
     categories = None
     sale = False
     free_charm = True
+    sort = None
+    direction = None
 
     if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'category':
+                sortkey = 'category__name'
+            if sortkey == 'colour':
+                sortkey = 'colour__name'      
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+                    
+            bags = bags.order_by(sortkey)
+
         # Filters the bags by category/style.
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
@@ -51,12 +68,15 @@ def all_bags(request):
 
             bags = bags.filter(name__icontains=query)
 
+    current_sorting = f'{sort}_{direction}'
+
     context = {
         'bags': bags,
         'search_term': query,
         'current_categories': categories,
         'sale': sale,
         'free_charm': free_charm,
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'products/bags.html', context)
