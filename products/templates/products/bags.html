@@ -53,6 +53,10 @@
                                     {% if bag.category %}
                                     <small class="d-block"><i class="fa-solid fa-folder me-1"></i>{{ bag.category.friendly_name }}</small>
                                     {% endif %}
+                                    <!-- If the bag has a free charm, states 'Free Charm' -->
+                                    {% if bag.has_charm_option %}
+                                    <small class="d-block"><i class="fa-solid fa-clover me-1"></i>Free Charm</small>
+                                    {% endif %}
                                     <!-- Bag rating if the bag has one, or else 'No rating yet'-->
                                     {% if bag.overall_rating != 0.0 %}
                                     <small><i class="fa-solid fa-star me-1"></i>{{ bag.overall_rating }} / 5</small>
