@@ -171,12 +171,13 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
 
 /* --------------------------------------------------- Delivery Banner */
 
-#delivery-banner {
+.banner {
     background-color: #E4117A;
     color: #FFF;
 }
 
-#delivery-banner h4 {
+.banner h4,
+.banner p {
     font-size: .9rem;
     text-transform: uppercase;
 }
@@ -387,7 +388,7 @@ h3 {
         padding-bottom: 0;
     }
 
-    #delivery-banner h4 {
+    .banner h4 {
         font-size: 1.5rem;
     }
 
