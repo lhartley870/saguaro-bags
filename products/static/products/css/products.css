@@ -8,6 +8,15 @@ small {
     color: #00855D;
 }
 
+.free-charm-banner {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 40%
+}
+
+/* --------------------------------------------------- Bag Detail Page */
+
 .bag-detail-icon-container {
     width: 35%;
 }
