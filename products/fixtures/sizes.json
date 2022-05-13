@@ -1,1 +1,1 @@
-[{"pk":1,"model":"products.size","fields":{"name":"Small"}},{"pk":2,"model":"products.size","fields":{"name":"Medium"}},{"pk":3,"model":"products.size","fields":{"name":"Large"}}]
+[{"pk":1,"model":"products.size","fields":{"name":"Small","order_smallest_to_largest":1}},{"pk":2,"model":"products.size","fields":{"name":"Medium","order_smallest_to_largest":2}},{"pk":3,"model":"products.size","fields":{"name":"Large","order_smallest_to_largest":3}}]
