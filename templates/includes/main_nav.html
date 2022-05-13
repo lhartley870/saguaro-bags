@@ -14,7 +14,7 @@
                 <span><i class="fa-solid fa-bag-shopping ps-1 ps-lg-2"></i></span>
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-bags-link">
-                <a href="#" class="dropdown-item">
+                <a href="{% url 'bags' %}?sort=price&direction=asc" class="dropdown-item">
                     By Price
                     <span>
                         <i class="fa-solid fa-tag ps-1 ps-lg-2"></i>
@@ -32,7 +32,7 @@
                         <i class="fa-solid fa-tag ps-1 ps-lg-2"></i>
                     </span>
                 </a>
-                <a href="#" class="dropdown-item ">
+                <a href="{% url 'bags'%}?sort=size&direction=asc" class="dropdown-item ">
                     By Size
                     <span>
                         <i class="fa-solid fa-tag ps-1 ps-lg-2"></i>
