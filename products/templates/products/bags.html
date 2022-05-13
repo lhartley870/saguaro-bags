@@ -20,6 +20,24 @@
         <div class="col text-center mt-3">
             <!-- Page heading -->
             <h1>Bags</h1>
+            <!-- Badge links for styles/categories -->
+            {% for c in current_categories %}
+            <a href="{% url 'bags' %}?category={{ c.name }}" class="text-decoration-none badge-link">
+                <span class="p-2 mt-2 badge rounded-2">{{ c.friendly_name }}</span>
+            </a>
+            {% endfor %}
+            <!-- Badge link for sale items -->
+            {% if sale %}
+            <a href="{% url 'bags'%}?sale" class="text-decoration-none badge-link">
+                <span class="p-2 mt-2 badge rounded-2">Sale</span>
+            </a>
+            {% endif %}
+            <!-- Badge link for bags with a free charm -->
+            {% if free_charm %}
+            <a href="{% url 'bags'%}?free_charm" class="text-decoration-none badge-link">
+                <span class="p-2 mt-2 badge rounded-2">Free Charm</span>
+            </a>
+            {% endif %}
             <hr class="w-50 mx-auto mb-3 mb-md-4 mb-xl-5">
             <div class="row bag-list-row">
                 <!-- Creates a card of information for each bag for sale -->
