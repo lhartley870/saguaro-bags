@@ -12,7 +12,7 @@ def all_bags(request):
     query = None
     categories = None
     sale = False
-    free_charm = True
+    free_charm = False
     sort = None
     direction = None
 
