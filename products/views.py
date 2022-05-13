@@ -1,10 +1,8 @@
-from decimal import Decimal
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
-from django.db.models import Q, When, Case, Value, Sum, F, ExpressionWrapper, FloatField, DecimalField
+from django.db.models import When, Case, F, Q
 from django.db.models.functions import Lower
 from .models import Bag, Category
-from django.db import models
 
 
 # Create your views here.
@@ -28,6 +26,29 @@ def all_bags(request):
                 sortkey = 'colour__name'
             if sortkey == 'size':
                 sortkey = 'size__order_smallest_to_largest'
+            if sortkey == 'price':
+                sortkey = 'final_price'
+                bags = bags.annotate(
+                    final_price=Case(
+                        When(
+                            on_sale=False,
+                            then=(F('original_price')),
+                        ),
+                        When(
+                            Q(on_sale=True) & ~Q(discount=None),
+                            then=F('original_price') -
+                            (
+                                F('original_price') *
+                                F('discount__amount') /
+                                100
+                            ),
+                        ),
+                        default=F('original_price')
+                    )
+                )
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                bags = bags.annotate(lower_name=Lower('name'))
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
