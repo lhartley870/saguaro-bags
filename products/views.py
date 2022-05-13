@@ -32,6 +32,9 @@ def all_bags(request):
             # integer number given to the size by the site admin.
             if sortkey == 'size':
                 sortkey = 'size__order_smallest_to_largest'
+            # Sorting by rating, sorts by the overall_rating field.
+            if sortkey == 'rating':
+                sortkey = 'overall_rating'
             # Sorting by price annotates each bag object with a final_price.
             # The final_price is the bag's original price if on_sale is False.
             # The final_price is the bag's discounted price if on_sale is True
