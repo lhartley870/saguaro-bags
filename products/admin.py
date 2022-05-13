@@ -14,6 +14,16 @@ class CategoryAdmin(admin.ModelAdmin):
     ordering = ('friendly_name',)
 
 
+@admin.register(Size)
+class SizeAdmin(admin.ModelAdmin):
+    list_display = (
+        'name',
+        'order_smallest_to_largest',
+    )
+
+    ordering = ('order_smallest_to_largest',)
+
+
 @admin.register(Colour)
 class ColourAdmin(admin.ModelAdmin):
 
@@ -59,6 +69,3 @@ class BagAdmin(admin.ModelAdmin):
         if obj.discount is not None:
             discount_amount = obj.discount.amount
             return f'{discount_amount} %'
-
-
-admin.site.register(Size)
