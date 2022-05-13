@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -23,22 +23,87 @@
             <!-- Badge links for styles/categories -->
             {% for c in current_categories %}
             <a href="{% url 'bags' %}?category={{ c.name }}" class="text-decoration-none badge-link">
-                <span class="p-2 mt-2 badge rounded-2">{{ c.friendly_name }}</span>
+                <span class="p-2 mt-2 my-xl-3 badge rounded-2">{{ c.friendly_name }}</span>
             </a>
             {% endfor %}
             <!-- Badge link for sale items -->
             {% if sale %}
             <a href="{% url 'bags'%}?sale" class="text-decoration-none badge-link">
-                <span class="p-2 mt-2 badge rounded-2">Sale</span>
+                <span class="p-2 mt-2 my-xl-3 badge rounded-2">Sale</span>
             </a>
             {% endif %}
             <!-- Badge link for bags with a free charm -->
             {% if free_charm %}
             <a href="{% url 'bags'%}?free_charm" class="text-decoration-none badge-link">
-                <span class="p-2 mt-2 badge rounded-2">Free Charm</span>
+                <span class="p-2 mt-2 my-xl-3 badge rounded-2">Free Charm</span>
             </a>
             {% endif %}
-            <hr class="w-50 mx-auto mb-3 mb-md-4 mb-xl-5">
+            <hr class="w-50 mx-auto mb-3 mb-md-4 mb-xl-0">
+            <div class="row my-2 mt-sm-3 mb-sm-1 sort-row mb-md-4 my-xl-4 my-xxl-5">
+                <!-- Dropdown sorting options -->
+                <div class="col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                    <div class="w-50">
+                        <select id="sort-selector"
+                            class="form-select form-select-sm rounded-2 border-{% if current_sorting != 'None_None' %}pink{% else %}green{% endif %}"
+                            aria-label="Sorting options">
+                            <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>
+                                Sort by...
+                            </option>
+                            <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>
+                                Price (low to high)
+                            </option>
+                            <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>
+                                Price (high to low)</option>
+                            <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>
+                                Rating (low to high)
+                            </option>
+                            <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>
+                                Rating (high to low)
+                            </option>                            
+                            <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>
+                                Style (A-Z)
+                            </option>
+                            <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>
+                                Style (Z-A)
+                            </option>
+                            <option value="size_asc" {% if current_sorting == 'size_asc' %}selected{% endif %}>
+                                Size (S-L)
+                            </option>
+                            <option value="size_desc" {% if current_sorting == 'size_desc' %}selected{% endif %}>
+                                Size (L-S)
+                            </option>
+                            <option value="colour_asc" {% if current_sorting == 'colour_asc' %}selected{% endif %}>
+                                Colour (A-Z)
+                            </option>
+                            <option value="colour_desc" {% if current_sorting == 'colour_desc' %}selected{% endif %}>
+                                Colour (Z-A)
+                            </option>
+                            <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>
+                                Name (A-Z)
+                            </option>
+                            <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>
+                                Name (Z-A)
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <!-- All bags home page link, number of bags being viewed and search terms -->
+                <div class="my-2 my-sm-3 col-md-6 order-md-first d-md-flex align-items-center my-md-0">
+                    <small class="text-center text-md-start">
+                        {% if search_term or current_categories or current_sorting != 'None_None' %}
+                        <a href="{% url 'bags' %}">Bags Home</a> |
+                        {% endif %}
+                        {% if bags|length == 1%}
+                        {{ bags|length }} Bag
+                        {% else %}
+                        {{ bags|length }} Bags
+                        {% endif %}
+                        {% if search_term %} found for
+                        <strong>"{{ search_term }}"</strong>
+                        {% endif %}
+                    </small>
+                </div>
+            </div>
             <div class="row bag-list-row">
                 <!-- Creates a card of information for each bag for sale -->
                 {% for bag in bags %}
@@ -47,7 +112,8 @@
                         <!-- Bag image displayed or the default no image icon if there is no bag image -->
                         {% if bag.image %}
                         <a href="{% url 'bag_detail' bag.id %}">
-                            <img src="{{ bag.image.url }}" alt="{{ bag.name }} - {{ bag.image_description }}" class="card-img-top img-fluid">
+                            <img src="{{ bag.image.url }}" alt="{{ bag.name }} - {{ bag.image_description }}"
+                                class="card-img-top img-fluid">
                             <!-- 'Free Charm' banner displayed in the corner of the image if the bag has a free charm -->
                             {% if bag.has_charm_option %}
                             <div class="free-charm-banner banner text-center rounded-2">
@@ -57,7 +123,8 @@
                         </a>
                         {% else %}
                         <a href="{% url 'bag_detail' bag.id %}">
-                            <img src="{{ MEDIA_URL }}no-image.png" alt="{{ bag.name }} - {{ bag.image_description }}" class="card-img-top img-fluid">
+                            <img src="{{ MEDIA_URL }}no-image.png" alt="{{ bag.name }} - {{ bag.image_description }}"
+                                class="card-img-top img-fluid">
                             <!-- 'Free Charm' banner displayed in the corner of the 'no image' image if the bag has a free charm -->
                             {% if bag.has_charm_option %}
                             <div class="free-charm-banner banner text-center rounded-2">
@@ -75,21 +142,33 @@
                                 <div class="col">
                                     <!-- Bag price -->
                                     {% if bag.on_sale and bag.discount != None %}
-                                    <p class="lead mb-0"><del>£{{ bag.original_price }}</del> £{{ bag.get_discounted_price }}</p>
+                                    <p class="lead mb-0">
+                                        <del>£{{ bag.original_price }}</del>
+                                        £{{ bag.get_discounted_price }}
+                                    </p>
                                     {% else %}
                                     <p class="lead mb-0">£{{ bag.original_price }}</p>
                                     {% endif %}
                                     <!-- Bag category, if the bag has one -->
                                     {% if bag.category %}
-                                    <small class="d-block"><i class="fa-solid fa-folder me-1"></i>{{ bag.category.friendly_name }}</small>
+                                    <small class="d-block">
+                                        <i class="fa-solid fa-folder me-1"></i>
+                                        {{ bag.category.friendly_name }}
+                                    </small>
                                     {% endif %}
                                     <!-- Bag size, if the bag has one -->
                                     {% if bag.size %}
-                                    <small class="d-block"><i class="fa-solid fa-tape me-1"></i>{{ bag.size }}</small>
+                                    <small class="d-block">
+                                        <i class="fa-solid fa-tape me-1"></i>
+                                        {{ bag.size }}
+                                    </small>
                                     {% endif %}
                                     <!-- Bag colour, if the bag has one -->
                                     {% if bag.colour %}
-                                    <small class="d-block"><i class="fa-solid fa-palette me-1"></i>{{ bag.colour }}</small>
+                                    <small class="d-block">
+                                        <i class="fa-solid fa-palette me-1"></i>
+                                        {{ bag.colour }}
+                                    </small>
                                     {% endif %}
                                     <!-- Bag rating if the bag has one, or else 'No rating yet'-->
                                     {% if bag.overall_rating != 0.0 %}
@@ -100,7 +179,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>                  
+                    </div>
                 </div>
                 <!-- Adds a horizontal rule under each row of bags depending on the number of columns in a row -->
                 {% if forloop.counter|divisibleby:1 %}
@@ -144,7 +223,7 @@
             let currentUrl = new URL(window.location);
 
             let selectedVal = selector.val();
-            if(selectedVal != "reset"){
+            if(selectedVal != "reset") {
                 let sort = selectedVal.split("_")[0];
                 let direction = selectedVal.split("_")[1];
                 
