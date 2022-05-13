@@ -98,6 +98,10 @@ small {
         margin: 0 3em;
     }
 
+    .sort-row {
+        margin: 0 5em;
+    }
+
     .bag-detail-row {
         margin: 0 2em;
     }
@@ -118,6 +122,10 @@ small {
         margin: 0 4em;
     }
 
+    .sort-row {
+        margin: 0 8em;
+    }
+
     .bag-detail-row {
         margin: 0 0;
     }
@@ -132,6 +140,10 @@ small {
 
     .bag-list-row {
         margin: 0 3em;
+    }
+
+    .sort-row {
+        margin: 0 6em;
     }
 }
 
@@ -149,6 +161,10 @@ small {
     .bag-list-row {
         margin: 0 4em;
     }
+
+    .sort-row {
+        margin: 0 8em;
+    }
 }
 
 /* for extra extra large screen sizes of 1700px and up */
@@ -161,6 +177,10 @@ small {
     .bag-list-row {
         margin: 0 12em;
     }
+
+    .sort-row {
+        margin: 0 16em;
+    }
 }
 
 /* for extra extra extra large screen sizes of 2000px and up */
@@ -172,6 +192,10 @@ small {
     
     .bag-list-row {
         margin: 0 15em;
+    }
+
+    .sort-row {
+        margin: 0 20em;
     }
 }
 
@@ -189,5 +213,10 @@ small {
     
     .bag-list-row {
         margin: 0 360px;
+    }
+
+    .sort-row {
+        margin-left: 480px;
+        margin-right: 480px;
     }
 }
