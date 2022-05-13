@@ -21,6 +21,10 @@ class Category(models.Model):
 
 class Size(models.Model):
     name = models.CharField(max_length=25, unique=True)
+    order_smallest_to_largest = models.PositiveSmallIntegerField(
+        unique=True,
+        validators=[MinValueValidator(1)]
+    )
 
     def __str__(self):
         return self.name
