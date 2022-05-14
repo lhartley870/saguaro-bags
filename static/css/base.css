@@ -199,6 +199,14 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
     color: #00855D;
 }
 
+/* --------------------------------------------------- Buttons */
+
+.page-nav-button {
+    background-color: #E4117A;
+    color: #FFF;
+    font-weight: 500;
+}
+
 /* --------------------------------------------------- Back to Top Link */
 
 .btt-button {
@@ -247,12 +255,6 @@ h2 {
 #hero-container h2 {
     font-size: calc(1.1rem + .9vw);;
 } 
-
-#home-pg-button {
-    background-color: #E4117A;
-    color: #FFF;
-    font-weight: 500;
-}
 
 /* Idea and code for the images inside circle containers adapted from the 
 Code Institute 'Love Running' project */
