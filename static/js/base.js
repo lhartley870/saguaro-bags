@@ -1,8 +1,5 @@
 // Wait for the DOM to finish loading before adding interactivity
 $(document).ready(function() {
-    // Sets the checkout logo to a shopping basket 
-    $('.checkout-logo').html('<i class="fa-solid fa-basket-shopping fa-lg"></i>');
-
     // Changes the checkout logo to a shopping trolley when hovered over or focussed on
     let basketLink = $('.basket-link');
     basketLink.hover(showShoppingTrolley, showShoppingBasket);
@@ -32,7 +29,9 @@ $(document).ready(function() {
  * changing the checkout logo from a shopping basket to a trolley.
  */
 function showShoppingBasket() {
-    $('.checkout-logo').html('<i class="fa-solid fa-basket-shopping fa-lg"></i>');
+    let icon = $('.checkout-logo');
+    icon.removeClass('fa-cart-shopping');
+    icon.addClass('fa-basket-shopping');
 }
 
 /**
@@ -40,7 +39,9 @@ function showShoppingBasket() {
  * logo, changing the checkout logo from a trolley back to a shopping basket.
  */
 function showShoppingTrolley() {
-    $('.checkout-logo').html('<i class="fa-solid fa-cart-shopping fa-lg"></i>');
+    let icon = $('.checkout-logo');
+    icon.removeClass('fa-basket-shopping');
+    icon.addClass('fa-cart-shopping');
 }
 
 /**
