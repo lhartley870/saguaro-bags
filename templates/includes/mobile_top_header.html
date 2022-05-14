@@ -69,7 +69,7 @@
 
 <!-- Shopping basket -->
 <li class="list-inline-item">
-    <a href="#"
+    <a href="{% url 'view_basket' %}" aria-label="Go to the shopping basket page (does not open in a new tab)"
         class="{% if grand_total %}basket-link-items{% else %}basket-link-no-items{% endif %} nav-link basket-link d-block d-lg-none">
         <div class="text-center">
             <div class="checkout-logo">
