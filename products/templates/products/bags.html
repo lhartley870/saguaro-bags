@@ -22,19 +22,22 @@
             <h1>Bags</h1>
             <!-- Badge links for styles/categories -->
             {% for c in current_categories %}
-            <a href="{% url 'bags' %}?category={{ c.name }}" class="text-decoration-none badge-link">
+            <a href="{% url 'bags' %}?category={{ c.name }}" aria-label="Go to the {{ c.friendly_name }} page (does not open in a new tab)"
+                class="text-decoration-none badge-link">
                 <span class="p-2 mt-2 my-xl-3 badge rounded-2">{{ c.friendly_name }}</span>
             </a>
             {% endfor %}
             <!-- Badge link for sale items -->
             {% if sale %}
-            <a href="{% url 'bags'%}?sale" class="text-decoration-none badge-link">
+            <a href="{% url 'bags'%}?sale" aria-label="Go to the sale page (does not open in a new tab)"
+                class="text-decoration-none badge-link">
                 <span class="p-2 mt-2 my-xl-3 badge rounded-2">Sale</span>
             </a>
             {% endif %}
             <!-- Badge link for bags with a free charm -->
             {% if free_charm %}
-            <a href="{% url 'bags'%}?free_charm" class="text-decoration-none badge-link">
+            <a href="{% url 'bags'%}?free_charm" aria-label="Go to the bags with a free charm page (does not open in a new tab)"
+                class="text-decoration-none badge-link">
                 <span class="p-2 mt-2 my-xl-3 badge rounded-2">Free Charm</span>
             </a>
             {% endif %}
@@ -91,7 +94,9 @@
                 <div class="my-2 my-sm-3 col-md-6 order-md-first d-md-flex align-items-center my-md-0">
                     <small class="text-center text-md-start">
                         {% if search_term or current_categories or current_sorting != 'None_None' %}
-                        <a href="{% url 'bags' %}">Bags Home</a> |
+                        <a href="{% url 'bags' %}" aria-label="Go to the all bags for sale page (does not open in a new tab)">
+                            Bags Home
+                        </a> |
                         {% endif %}
                         {% if bags|length == 1%}
                         {{ bags|length }} Bag
@@ -111,7 +116,7 @@
                     <div class="card h-100 border-0 bag-list-card">
                         <!-- Bag image displayed or the default no image icon if there is no bag image -->
                         {% if bag.image %}
-                        <a href="{% url 'bag_detail' bag.id %}">
+                        <a href="{% url 'bag_detail' bag.id %}" aria-label="Go to the details page for {{ bag.name }} bag (does not open in a new tab)">
                             <img src="{{ bag.image.url }}" alt="{{ bag.name }} - {{ bag.image_description }}"
                                 class="card-img-top img-fluid">
                             <!-- 'Free Charm' banner displayed in the corner of the image if the bag has a free charm -->
@@ -122,7 +127,7 @@
                             {% endif %}
                         </a>
                         {% else %}
-                        <a href="{% url 'bag_detail' bag.id %}">
+                        <a href="{% url 'bag_detail' bag.id %}" aria-label="Go to the details page for {{ bag.name }} bag (does not open in a new tab)">
                             <img src="{{ MEDIA_URL }}no-image.png" alt="{{ bag.name }} - {{ bag.image_description }}"
                                 class="card-img-top img-fluid">
                             <!-- 'Free Charm' banner displayed in the corner of the 'no image' image if the bag has a free charm -->
