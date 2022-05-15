@@ -23,7 +23,7 @@
             <hr class="w-50 mx-auto mb-3">
             <div class="row bag-detail-row mt-xl-4 mt-xxl-5">
                 <!-- Bag image column -->
-                <div class="col-md-6 col-lg-4 offset-lg-2">
+                <div class="col-md-6 col-lg-4 offset-lg-2 d-flex align-items-center">
                     <div class="my-3">
                         <!-- Bag image displayed or the default no image icon if there is no bag image -->
                         {% if bag.image %}
@@ -109,7 +109,22 @@
                         <!-- Form containing bag quantity input, 'Keep Shopping' button and 'Add to Basket' buttons -->
                         <form action="{% url 'add_to_basket' bag.id %}" method="POST">
                             {% csrf_token %}
-                            <p class="mt-3 mb-1 bag-detail-label">Quantity:</p>
+                            <!-- Free charm options -->
+                            {% with bag.has_charm_option as c %}
+                            {% if c %}
+                            <div class="my-3">
+                                <p class="bag-detail-label">Free Charm:</p>
+                                {% for charm in charms %}
+                                <div class="d-inline-block">
+                                    <img src="{{ charm.image.url }}" alt="{{ charm.image_description }}" class="charm-image d-block">
+                                    <input type="radio" id="charm_id_{{ charm.id }}" name="charm_option" class="d-block mx-auto my-2">
+                                    <label for="charm_id_{{ charm.id }}" class="d-block"><small>{{ charm.name }}</small></label>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                            <!-- Bag quantity -->
+                            <p class="mt-3 mb-2 bag-detail-label">Quantity:</p>
                             <div class="input-group input-group-{{ bag.id }} mx-auto bag-quantity-container">
                                 <!-- Quantity decrementer button -->
                                 <button class="btn form-appended-button decrement-qty_{{ bag.id }}" data-item_id="{{ bag.id }}" type="button">
@@ -139,6 +154,7 @@
                                 <input type="submit" class="btn btn-sm rounded-1 text-uppercase mt-4 submit-button" value="Add to Basket">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            {% endwith %}
                         </form>
                     </div>
                 </div>
