@@ -22,17 +22,52 @@
     <div class="row">
         <div class="col">
             {% if basket_items %}
-                <div class="table-responsive rounded"></div>
+            <div class="table-responsive rounded d-none d-md-block">
+                <table class="table table-sm table-borderless text-green">
+                    <thead>
+                        <tr class="text-purple">
+                            <th scope="col" class="ps-4">Bag Info</th>
+                            <th scope="col"></th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Subtotal</th>
+                        </tr>
+                    </thead>
+                    {% for item in basket_items %}
+                    <tr>
+                        <td class="p-3 w-25">
+                            {% include "basket/bag-image.html" %}
+                        </td>
+                        <td class="py-3">
+                            {% include "basket/bag-info.html" %}
+                        </td>
+                        <td class="py-3">
+                            {% include "basket/bag-price.html" %}
+                        </td>
+                        <td class="py-3 w-25">
+                            <p class="my-0">
+                                {{ item.quantity }}
+                            </p>
+                        </td>
+                        <td class="py-3">
+                            <p class="my-0">£{{ item.product.price }}</p>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="5" class="pt-5 text-end">
+                            {% include "basket/basket-total.html" %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="text-end">
+                            {% include "basket/checkout-buttons.html" %}
+                        </td>
+                    </tr>
+                </table>
+            </div>
             {% else %}
-                <p class="lead mb-5">Your basket is empty.</p>
-                <form action="{% url 'bags' %}">
-                    <button type="submit" class="btn btn-lg rounded-1 text-uppercase py-2 mt-4 page-nav-button">
-                        <span class="icon">
-                            <i class="fa-solid fa-chevron-left"></i>
-                        </span>
-                        <span class="text-uppercase">Keep Shopping</span>
-                    </button>
-                </form>
+            <p class="lead mb-5">Your basket is empty.</p>
             {% endif %}
         </div>
     </div>

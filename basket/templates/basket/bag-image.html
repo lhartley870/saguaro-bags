@@ -1,0 +1,5 @@
+{% if item.bag.image %}
+<img class="img-fluid rounded" src="{{ item.bag.image.url }}" alt="{{ item.bag.name }} - {{ item.bag.image_description }}">
+{% else %}
+<img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.bag.name }} - {{ item.bag.image_description }}">
+{% endif %}
