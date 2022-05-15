@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models import When, Case, F, Q
 from django.db.models.functions import Lower
-from .models import Bag, Category
+from .models import Bag, Category, Charm
 
 
 # Create your views here.
@@ -133,6 +133,8 @@ def bag_detail(request, bag_id):
     """ A view to show individual bag details """
     bag = get_object_or_404(Bag, pk=bag_id)
     rating_stars = bag.get_number_rating_stars()
+    charms = Charm.objects.all()
+
     if isinstance(rating_stars, list):
         whole_stars = rating_stars[0]
         whole_stars_list = list(range(1, rating_stars[0] + 1))
@@ -151,6 +153,7 @@ def bag_detail(request, bag_id):
         'whole_stars': whole_stars_list,
         'half_stars': half_stars_list,
         'empty_stars': empty_stars_list,
+        'charms': charms,
     }
 
     return render(request, 'products/bag_detail.html', context)
