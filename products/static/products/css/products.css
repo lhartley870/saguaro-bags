@@ -43,6 +43,11 @@
     font-weight: 500;
 }
 
+.charm-image {
+    height: 75px;
+    width: 75px;
+}
+
 /* --------------------------------------------------- Media Queries */
 
 /* for small screen sizes of 425px and up */
