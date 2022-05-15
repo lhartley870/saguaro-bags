@@ -129,3 +129,12 @@ class Bag(models.Model):
         # whole number and return that.
         elif d > 0.5:
             return math.ceil(self.overall_rating)
+
+
+class Charm(models.Model):
+    name = models.CharField(max_length=25)
+    image = models.ImageField()
+    image_description = models.TextField()
+
+    def __str__(self):
+        return self.name
