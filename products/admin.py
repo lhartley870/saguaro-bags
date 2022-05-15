@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Size, Colour, Discount, Bag
+from .models import Category, Size, Colour, Discount, Bag, Charm
 
 
 # Register your models here.
@@ -69,3 +69,10 @@ class BagAdmin(admin.ModelAdmin):
         if obj.discount is not None:
             discount_amount = obj.discount.amount
             return f'{discount_amount} %'
+
+
+@admin.register(Charm)
+class CharmAdmin(admin.ModelAdmin):
+    search_fields = ['name']
+
+    ordering = ('name',)
