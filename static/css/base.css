@@ -231,6 +231,32 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
     color: #00855D;
 }
 
+/* --------------------------------------------------- Text */
+
+.text-green {
+    color: #00855D;
+}
+
+.text-purple {
+    color: #6C6EC4;
+}
+
+/* --------------------------------------------------- Headings */
+
+h1 {
+    font-family: 'Oregano', cursive;
+    font-weight: 400;
+}
+
+h2 {
+    color: #E4117A;
+    font-size: calc(1rem + .9vw);
+}
+
+h4 {
+    color: #E4117A;
+}
+
 /* --------------------------------------------------- Back to Top Link */
 
 .btt-button {
@@ -264,16 +290,6 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
 #hero-container h1,
 #hero-container h2 {
     color: #FFF;
-}
-
-h1 {
-    font-family: 'Oregano', cursive;
-    font-weight: 400;
-}
-
-h2 {
-    color: #E4117A;
-    font-size: calc(1rem + .9vw);
 }
 
 #hero-container h2 {
