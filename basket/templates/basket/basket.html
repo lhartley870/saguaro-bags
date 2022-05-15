@@ -22,6 +22,7 @@
     <div class="row">
         <div class="col">
             {% if basket_items %}
+            <!-- Table of shopping basket items -->
             <div class="table-responsive rounded d-none d-md-block">
                 <table class="table table-sm table-borderless text-green">
                     <thead>
@@ -35,31 +36,38 @@
                     </thead>
                     {% for item in basket_items %}
                     <tr>
+                        <!-- Item image -->
                         <td class="p-3 w-25">
                             {% include "basket/bag-image.html" %}
                         </td>
+                        <!-- Item name and SKU -->
                         <td class="py-3">
                             {% include "basket/bag-info.html" %}
                         </td>
+                        <!-- Item price -->
                         <td class="py-3">
                             {% include "basket/bag-price.html" %}
                         </td>
+                        <!-- Item quantity -->
                         <td class="py-3 w-25">
                             <p class="my-0">
                                 {{ item.quantity }}
                             </p>
                         </td>
+                        <!-- Item subtotal -->
                         <td class="py-3">
                             <p class="my-0">£{{ item.product.price }}</p>
                         </td>
                     </tr>
                     {% endfor %}
                     <tr>
+                        <!-- Basket total, delivery and grand total -->
                         <td colspan="5" class="pt-5 text-end">
                             {% include "basket/basket-total.html" %}
                         </td>
                     </tr>
                     <tr>
+                        <!-- Keep Shopping and Secure Checkout buttons -->
                         <td colspan="5" class="text-end">
                             {% include "basket/checkout-buttons.html" %}
                         </td>
@@ -67,7 +75,7 @@
                 </table>
             </div>
             {% else %}
-            <p class="lead mb-5">Your basket is empty.</p>
+            <p class="lead mb-5 text-center">Your basket is empty.</p>
             {% endif %}
         </div>
     </div>
