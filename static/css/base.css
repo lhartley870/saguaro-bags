@@ -97,11 +97,11 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
     border: 2px solid #00855D;
 }
 
-.search-button {
+.form-appended-button {
     background-color: #00855D;
 }
 
-.search-button i {
+.form-appended-button i {
     color: #FFF;
 }
 
@@ -203,8 +203,32 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
 
 .page-nav-button {
     background-color: #E4117A;
+    border: 2px solid transparent;
     color: #FFF;
     font-weight: 500;
+}
+
+.page-nav-button:hover, 
+.page-nav-button:focus {
+    background-color: #FFF;
+    border: 2px solid #E4117A;
+    color: #E4117A;
+}
+
+.submit-button {
+    background-color: #00855D;
+    border: 2px solid transparent;
+    color: #FFF;
+    font-weight: 500;
+    padding-top: .6rem;
+    padding-bottom: .61rem;
+}
+
+.submit-button:hover,
+.submit-button:focus {
+    background-color: #FFF;
+    border: 2px solid #00855D;
+    color: #00855D;
 }
 
 /* --------------------------------------------------- Back to Top Link */
