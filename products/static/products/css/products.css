@@ -38,6 +38,15 @@ small {
     width: 55%;
 }
 
+.bag-quantity-container {
+    width: 60%;
+}
+
+.bag-detail-label {
+    color: #E4117A;
+    font-weight: 500;
+}
+
 /* --------------------------------------------------- Media Queries */
 
 /* for small screen sizes of 425px and up */
