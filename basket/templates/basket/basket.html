@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'basket/css/basket.css' %}">
+{% endblock %}
+
 {% block page_header %}
 <!-- Blank header needed to apply top padding where there is a fixed header on desktop screens -->
 <div class="container header-container">
@@ -24,7 +28,7 @@
             {% if basket_items %}
             <!-- Table of shopping basket items -->
             <div class="table-responsive rounded d-none d-md-block">
-                <table class="table table-sm table-borderless text-green">
+                <table id="shopping-basket-table" class="table table-sm table-borderless text-green">
                     <thead>
                         <tr class="text-purple">
                             <th scope="col" class="ps-4">Bag Info</th>
@@ -49,10 +53,8 @@
                             {% include "basket/bag-price.html" %}
                         </td>
                         <!-- Item quantity -->
-                        <td class="py-3 w-25">
-                            <p class="my-0">
-                                {{ item.quantity }}
-                            </p>
+                        <td class="py-3 item-quantity">
+                            {% include "basket/quantity-form.html" %}
                         </td>
                         <!-- Item subtotal -->
                         <td class="py-3">
