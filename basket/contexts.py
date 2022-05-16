@@ -43,11 +43,13 @@ def basket_contents(request):
                     charm_object = get_object_or_404(Charm, id=charm_id)
                 else:
                     charm_object = None
+                    charm = 'none'
                 basket_items.append({
                     'item_id': item_id,
                     'quantity': quantity,
                     'bag': bag,
                     'charm_object': charm_object,
+                    'charm': charm,
                 })
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
