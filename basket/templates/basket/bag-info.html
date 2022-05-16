@@ -1,2 +1,9 @@
 <p class="my-0"><strong>{{ item.bag.name }}</strong></p>
 <small>SKU: {{ item.bag.sku|upper }}</small>
+{% if item.bag.has_charm_option %}
+    {% if item.charm_object %}
+    <p class="my-0">Charm Option: {{ item.charm_object.name }}</p>
+    {% else %}
+    <p class="my-0">Charm Option: No charm selected</p>
+    {% endif %}
+{% endif %}
