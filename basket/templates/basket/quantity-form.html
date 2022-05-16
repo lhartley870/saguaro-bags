@@ -1,0 +1,32 @@
+<form action="#" method="POST" class="update-form">
+    {% csrf_token %}
+    <!-- Bag quantity -->
+    <p class="mb-2 bag-detail-label">Quantity:</p>
+    <div class="input-group input-group-{{ item.item_id }} mx-auto">
+        <!-- Quantity decrementer button -->
+        <button class="btn form-appended-button decrement-qty decrement-qty_{{ item.item_id }}
+            {% if item.charm %}decrement-charm_{{ item.item_id }}_{{ item.charm }}{% endif %}" data-item_id="{{ item.item_id }}" type="button"
+            data-charm="{{ item.charm }}">
+            <span>
+                <i class="fa-solid fa-minus"></i>
+            </span>
+        </button>
+        <!-- Quantity input -->
+        <input type="number" class="form-control qty_input id_qty_{{ item.item_id }}
+            {% if item.charm %}charm_{{ item.item_id }}_{{ item.charm }}{% endif %}" aria-label="Bag quantity with add and minus buttons"
+            name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}" data-charm="{{ item.charm }}">
+        <!-- Quantity incrementer button -->
+        <button class="btn form-appended-button increment-qty increment-qty_{{ item.item_id }}
+            {% if item.charm %}increment-charm_{{ item.item_id }}_{{ item.charm }}{% endif %}" data-item_id="{{ item.item_id }}" type="button"
+            data-charm="{{ item.charm }}">
+            <span>
+                <i class="fa-solid fa-plus"></i>
+            </span>
+        </button>
+        {% if item.bag.has_charm_option %}
+        <input type="hidden" name="charm_option" value="{{ item.charm }}">
+        {% endif %}
+    </div>
+</form>
+<a class="update-link"><small>Update</small></a>
+<a class="remove-item float-end" id="remove_{{ item.item_id }}" data-charm_option="{{ item.charm }}"><small>Remove</small></a>
