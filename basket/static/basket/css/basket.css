@@ -1,0 +1,8 @@
+#shopping-basket-table .increment-qty {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.item-quantity {
+    width: 20%;
+}
