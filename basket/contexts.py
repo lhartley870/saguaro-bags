@@ -1,7 +1,7 @@
 from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
-from products.models import Bag
+from products.models import Bag, Charm
 
 
 def basket_contents(request):
@@ -11,20 +11,44 @@ def basket_contents(request):
     bag_count = 0
     basket = request.session.get('basket', {})
 
-    for item_id, quantity in basket.items():
-        bag = get_object_or_404(Bag, pk=item_id)
-        # If the bag is on sale, use the discounted price.
-        if bag.on_sale and bag.discount is not None:
-            total += quantity * bag.get_discounted_price()
-        # If the bag is not on sale use the original price.
+    for item_id, item_data in basket.items():
+        # If the item_data is an integer, the bag has no charm option
+        if isinstance(item_data, int):
+            bag = get_object_or_404(Bag, pk=item_id)
+            # If the bag is on sale, use the discounted price.
+            if bag.on_sale and bag.discount is not None:
+                total += item_data * bag.get_discounted_price()
+            # If the bag is not on sale use the original price.
+            else:
+                total += item_data * bag.original_price
+            bag_count += item_data
+            basket_items.append({
+                'item_id': item_id,
+                'quantity': item_data,
+                'bag': bag,
+            })
+        # If the item_data is not an integer, so the bag has a charm option
         else:
-            total += quantity * bag.original_price
-        bag_count += quantity
-        basket_items.append({
-            'item_id': item_id,
-            'quantity': quantity,
-            'bag': bag,
-        })
+            bag = get_object_or_404(Bag, pk=item_id)
+            for charm, quantity in item_data['items_by_charm_option'].items():        
+                # If the bag is on sale, use the discounted price.
+                if bag.on_sale and bag.discount is not None:
+                    total += quantity * bag.get_discounted_price()
+                # If the bag is not on sale use the original price.
+                else:
+                    total += quantity * bag.original_price
+                bag_count += quantity
+                if charm != 'No charm selected':
+                    charm_id = int(charm)
+                    charm_object = get_object_or_404(Charm, id=charm_id)
+                else:
+                    charm_object = None
+                basket_items.append({
+                    'item_id': item_id,
+                    'quantity': quantity,
+                    'bag': bag,
+                    'charm_object': charm_object,
+                })
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE/100)
