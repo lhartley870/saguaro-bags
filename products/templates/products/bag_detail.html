@@ -127,7 +127,7 @@
                             <p class="mt-3 mb-2 bag-detail-label">Quantity:</p>
                             <div class="input-group input-group-{{ bag.id }} mx-auto bag-quantity-container">
                                 <!-- Quantity decrementer button -->
-                                <button class="btn form-appended-button decrement-qty_{{ bag.id }}" data-item_id="{{ bag.id }}" type="button">
+                                <button class="btn form-appended-button decrement-qty decrement-qty_{{ bag.id }}" data-item_id="{{ bag.id }}" type="button">
                                     <span class="icon">
                                         <i class="fa-solid fa-minus"></i>
                                     </span>
@@ -136,7 +136,7 @@
                                 <input type="number" class="form-control qty_input id_qty_{{ bag.id }}" aria-label="Bag quantity with add and minus buttons"
                                     name="quantity" value="1" min="1" max="99" data-item_id="{{ bag.id }}">
                                 <!-- Quantity incrementer button -->
-                                <button class="btn form-appended-button increment-qty_{{ bag.id }}" data-item_id="{{ bag.id }}" type="button">
+                                <button class="btn form-appended-button increment-qty increment-qty_{{ bag.id }}" data-item_id="{{ bag.id }}" type="button">
                                     <span class="icon">
                                         <i class="fa-solid fa-plus"></i>
                                     </span>
@@ -162,4 +162,9 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}
