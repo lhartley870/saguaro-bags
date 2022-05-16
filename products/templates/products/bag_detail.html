@@ -117,7 +117,7 @@
                                 {% for charm in charms %}
                                 <div class="d-inline-block">
                                     <img src="{{ charm.image.url }}" alt="{{ charm.image_description }}" class="charm-image d-block">
-                                    <input type="radio" id="charm_id_{{ charm.id }}" name="charm_option" class="d-block mx-auto my-2">
+                                    <input type="radio" id="charm_id_{{ charm.id }}" name="charm_option" value="{{ charm.id }}" class="d-block mx-auto my-2">
                                     <label for="charm_id_{{ charm.id }}" class="d-block"><small>{{ charm.name }}</small></label>
                                 </div>
                                 {% endfor %}
