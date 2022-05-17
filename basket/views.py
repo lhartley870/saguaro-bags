@@ -84,6 +84,8 @@ def adjust_basket(request, item_id):
             basket[item_id]['items_by_charm_option'][charm] = quantity
         else:
             del basket[item_id]['items_by_charm_option'][charm]
+            if not basket[item_id]['items_by_charm_option']:
+                basket.pop(item_id)
     else:
         if quantity > 0:
             basket[item_id] = quantity
