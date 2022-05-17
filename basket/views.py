@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404, reverse
+from django.shortcuts import render, redirect, get_object_or_404, reverse, HttpResponse
 from products.models import Bag
 
 
@@ -93,3 +93,38 @@ def adjust_basket(request, item_id):
     request.session['basket'] = basket
 
     return redirect(reverse('view_basket'))
+
+
+def remove_from_basket(request, item_id):
+    """
+    Remove the specified bag (and charm combination if applicable)
+    from the shopping basket.
+    """
+
+    try:
+        charm = None
+        if 'charm_option' in request.POST:
+            # If the 'charm_option' value is not 'none'
+            # then the user has selected a charm.
+            if request.POST['charm_option'] != 'none':
+                charm = request.POST['charm_option']
+            # If the 'charm_option' value is 'none', the
+            # user had the option to choose a charm but
+            # didn't.
+            else:
+                charm = 'No charm selected'
+        basket = request.session.get('basket', {})
+        print(basket)
+
+        if charm:
+            del basket[item_id]['items_by_charm_option'][charm]
+            if not basket[item_id]['items_by_charm_option']:
+                basket.pop(item_id)
+        else:
+            basket.pop(item_id)
+
+        request.session['basket'] = basket
+        print(basket)
+        return HttpResponse(status=200)
+    except Exception as e:
+        return HttpResponse(status=500)
