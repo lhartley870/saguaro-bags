@@ -35,7 +35,7 @@
                             <th scope="col"></th>
                             <th scope="col">Price</th>
                             <th scope="col">Qty</th>
-                            <th scope="col">Subtotal</th>
+                            <th scope="col" class="ps-4">Subtotal</th>
                         </tr>
                     </thead>
                     {% for item in basket_items %}
@@ -57,7 +57,7 @@
                             {% include "basket/quantity_form.html" %}
                         </td>
                         <!-- Item subtotal -->
-                        <td class="py-3">
+                        <td class="py-3 ps-4">
                             <p class="my-0">£{{ item.product.price }}</p>
                         </td>
                     </tr>
