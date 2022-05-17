@@ -4,7 +4,7 @@
     <p class="mb-2 bag-detail-label">Quantity:</p>
     <div class="input-group input-group-{{ item.item_id }} mx-auto">
         <!-- Quantity decrementer button -->
-        <button class="btn form-appended-button decrement-qty decrement-qty_{{ item.item_id }}
+        <button class="btn form-appended-button decrement-qty decrement-qty_{{ item.item_id }}_basket_pg
             {% if item.charm %}decrement-charm_{{ item.item_id }}_{{ item.charm }}{% endif %}" data-item_id="{{ item.item_id }}" type="button"
             data-charm="{{ item.charm }}">
             <span>
