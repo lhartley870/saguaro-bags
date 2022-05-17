@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from products.models import Bag
 
 
@@ -56,3 +56,40 @@ def add_to_basket(request, item_id):
     request.session['basket'] = basket
 
     return redirect(redirect_url)
+
+
+def adjust_basket(request, item_id):
+    """
+    Adjust the quantity of the specified bag (and charm combination if
+    applicable) to the specified amount.
+    """
+
+    quantity = int(request.POST.get('quantity'))
+    charm = None
+    basket = request.session.get('basket', {})
+
+    if 'charm_option' in request.POST:
+        # If the 'charm_option' value is not 'none'
+        # then the user has selected a charm.
+        if request.POST['charm_option'] != 'none':
+            charm = request.POST['charm_option']
+        # If the 'charm_option' value is 'none', the
+        # user had the option to choose a charm but
+        # didn't.
+        else:
+            charm = 'No charm selected'
+
+    if charm:
+        if quantity > 0:
+            basket[item_id]['items_by_charm_option'][charm] = quantity
+        else:
+            del basket[item_id]['items_by_charm_option'][charm]
+    else:
+        if quantity > 0:
+            basket[item_id] = quantity
+        else:
+            basket.pop(item_id)
+
+    request.session['basket'] = basket
+
+    return redirect(reverse('view_basket'))
