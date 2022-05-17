@@ -97,10 +97,37 @@
 {% include 'products/includes/quantity_input_script.html' %}
 
 <script type="text/javascript">
-    // Update quantity on click
+    /* 
+    If the quantity entered is an empty string, a number below 0
+    or a number above 99 an alert is raised. 
+    Otherwise updates the quantity on clicking 'update'.
+    */
     $('.update-link').click(function(e) {
-        let form = $(this).prev('.update-form');
-        form.submit();
+        e.preventDefault();
+        let itemId = $(this).attr('id').split('update_')[1];
+        let charm = $(this).data('charm_option');
+        let currentValue;
+        if (charm === '') {
+            let quantity = $(`.id_qty_${itemId}`).val();
+            if (quantity === '') {
+                currentValue = quantity
+            } else {
+                currentValue = parseInt(quantity);
+            }
+        } else {
+            let quantity = $(`.charm_${itemId}_${charm}`).val();
+            if (quantity === '') {
+                currentValue = quantity
+            } else {
+                currentValue = parseInt(quantity);
+            }
+        }
+        if (currentValue < 0 || currentValue > 99 || currentValue === '') {
+            alert('Please choose an update quantity between 0 and 99'); 
+        } else {
+            let form = $(this).prev('.update-form');
+            form.submit();
+        }
     })
 
     // Remove item and reload on click
