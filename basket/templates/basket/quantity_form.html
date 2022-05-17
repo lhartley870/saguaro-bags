@@ -14,7 +14,7 @@
         <!-- Quantity input -->
         <input type="number" class="form-control qty_input id_qty_{{ item.item_id }}
             {% if item.charm %}charm_{{ item.item_id }}_{{ item.charm }}{% endif %}" aria-label="Bag quantity with add and minus buttons"
-            name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}" data-charm="{{ item.charm }}">
+            name="quantity" value="{{ item.quantity }}" data-item_id="{{ item.item_id }}" data-charm="{{ item.charm }}">
         <!-- Quantity incrementer button -->
         <button class="btn form-appended-button increment-qty increment-qty_{{ item.item_id }}
             {% if item.charm %}increment-charm_{{ item.item_id }}_{{ item.charm }}{% endif %}" data-item_id="{{ item.item_id }}" type="button"
