@@ -12,14 +12,16 @@
             currentValue = parseInt($(`.id_qty_${itemId}`).val()); 
         }
 
-        let minusDisabled = currentValue < 2;
+        let minusDisabledAddBag = currentValue < 2;        
+        let minusDisabledAdjustBag = currentValue < 1;
         let plusDisabled = currentValue > 98;
 
         if (charm) {
-            $(`.decrement-charm_${itemId}_${charm}`).prop('disabled', minusDisabled);
+            $(`.decrement-charm_${itemId}_${charm}`).prop('disabled', minusDisabledAdjustBag);
             $(`.increment-charm_${itemId}_${charm}`).prop('disabled', plusDisabled);
         } else {
-            $(`.decrement-qty_${itemId}`).prop('disabled', minusDisabled);
+            $(`.decrement-qty_${itemId}`).prop('disabled', minusDisabledAddBag);
+            $(`.decrement-qty_${itemId}_basket_pg`).prop('disabled', minusDisabledAdjustBag);
             $(`.increment-qty_${itemId}`).prop('disabled', plusDisabled); 
         }
     }
