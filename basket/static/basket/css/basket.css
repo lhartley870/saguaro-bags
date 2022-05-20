@@ -1,8 +1,52 @@
-#shopping-basket-table .increment-qty {
+/* fixes bug where top and bottom right corners of quantity
+incrementer (+) button are not rounded on shopping basket page */
+#shopping-basket-desktop .increment-qty, 
+#shopping-basket-mobile .increment-qty {
     border-top-right-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
 }
 
-.item-quantity {
+#shopping-basket-desktop .item-quantity {
     width: 20%;
+}
+
+#shopping-basket-mobile .item-quantity {
+    width: 80%;
+}
+
+/* --------------------------------------------------- Media Queries */
+
+@media (min-width: 320px) and (max-width: 450px) {
+
+    .bag-list-basket img{
+        height: 50vw;
+    }
+}
+
+@media (min-width: 450px) {
+
+    #shopping-basket-mobile .item-quantity {
+        width: 60%;
+    }
+}
+
+@media (min-width: 451px) and (max-width: 599px) {
+
+    .bag-list-basket img{
+        height: 40vw;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 649px) {
+
+    .bag-list-basket img{
+        height: 35vw;
+    }
+}
+
+@media (min-width: 650px) and (max-width: 767px) {
+
+    .bag-list-basket img{
+        height: 30vw;
+    }
 }
