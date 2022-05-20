@@ -26,6 +26,49 @@
     <div class="row">
         <div class="col">
             {% if basket_items %}
+            <div id="shopping-basket-mobile" class="d-block d-md-none">
+                <div class="row pt-2">
+                    <div class="col d-flex justify-content-center">
+                        <div class="text-center">
+                           {% include "basket/basket_total.html" %} 
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        {% include "basket/checkout_buttons_mobile.html" %}
+                        <p class="my-4">A summary of your basket contents is below</p>
+                    </div>
+                </div>
+                {% for item in basket_items %}
+                <div class="row">
+                    <div class="mb-2 text-center">
+                        <div class="bag-list-basket">
+                          {% include "basket/bag_image.html" %}  
+                        </div>
+                    </div>
+                    <div class="mb-2 text-center">
+                        {% include "basket/bag_info.html" %}
+                    </div>
+                    <div class="text-center">
+                        {% include "basket/bag_price_mobile.html" %}
+                        {% include "basket/bag_subtotal_mobile.html" %}
+                    </div>
+                    <div class="item-quantity mx-auto">
+                        <div>
+                            {% include "basket/quantity_form.html" %}  
+                        </div>
+                    </div>
+                </div>
+                <div class="row"><div class="col"><hr></div></div>
+                {% endfor %}
+                <div class="btt-button shadow sm rounded-2">
+                    <a class="btt-link d-flex h-100 text-decoration-none">
+                        <i class="fa-solid fa-angle-up mx-auto my-auto"></i>
+                    </a>
+                </div>
+            </div>
             <!-- Table of shopping basket items -->
             <div class="table-responsive rounded d-none d-md-block">
                 <table id="shopping-basket-desktop" class="table table-sm table-borderless text-green">

@@ -1,0 +1,9 @@
+{% if item.bag.on_sale and item.bag.discount != None %}
+<p class="my-0">
+    Price Each:
+    <del>£{{ item.bag.original_price }}</del>
+    £{{ item.bag.get_discounted_price }}
+</p>
+{% else %}
+<p class="my-0">Price Each: £{{ item.bag.original_price }}</p>
+{% endif %}
