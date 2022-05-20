@@ -241,6 +241,10 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
     color: #6C6EC4;
 }
 
+.bold {
+    font-weight: 500;
+}
+
 /* --------------------------------------------------- Headings */
 
 h1 {
