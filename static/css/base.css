@@ -270,6 +270,7 @@ h4 {
     position: fixed;
     right: 10px;
     width: 42px;
+    z-index: 200;
 }
 
 .btt-button a {
