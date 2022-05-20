@@ -50,7 +50,7 @@
                         </td>
                         <!-- Item price -->
                         <td class="py-3">
-                            {% include "basket/bag_price.html" %}
+                            {% include "basket/bag_price_desktop.html" %}
                         </td>
                         <!-- Item quantity -->
                         <td class="py-3 item-quantity">
@@ -58,7 +58,7 @@
                         </td>
                         <!-- Item subtotal -->
                         <td class="py-3 ps-4">
-                            <p class="my-0">£{{ item.product.price }}</p>
+                            {% include "basket/bag_subtotal_desktop.html" %}
                         </td>
                     </tr>
                     {% endfor %}
