@@ -1,0 +1,9 @@
+{% load bag_tools %}
+
+{% if item.bag.on_sale and item.bag.discount != None %}
+<p class="my-0">
+    £{{ item.bag.get_discounted_price | calc_subtotal:item.quantity }}
+</p>
+{% else %}
+<p class="my-0">£{{ item.bag.original_price | calc_subtotal:item.quantity }}</p>
+{% endif %}
