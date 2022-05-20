@@ -28,7 +28,7 @@
             {% if basket_items %}
             <!-- Table of shopping basket items -->
             <div class="table-responsive rounded d-none d-md-block">
-                <table id="shopping-basket-table" class="table table-sm table-borderless text-green">
+                <table id="shopping-basket-desktop" class="table table-sm table-borderless text-green">
                     <thead>
                         <tr class="text-purple">
                             <th scope="col" class="ps-4">Bag Info</th>
@@ -71,7 +71,7 @@
                     <tr>
                         <!-- Keep Shopping and Secure Checkout buttons -->
                         <td colspan="5" class="text-end">
-                            {% include "basket/checkout_buttons.html" %}
+                            {% include "basket/checkout_buttons_desktop.html" %}
                         </td>
                     </tr>
                 </table>
