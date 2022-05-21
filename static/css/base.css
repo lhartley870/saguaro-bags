@@ -5,6 +5,10 @@ body {
     font-weight: 400;
 }
 
+#outermost-container {
+    position: relative;
+}
+
 .max-page-width {
     margin-right: auto;
     margin-left: auto;
@@ -290,9 +294,9 @@ h4 {
 /* --------------------------------------------------- Toasts */
 
 .message-container {
-    position: fixed;
-    top: 72px;
-    right: 15px;
+    position: absolute;
+    top: 68px;
+    right: 10px;
     z-index: 99999999999;
 }
 
@@ -402,6 +406,20 @@ a {
 
 /* --------------------------------------------------- Media Queries */
 
+/* for extra small screen sizes of 320px to 374px */
+@media screen and (min-width: 320px) and (max-width: 374px) {
+    .toast {
+        width: 300px;
+    }
+}
+
+/* for extra small screen sizes of 375px and up */
+@media screen and (min-width: 374px) {
+    .toast {
+        width: 350px;
+    }
+}
+
 /* for small screen sizes of 500px and up */
 @media screen and (min-width:500px) {
 
@@ -412,6 +430,15 @@ a {
     .home-page-information-container {
         width: 70%;
     }
+}
+
+/* for small screen sizes of 576px and up */
+@media screen and (min-width: 576px) {
+
+    .message-container {
+        top: 85px;
+        right: 15px;
+    }    
 }
 
 /* for small screen sizes of 625px and up */
@@ -445,6 +472,10 @@ a {
     .search-bar-container {
         width: 50%;
     }   
+
+    .message-container {
+        top: 95px;
+    }    
 }
 
 /* for large screen sizes of 992px and up */
@@ -519,6 +550,10 @@ a {
     #left-photo-desktop {
         margin-right: 0;
     }
+
+    .message-container {
+        top: 105px;
+    }    
 }
 
 /* for extra large screen sizes of 1200px and up */
@@ -543,6 +578,10 @@ a {
     h2 {
         font-size: 1.5rem;
     }
+
+    .message-container {
+        top: 120px;
+    }  
 }
 
 /* for extra extra large screen sizes of 1400px and up */
@@ -569,6 +608,10 @@ a {
         height: 300px; 
         width: 300px;
     }
+
+    .message-container {
+        top: 140px;
+    }    
 }
 
 /* for extra extra large screen sizes of 1700px and up */
@@ -587,6 +630,10 @@ a {
     .title-logo-link {
         font-size: 3.5em;
     }
+
+    .message-container {
+        top: 160px;
+    }  
 }
 
 /* for extra extra extra large screen sizes of 2500px and up */
@@ -618,4 +665,8 @@ a {
         height: 500px; 
         width: 500px;
     }
+
+    .message-container {
+        top: 180px;
+    }  
 }
