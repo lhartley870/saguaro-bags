@@ -241,6 +241,10 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
     color: #6C6EC4;
 }
 
+.text-pink {
+    color: #E4117A;
+}
+
 .bold {
     font-weight: 500;
 }
@@ -281,6 +285,28 @@ h4 {
 .update-link,
 .remove-item {
     cursor: pointer;
+}
+
+/* --------------------------------------------------- Toasts */
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-body {
+    border-bottom-left-radius: calc(0.25rem - 1px);
+    border-bottom-right-radius: calc(0.25rem - 1px);
+}
+
+.toast-capper {
+    height: 2px;
 }
 
 /* --------------------------------------------------- Home Page */
