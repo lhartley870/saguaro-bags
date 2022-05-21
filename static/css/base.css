@@ -5,6 +5,12 @@ body {
     font-weight: 400;
 }
 
+/* 
+relative position of outermost container relates to the toast absolute position -
+this is required to ensure that when the max-page width of 2500px applies
+the toast position relates to the outermost container div rather than the viewport
+and so does not sit outside the 2500px page width 
+*/
 #outermost-container {
     position: relative;
 }
