@@ -91,68 +91,76 @@ def adjust_basket(request, item_id):
     """
 
     bag = get_object_or_404(Bag, pk=item_id)
-    quantity = int(request.POST.get('quantity'))
+    quantity = request.POST.get('quantity')
     charm = None
     basket = request.session.get('basket', {})
 
-    if 'charm_option' in request.POST:
-        # If the 'charm_option' value is not 'none'
-        # then the user has selected a charm.
-        if request.POST['charm_option'] != 'none':
-            charm = request.POST['charm_option']
-        # If the 'charm_option' value is 'none', the
-        # user had the option to choose a charm but
-        # didn't.
-        else:
-            charm = 'No charm selected'
-
-    # If the submitted bag has a charm option.
-    if charm:
-        # Used to name the charm/lack of charm in the toast messages.
-        if charm == 'No charm selected':
-            charm_name = 'no'
-        else:
-            charm_id = int(charm)
-            charm_object = get_object_or_404(Charm, pk=charm_id)
-            charm_name = charm_object.name
-
-        # If the quantity is greater than 0 the quantity of the bag and
-        # charm combination is set to the new quantity in the basket.
-        if quantity > 0:
-            basket[item_id]['items_by_charm_option'][charm] = quantity
-            item_quantity = basket[item_id]['items_by_charm_option'][charm]
-            messages.success(request,
-                             (f'Updated {bag.name} with '
-                              f'{charm_name} charm quantity to '
-                              f'{item_quantity}'))
-        # If the quantity is 0 (negative numbers prevented by JavaScript)
-        # the bag and charm combination is deleted and if there are no
-        # charm options for the bag left in the basket, the entire bag
-        # item is deleted from the basket.
-        else:
-            del basket[item_id]['items_by_charm_option'][charm]
-            if not basket[item_id]['items_by_charm_option']:
-                basket.pop(item_id)
-            messages.success(request,
-                             (f'Removed {bag.name} with '
-                              f'{charm_name} charm from your basket'))
-    # If the submitted bag does not have a charm option.
+    # As the updated form is submitted using JavaScript the if statement
+    # carries out the form validation by checking that the user has not entered
+    # an update quantity of less than 0 or greater than 99 and has not entered
+    # a blank string. If the user has, an error message appears.
+    if quantity == '' or int(quantity) < 0 or int(quantity) > 99:
+        messages.error(request,
+                       'Please choose an update quantity between 0 and 99')
     else:
-        # If the quantity is greater than 0, the quantity of the bag is
-        # set to the new quantity in the basket.
-        if quantity > 0:
-            basket[item_id] = quantity
-            messages.success(request,
-                             (f'Updated {bag.name} '
-                              f'quantity to {basket[item_id]}'))
-        # If the quantity is 0 (negative numbers prevented by JavaScript)
-        # the bag is deleted from the basket.
-        else:
-            basket.pop(item_id)
-            messages.success(request,
-                             (f'Removed {bag.name} from your basket'))
+        quantity = int(quantity)
 
-    request.session['basket'] = basket
+        if 'charm_option' in request.POST:
+            # If the 'charm_option' value is not 'none'
+            # then the user has selected a charm.
+            if request.POST['charm_option'] != 'none':
+                charm = request.POST['charm_option']
+            # If the 'charm_option' value is 'none', the
+            # user had the option to choose a charm but
+            # didn't.
+            else:
+                charm = 'No charm selected'
+
+        # If the submitted bag has a charm option.
+        if charm:
+            # Used to name the charm/lack of charm in the toast messages.
+            if charm == 'No charm selected':
+                charm_name = 'no'
+            else:
+                charm_id = int(charm)
+                charm_object = get_object_or_404(Charm, pk=charm_id)
+                charm_name = charm_object.name
+
+            # If the quantity is greater than 0 the quantity of the bag and
+            # charm combination is set to the new quantity in the basket.
+            if quantity > 0:
+                basket[item_id]['items_by_charm_option'][charm] = quantity
+                item_quantity = basket[item_id]['items_by_charm_option'][charm]
+                messages.success(request,
+                                 (f'Updated {bag.name} with '
+                                  f'{charm_name} charm quantity to '
+                                  f'{item_quantity}'))
+            # If the quantity is 0 the bag and charm combination is deleted and
+            # if there are no charm options for the bag left in the basket, the
+            # entire bag item is deleted from the basket.
+            else:
+                del basket[item_id]['items_by_charm_option'][charm]
+                if not basket[item_id]['items_by_charm_option']:
+                    basket.pop(item_id)
+                messages.success(request,
+                                 (f'Removed {bag.name} with '
+                                  f'{charm_name} charm from your basket'))
+        # If the submitted bag does not have a charm option.
+        else:
+            # If the quantity is greater than 0, the quantity of the bag is
+            # set to the new quantity in the basket.
+            if quantity > 0:
+                basket[item_id] = quantity
+                messages.success(request,
+                                 (f'Updated {bag.name} '
+                                  f'quantity to {basket[item_id]}'))
+            # If the quantity is 0 the bag is deleted from the basket.
+            else:
+                basket.pop(item_id)
+                messages.success(request,
+                                 (f'Removed {bag.name} from your basket'))
+
+        request.session['basket'] = basket
 
     return redirect(reverse('view_basket'))
 
