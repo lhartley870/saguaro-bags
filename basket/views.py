@@ -172,6 +172,7 @@ def remove_from_basket(request, item_id):
     """
 
     try:
+        bag = get_object_or_404(Bag, pk=item_id)
         charm = None
         if 'charm_option' in request.POST:
             # If the 'charm_option' value is not 'none'
@@ -185,14 +186,30 @@ def remove_from_basket(request, item_id):
                 charm = 'No charm selected'
         basket = request.session.get('basket', {})
 
+        # If the submitted bag has a charm option.
         if charm:
+            # Used to name the charm/lack of charm in the toast message.
+            if charm == 'No charm selected':
+                charm_name = 'no'
+            else:
+                charm_id = int(charm)
+                charm_object = get_object_or_404(Charm, pk=charm_id)
+                charm_name = charm_object.name
+
             del basket[item_id]['items_by_charm_option'][charm]
             if not basket[item_id]['items_by_charm_option']:
                 basket.pop(item_id)
+            messages.success(request,
+                             (f'Removed {bag.name} with '
+                              f'{charm_name} charm from your basket'))
+        # If the submitted bag does not have a charm option.
         else:
             basket.pop(item_id)
+            messages.success(request,
+                             (f'Removed {bag.name} from your basket'))
 
         request.session['basket'] = basket
         return HttpResponse(status=200)
     except Exception as e:
+        messages.error(request, f'Error removing item: {e}')
         return HttpResponse(status=500)
