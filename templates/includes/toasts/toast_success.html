@@ -5,6 +5,59 @@
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
     <div class="toast-body bg-white">
-        {{ message }}
+        <div class="row">
+            <div class="col">
+               {{ message }}
+                <hr class="my-2"> 
+            </div>
+        </div>
+        {% if grand_total %}
+        <p class="bg-white text-pink py-1 mb-1">Your Bag ({{ bag_count }})</p>
+        <div class="basket-notification-wrapper">
+            {% for item in basket_items %}
+            <div class="row pb-2">
+                <div class="col-3 my-1">
+                    {% if item.bag.image %}
+                    <img class="w-100" src="{{ item.bag.image.url }}" alt="{{ item.bag.name }} - {{ item.bag.image_description }}">
+                    {% else %}
+                    <img class="w-100" src="{{ MEDIA_URL }}no-image.png" alt="{{ item.bag.name }} - {{ item.bag.image_description }}">
+                    {% endif %}
+                </div>
+                <div class="col-9">
+                    <p class="my-0 bold">{{ item.bag.name }}</p>
+                    {% if item.bag.has_charm_option %}
+                    {% if item.charm_object %}
+                    <p class="my-0">Charm Option: {{ item.charm_object.name }}</p>
+                    {% else %}
+                    <p class="my-0">Charm Option: No charm selected</p>
+                    {% endif %}
+                    {% endif %}
+                    <small>Qty: {{ item.quantity }}</small>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <div class="col">
+                <p class="my-2 text-pink bold">
+                    Total{% if free_delivery_delta > 0 %} (Exc. delivery){% endif %}: 
+                    <span class="float-end">£{{ total|floatformat:2 }}</span>
+                </p>
+                {% if free_delivery_delta > 0 %}
+                <p class="mb-2 p-2 shadow-sm text-center text-white purple-bg">
+                    Spend <span class="bold">{{ free_delivery_delta }}</span> more to get free delivery!
+                </p>
+                {% endif %}
+                <form action="#" class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-sm rounded-1 text-uppercase py-1 page-nav-button">
+                        <span class="text-uppercase">Secure Checkout</span>
+                        <span class="icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </span>
+                    </button>
+                </form>
+            </div>
+        </div>
+        {% endif %}
     </div>
 </div>
