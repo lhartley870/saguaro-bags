@@ -225,7 +225,7 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
     color: #E4117A;
 }
 
-.submit-button {
+.input-submit-button {
     background-color: #00855D;
     border: 2px solid transparent;
     color: #FFF;
@@ -234,7 +234,16 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
     padding-bottom: .61rem;
 }
 
+.submit-button {
+    background-color: #00855D;
+    border: 2px solid transparent;
+    color: #FFF;
+    font-weight: 500;
+}
+
+.input-submit-button:hover,
 .submit-button:hover,
+.input-submit-button:focus,
 .submit-button:focus {
     background-color: #FFF;
     border: 2px solid #00855D;
