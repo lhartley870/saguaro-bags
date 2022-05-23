@@ -147,3 +147,38 @@
     </div>
 </div>
 {% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        /* 
+        Runs the changeTextColour function on page load
+        and every time the country field in the checkout form
+        is changed.
+        */
+        let countryField = $('#id_country');
+        changeTextColour();
+        countryField.change(changeTextColour);
+
+        /** 
+         * Checks the value of the country field in the checkout
+         * form. If it is blank (ie 'Country *' placeholder text is
+         * showing), set the text colour to green, otherwise set the 
+         * text colour to pink.
+        */
+        function changeTextColour() {
+            let countryFieldText = $('#id_country').val();
+            if (countryFieldText === '') {
+                if (countryField.hasClass('text-pink')) {
+                    countryField.removeClass('text-pink');
+                }
+                countryField.addClass('text-green');
+            } else {
+                if (countryField.hasClass('text-green')) {
+                    countryField.removeClass('text-green');
+                }
+                countryField.addClass('text-pink');
+            }
+        }
+    </script>
+{% endblock %}
