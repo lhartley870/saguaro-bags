@@ -109,7 +109,7 @@
                 </fieldset>
                 <!-- Delivery details -->
                 <fieldset class="rounded border border-success p-3 mb-4 text-center">
-                    <legend class="small text-purple px-2 w-auto float-none mb-0">Delivery</legend>
+                    <legend class="small text-purple px-2 w-auto float-none mb-0 text-start">Delivery</legend>
                     {{ order_form.phone_number | as_crispy_field }}
                     {{ order_form.street_address1 | as_crispy_field }}
                     {{ order_form.street_address2 | as_crispy_field }}
@@ -170,6 +170,9 @@
 
 {% block postloadjs %}
     {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
     <script type="text/javascript">
         /* 
         Runs the changeTextColour function on page load

@@ -2,6 +2,30 @@
     margin-bottom: 1em;
 }
 
+/* Styling for Stripe card element */
+.StripeElement {
+    appearance: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: 0.25rem;
+    display: block;
+    line-height: 1.5;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    width: 100%;
+}
+
+.StripeElement--focus {
+    background-color: #fff;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+}
+
+#card-element {
+    border: 2px solid #00855D;
+    padding: 8.5px 12px;
+}
+
 /* --------------------------------------------------- Media Queries */
 
 /* for extra small screen sizes of 320px to 361px */
@@ -33,5 +57,23 @@
         margin-left: auto;
         margin-right: auto;
         width: 80%;
+    }
+
+    #card-element {
+        padding: 11px 12px;
+    }
+
+    .StripeElement {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    }
+}
+
+/* for extra extra extra large screen sizes of 2500px and up */
+@media screen and (min-width: 2500px) {
+
+    #card-element {
+        padding: 14.5px 12px;
     }
 }
