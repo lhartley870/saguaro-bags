@@ -187,20 +187,20 @@
          * Checks the value of the country field in the checkout
          * form. If it is blank (ie 'Country *' placeholder text is
          * showing), set the text colour to green, otherwise set the 
-         * text colour to pink.
+         * text colour to purple.
         */
         function changeTextColour() {
             let countryFieldText = $('#id_country').val();
             if (countryFieldText === '') {
-                if (countryField.hasClass('text-pink')) {
-                    countryField.removeClass('text-pink');
+                if (countryField.hasClass('text-purple')) {
+                    countryField.removeClass('text-purple');
                 }
                 countryField.addClass('text-green');
             } else {
                 if (countryField.hasClass('text-green')) {
                     countryField.removeClass('text-green');
                 }
-                countryField.addClass('text-pink');
+                countryField.addClass('text-purple');
             }
         }
     </script>
