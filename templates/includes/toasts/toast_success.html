@@ -48,7 +48,7 @@
                     Spend <span class="bold">{{ free_delivery_delta }}</span> more to get free delivery!
                 </p>
                 {% endif %}
-                <form action="#" class="d-flex justify-content-center">
+                <form action="{% url 'checkout' %}" class="d-flex justify-content-center">
                     <button type="submit" class="btn btn-sm rounded-1 text-uppercase py-1 page-nav-button">
                         <span class="text-uppercase">Secure Checkout</span>
                         <span class="icon">
