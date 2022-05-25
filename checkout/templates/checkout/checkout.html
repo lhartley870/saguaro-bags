@@ -182,35 +182,4 @@
     {{ stripe_public_key|json_script:"id_stripe_public_key" }}
     {{ client_secret|json_script:"id_client_secret" }}
     <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
-    <script type="text/javascript">
-        /* 
-        Runs the changeTextColour function on page load
-        and every time the country field in the checkout form
-        is changed.
-        */
-        let countryField = $('#id_country');
-        changeTextColour();
-        countryField.change(changeTextColour);
-
-        /** 
-         * Checks the value of the country field in the checkout
-         * form. If it is blank (ie 'Country *' placeholder text is
-         * showing), set the text colour to green, otherwise set the 
-         * text colour to purple.
-        */
-        function changeTextColour() {
-            let countryFieldText = $('#id_country').val();
-            if (countryFieldText === '') {
-                if (countryField.hasClass('text-purple')) {
-                    countryField.removeClass('text-purple');
-                }
-                countryField.addClass('text-green');
-            } else {
-                if (countryField.hasClass('text-green')) {
-                    countryField.removeClass('text-green');
-                }
-                countryField.addClass('text-purple');
-            }
-        }
-    </script>
 {% endblock %}

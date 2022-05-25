@@ -39,6 +39,16 @@
     z-index: 9999;
 }
 
+select,
+select option {
+    color: #6C6EC4;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #00855D;
+}
+
 /* --------------------------------------------------- Media Queries */
 
 /* for extra small screen sizes of 320px to 335px */
