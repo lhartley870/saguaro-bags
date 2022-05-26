@@ -209,6 +209,24 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
     color: #00855D;
 }
 
+.form-group {
+    margin-bottom: 1em;
+}
+
+/* --------------------------------------------------- Links */
+
+.link,
+.link:visited {
+    color: #1F2551;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:focus {
+    color: #1F2551;
+    text-decoration: underline;
+}
+
 /* --------------------------------------------------- Buttons */
 
 .page-nav-button {
@@ -340,6 +358,12 @@ h4 {
     background-color: #6C6EC4;
 }
 
+/* --------------------------------------------------- Allauth Pages */
+
+.allauth-form-inner-content label:not([for="id_remember"], [data-label="email"]) {
+    display: none;
+}
+
 /* --------------------------------------------------- Home Page */
 
 #hero-container {
@@ -418,10 +442,6 @@ h3 {
     background: url('/media/leather-rolls.jpg') center center / cover no-repeat;
 }
 
-a {
-    color: #1F2551;
-}
-
 .home-page-information-container {
     width: 90%;
 }
@@ -456,6 +476,10 @@ a {
 
     .home-page-information-container {
         width: 70%;
+    }
+
+    .allauth-form-inner-content .form-control {
+        width: 75%;
     }
 }
 
@@ -503,6 +527,10 @@ a {
     .message-container {
         top: 95px;
     }    
+
+    .allauth-form-inner-content .form-control {
+        width: 100%;
+    }
 }
 
 /* for large screen sizes of 992px and up */
@@ -581,6 +609,10 @@ a {
     .message-container {
         top: 105px;
     }    
+
+    .allauth-form-inner-content .form-control {
+        width: 75%;
+    }
 }
 
 /* for extra large screen sizes of 1200px and up */
