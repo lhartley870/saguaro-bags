@@ -94,7 +94,8 @@
                 <div class="my-2 my-sm-3 col-md-6 order-md-first d-md-flex align-items-center my-md-0">
                     <small class="text-center text-md-start">
                         {% if search_term or current_categories or current_sorting != 'None_None' %}
-                        <a href="{% url 'bags' %}" aria-label="Go to the all bags for sale page (does not open in a new tab)">
+                        <a href="{% url 'bags' %}" aria-label="Go to the all bags for sale page (does not open in a new tab)"
+                            class="link">
                             Bags Home
                         </a> |
                         {% endif %}
