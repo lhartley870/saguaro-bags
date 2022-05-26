@@ -23,5 +23,24 @@
             <hr class="w-50 mx-auto mb-3 mb-md-4 mb-xl-5">
         </div>
     </div>
+
+    <div class="row">
+        <!-- Default delivery information form -->
+        <div class="col col-lg-6 mx-2 mx-lg-0">
+            <p>Default Delivery Information:</p>
+            <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <!-- Update Information button -->
+                <button type="submit" class="btn btn-lg rounded-1 text-uppercase submit-button mt-2 bold float-end">
+                    Update Information
+                </button>               
+            </form>
+        </div>
+        <!-- Order History -->
+        <div class="col-12 col-lg-6 mb-4">
+            <p class="text-pink mx-2">Order History</p>
+        </div>
+    </div>
 </div>
 {% endblock %}
