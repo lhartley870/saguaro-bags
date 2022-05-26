@@ -4,18 +4,31 @@
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
-{% block content %}
+{% block inner_content_heading %}
 <h1>{% trans "Sign Up" %}</h1>
+{% endblock %}
 
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+{% block inner_content %}
+
+<p>
+    {% blocktrans %}
+    Already have an account? Then please 
+    <a href="{{ login_url }}" aria-label="Go to the account login page (does not open in a new tab)" class="link">
+        sign in.
+    </a>
+    {% endblocktrans %}
+</p>
 
 <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
+    {% csrf_token %}
+    {{ form|crispy }}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+    <a href="{% url 'account_login' %}" aria-label="Go to the login page (does not open in a new tab)" class="btn btn-lg rounded-1 text-uppercase bold page-nav-button mt-1">
+        Back to Login
+    </a> 
+    <button type="submit" class="btn btn-lg rounded-1 text-uppercase bold submit-button mt-1">{% trans "Sign Up" %}</button>
 </form>
 
 {% endblock %}

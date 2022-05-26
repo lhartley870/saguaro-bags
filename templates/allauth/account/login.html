@@ -5,24 +5,26 @@
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
-{% block content %}
-
+{% block inner_content_heading %}
 <h1>{% trans "Sign In" %}</h1>
+{% endblock %}
+
+{% block inner_content %}
 
 {% get_providers as socialaccount_providers %}
 
 {% if socialaccount_providers %}
 <p>{% blocktrans with site.name as site_name %}Please sign in with one
-of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
+of your existing third party accounts. Or, <a href="{{ signup_url }}" class="link">sign up</a>
 for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 
 <div class="socialaccount_ballot">
 
-  <ul class="socialaccount_providers">
-    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-  </ul>
+    <ul class="socialaccount_providers">
+        {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+    </ul>
 
-  <div class="login-or">{% trans 'or' %}</div>
+    <div class="login-or">{% trans 'or' %}</div>
 
 </div>
 
@@ -30,17 +32,26 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 
 {% else %}
 <p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+<a href="{{ signup_url }}" aria-label="Go to the account signup page (does not open in a new tab)" class="link">sign up</a> first.{% endblocktrans %}</p>
 {% endif %}
 
 <form class="login" method="POST" action="{% url 'account_login' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+    {% csrf_token %}
+    {{ form|crispy }}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+
+    <a href="{% url 'home' %}" aria-label="Go to the home page (does not open in a new tab)" class="btn btn-lg rounded-1 text-uppercase bold page-nav-button">
+        Home
+    </a> 
+    <button class="primaryAction btn btn-lg rounded-1 text-uppercase bold submit-button" type="submit">{% trans "Sign In" %}</button>
+    <p class="mt-3">
+       <a class="button secondaryAction link" href="{% url 'account_reset_password' %}" 
+            aria-label="Go to the reset password page (does not open in a new tab)">
+            {% trans "Forgot Password?" %}
+        </a> 
+    </p>
 </form>
 
 {% endblock %}
