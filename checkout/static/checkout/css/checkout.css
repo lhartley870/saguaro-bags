@@ -1,9 +1,5 @@
 /* --------------------------------------------------- Checkout Page */
 
-.form-group {
-    margin-bottom: 1em;
-}
-
 /* Styling for Stripe card element */
 .StripeElement {
     appearance: none;
