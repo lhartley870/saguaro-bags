@@ -9,8 +9,8 @@
     <div class="dropdown-menu w-100 border-0 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
         <form method="GET" action="{% url 'bags' %}">
             <div class="input-group mx-auto search-bar-container">
-                <input type="text" name="q" placeholder="Search" class="form-control" aria-label="Search the site" aria-describedby="submit-search-button">
-                <button type="submit" class="btn form-appended-button" id="submit-search-button">
+                <input type="text" name="q" placeholder="Search" class="form-control" aria-label="Search the site" aria-describedby="submit-search-button-mobile">
+                <button type="submit" class="btn form-appended-button" id="submit-search-button-mobile">
                     <span class="icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </span>
@@ -32,7 +32,7 @@
                 {% endif %}
             </div>
             {% if request.user.is_authenticated %}
-            <p class="my-0">{{ user.username }}</p>
+            <p class="my-0">{{ user.username|truncatechars:7 }}</p>
             {% else %}
             <p class="my-0">My Account</p>
             {% endif %}
@@ -46,7 +46,7 @@
             <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
         </a>
         {% endif %}
-        <a href="#" class="dropdown-item account-item">
+        <a href="{% url 'profile' %}" class="dropdown-item account-item">
             My Profile
             <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
         </a>

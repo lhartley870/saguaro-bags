@@ -77,8 +77,8 @@
                 <div class="col-12 col-lg-4 my-auto d-flex justify-content-center">
                     <form method="GET" action="{% url 'bags' %}" class="w-100">
                         <div class="input-group mx-auto search-bar-container">
-                            <input type="text" name="q" placeholder="Search" class="form-control" aria-label="Search the site" aria-describedby="submit-search-button">
-                            <button type="submit" class="btn form-appended-button" id="submit-search-button">
+                            <input type="text" name="q" placeholder="Search" class="form-control" aria-label="Search the site" aria-describedby="submit-search-button-desktop">
+                            <button type="submit" class="btn form-appended-button" id="submit-search-button-desktop">
                                 <span class="icon">
                                     <i class="fa-solid fa-magnifying-glass"></i> 
                                 </span>
@@ -101,7 +101,7 @@
                                         {% endif %}
                                     </div>
                                     {% if request.user.is_authenticated %}
-                                    <p class="my-0">{{ user.username }}</p>
+                                    <p class="my-0">{{ user.username|truncatechars:15 }}</p>
                                     {% else %}
                                     <p class="my-0">My Account</p>
                                     {% endif %}
@@ -115,7 +115,7 @@
                                     <span><i class="fa-solid fa-bag-shopping ps-1 ps-lg-2"></i></span>
                                 </a>
                                 {% endif %}
-                                <a href="#" class="dropdown-item">
+                                <a href="{% url 'profile' %}" class="dropdown-item">
                                     My Profile
                                     <span><i class="fa-solid fa-bag-shopping ps-1 ps-lg-2"></i></span>
                                 </a>
