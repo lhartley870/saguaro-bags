@@ -124,8 +124,10 @@
                             <label class="form-check-label small" for="id-save-info">Save this delivery information to my profile</label>
                         {% else %}
                             <label class="form-check-label" for="id-save-info">
-                                <a href="{% url 'account_signup' %}" aria-label="Go to the account signup page (does not open in a new tab)">Create an account</a> or 
-                                <a href="{% url 'account_login' %}" aria-label="Go to the account login page (does not open in a new tab)">login</a> to save this information
+                                <a href="{% url 'account_signup' %}" aria-label="Go to the account signup page (does not open in a new tab)"
+                                    class="link">Create an account</a> or 
+                                <a href="{% url 'account_login' %}" aria-label="Go to the account login page (does not open in a new tab)"
+                                    class="link">login</a> to save this information
                             </label>
                         {% endif %}
                     </div>
