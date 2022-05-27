@@ -1,14 +1,24 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.cache import cache_control
 
+from checkout.models import Order
 from .models import UserProfile
 from .forms import UserProfileForm
-from checkout.models import Order
 
 
+# The solution of using the @cache_control and @login_required decorators
+# to control what happens if a user logs out of their account and then
+# presses the back button was taken from an answer given by Mahmood on
+# this Stack Overflow post -
+# https://stackoverflow.com/questions/28000981/django-user-re-entering
+# -session-by-clicking-browser-back-button-after-logging?noredirect=1&lq=1
+@login_required
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def profile(request):
     """ Display the user's profile. """
-    
+
     user_profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
@@ -30,6 +40,8 @@ def profile(request):
     return render(request, template, context)
 
 
+@login_required
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def order_history(request, order_number):
     """ Display the order details for a user's past order """
 
