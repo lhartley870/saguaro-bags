@@ -2,10 +2,12 @@ from django.shortcuts import (
     render, redirect, reverse, HttpResponse, get_object_or_404
 )
 from django.contrib import messages
+from django.views.decorators.cache import cache_control
 from products.models import Bag, Charm
 
 
 # Create your views here.
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def view_basket(request):
     """ View to render the basket contents page """
 

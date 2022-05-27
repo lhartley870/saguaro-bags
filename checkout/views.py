@@ -6,6 +6,7 @@ from django.shortcuts import (
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
+from django.views.decorators.cache import cache_control
 
 import stripe
 
@@ -38,6 +39,7 @@ def cache_checkout_data(request):
         return HttpResponse(content=e, status=400)
 
 
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def checkout(request):
     """ View to render the checkout page """
 
@@ -177,6 +179,7 @@ def checkout(request):
     return render(request, template, context)
 
 
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def checkout_success(request, order_number):
     """
     Handle successful checkouts

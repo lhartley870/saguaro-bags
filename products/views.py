@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.views.decorators.cache import cache_control
 from django.contrib import messages
 from django.db.models import When, Case, F, Q
 from django.db.models.functions import Lower
@@ -6,6 +7,7 @@ from .models import Bag, Category, Charm
 
 
 # Create your views here.
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def all_bags(request):
     """ A view to show all bags, including sorting and search queries """
     bags = Bag.objects.all()
@@ -129,6 +131,7 @@ def all_bags(request):
     return render(request, 'products/bags.html', context)
 
 
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def bag_detail(request, bag_id):
     """ A view to show individual bag details """
     bag = get_object_or_404(Bag, pk=bag_id)
