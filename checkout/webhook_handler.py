@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 
 from products.models import Bag, Charm
+from profiles.models import UserProfile
 from .models import Order, OrderLineItem
 
 
@@ -40,6 +41,23 @@ class StripeWH_Handler:
         for field, value in shipping_details.address.items():
             if value == "":
                 shipping_details.address[field] = None
+
+        # Update profile information if save_info was checked
+        profile = None
+        username = intent.metadata.username
+        if username != 'AnonymousUser':
+            profile = UserProfile.objects.get(user__username=username)
+            address_line_1 = shipping_details.address.line1
+            address_line_2 = shipping_details.address.line2
+            if save_info:
+                profile.default_phone_number = shipping_details.phone
+                profile.default_street_address1 = address_line_1
+                profile.default_street_address2 = address_line_2
+                profile.default_town_or_city = shipping_details.address.city
+                profile.default_county = shipping_details.address.state
+                profile.default_postcode = shipping_details.address.postal_code
+                profile.default_country = shipping_details.address.country
+                profile.save()
 
         order_exists = False
         attempt = 1
@@ -80,6 +98,7 @@ class StripeWH_Handler:
             try:
                 order = Order.objects.create(
                     full_name=shipping_details.name,
+                    user_profile=profile,
                     email=billing_details.email,
                     phone_number=shipping_details.phone,
                     country=shipping_details.address.country,
@@ -127,6 +146,7 @@ class StripeWH_Handler:
                                     quantity=quantity,
                                 )
                             order_line_item.save()
+
             # If something goes wrong with trying to create the order,
             # delete any order created and return a 500 server error
             # response to Stripe.
