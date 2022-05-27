@@ -187,38 +187,50 @@ def checkout_success(request, order_number):
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
 
-    if request.user.is_authenticated:
-        profile = UserProfile.objects.get(user=request.user)
-        # Attach the user's profile to the order
-        order.user_profile = profile
-        order.save()
+    # The if statement is triggered when a registered user logs out
+    # and then uses the back button to try and navigate back to the checkout
+    # success page. In this circumstance, the user will not be able to
+    # see the checkout success page and will instead be redirected to the
+    # login page. Used to protect the user's data visible on the checkout
+    # success page.
+    if order.user_profile is not None and request.user.is_anonymous:
+        return redirect(reverse('account_login'))
+    else:
+        if request.user.is_authenticated:
+            profile = UserProfile.objects.get(user=request.user)
+            # Attach the user's profile to the order
+            order.user_profile = profile
+            order.save()
 
-        # Save the user's info
-        if save_info:
-            profile_data = {
-                'default_phone_number': order.phone_number,
-                'default_street_address1': order.street_address1,
-                'default_street_address2': order.street_address2,
-                'default_town_or_city': order.town_or_city,
-                'default_county': order.county,
-                'default_postcode': order.postcode,
-                'default_country': order.country,
-            }
-            user_profile_form = UserProfileForm(profile_data, instance=profile)
-            if user_profile_form.is_valid():
-                user_profile_form.save()
+            # Save the user's info
+            if save_info:
+                profile_data = {
+                    'default_phone_number': order.phone_number,
+                    'default_street_address1': order.street_address1,
+                    'default_street_address2': order.street_address2,
+                    'default_town_or_city': order.town_or_city,
+                    'default_county': order.county,
+                    'default_postcode': order.postcode,
+                    'default_country': order.country,
+                }
+                user_profile_form = UserProfileForm(
+                                                    profile_data,
+                                                    instance=profile)
+                if user_profile_form.is_valid():
+                    user_profile_form.save()
 
-    messages.success(request, f'Order successfully processed! '
-                     f'Your order number is {order_number}. '
-                     f'A confirmation email will be sent to {order.email}.')
+        messages.success(request, f'Order successfully processed! '
+                         f'Your order number is {order_number}. '
+                         f'A confirmation email will be sent to '
+                         f'{order.email}.')
 
-    # Clear the shopping basket in session storage.
-    if 'basket' in request.session:
-        del request.session['basket']
+        # Clear the shopping basket in session storage.
+        if 'basket' in request.session:
+            del request.session['basket']
 
-    template = 'checkout/checkout_success.html'
-    context = {
-        'order': order,
-    }
+        template = 'checkout/checkout_success.html'
+        context = {
+            'order': order,
+        }
 
-    return render(request, template, context)
+        return render(request, template, context)
