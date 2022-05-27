@@ -56,7 +56,7 @@
                         <tr>
                             <!-- Order Number -->
                             <td>
-                                <a href="#"
+                                <a href="{% url 'order_history' order.order_number %}"
                                     title="{{ order.order_number }}"
                                     aria-label="Go to the summary page for order number {{ order.order_number }} (does not open in a new tab)"
                                     class="link">
