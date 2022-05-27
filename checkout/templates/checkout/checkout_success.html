@@ -213,9 +213,20 @@
             </div>
         </div>
     </div>
-    <!-- Explore latest offers button -->
     <div class="row">
         <div class="col col-lg-8 offset-lg-2 text-center">
+            <!-- Back to Profile button -->
+            {% if from_profile %}
+            <form action="{% url 'profile'%}">
+                <button type="submit" class="btn btn-lg rounded-1 text-uppercase mt-4 mt-xxl-5 page-nav-button">
+                    <span class="icon">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </span>
+                    <span>Back to Profile</span>
+                </button>
+            </form>
+            <!-- Explore latest offers button -->
+            {% else %}
             <form action="{% url 'bags'%}?all_special_offers">
                 <button type="submit" class="btn btn-lg rounded-1 text-uppercase mt-4 mt-xxl-5 page-nav-button">
                     <span class="icon">
@@ -224,6 +235,7 @@
                     <span>Now explore the latest offers!</span>
                 </button>
             </form>
+            {% endif %}
         </div>
     </div>
 </div>
