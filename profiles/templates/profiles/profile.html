@@ -26,13 +26,13 @@
 
     <div class="row">
         <!-- Default delivery information form -->
-        <div class="col col-lg-6 mx-2 mx-lg-0">
-            <p>Default Delivery Information:</p>
+        <div class="col col-lg-6 mx-2 mx-lg-0 mb-4 mb-lg-0">
+            <p class="text-pink">Default Delivery Information</p>
             <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <!-- Update Information button -->
-                <button type="submit" class="btn btn-lg rounded-1 text-uppercase submit-button mt-2 bold float-end">
+                <button type="submit" class="btn btn-lg rounded-1 text-uppercase submit-button mt-2 bold">
                     Update Information
                 </button>               
             </form>
@@ -40,6 +40,56 @@
         <!-- Order History -->
         <div class="col-12 col-lg-6 mb-4">
             <p class="text-pink mx-2">Order History</p>
+            <div id="order-history" class="table-responsive">
+                <!-- Table of Orders -->
+                <table class="table table-sm table-borderless">
+                    <thead class="text-purple">
+                        <tr>
+                            <th>Order Number</th>
+                            <th>Date</th>
+                            <th>Items</th>
+                            <th>Order Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in orders %}
+                        <tr>
+                            <!-- Order Number -->
+                            <td>
+                                <a href="#"
+                                    title="{{ order.order_number }}"
+                                    aria-label="Go to the summary page for order number {{ order.order_number }} (does not open in a new tab)"
+                                    class="link">
+                                    {{ order.order_number|truncatechars:6 }}
+                                </a>
+                            </td>
+                            <!-- Order Date -->
+                            <td class="text-green">{{ order.date }}</td>
+                            <!-- For each bag in each order - bag name, charm option (if applicable) and quantity -->
+                            <td>
+                                <ul class="list-unstyled">
+                                    {% for item in order.lineitems.all %}
+                                    <li class="small text-green">
+                                        {{ item.bag.name }}
+                                        {% if item.bag.has_charm_option %}
+                                        {% if item.bag_charm %}
+                                         - {{ item.bag_charm.name }} charm -
+                                        {% else %}
+                                         - No charm selected -
+                                        {% endif %}
+                                        {% endif %} 
+                                         x{{ item.quantity }} 
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                            <!-- Order Grand Total -->
+                            <td class="text-green">£{{ order.grand_total }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
