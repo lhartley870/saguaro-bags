@@ -1,0 +1,69 @@
+#profile-update-form {
+    text-align: center;
+}
+
+/* --------------------------------------------------- Media Queries */
+
+/* for small screen sizes of 426px and up */
+@media screen and (min-width: 426px) {
+
+    #profile-update-form .form-group {
+        margin-right: auto;
+        margin-left: auto;
+        width: 80%;
+    }
+}
+
+/* for medium screen sizes of 768px and up */
+@media screen and (min-width: 768px) {
+
+    #profile-update-form .form-group {
+        width: 60%;
+    }
+}
+
+/* for large screen sizes of 992px and up */
+@media screen and (min-width: 992px) {
+
+    #profile-update-form .form-group {
+        width: 100%;
+    }
+
+    #profile-update-form {
+        text-align: start;
+    }
+
+    #order-history {
+        max-height: 450px; /* height of profile form and submit button */
+        overflow-y: auto;
+    }
+}
+
+/* for extra large screen sizes of 1200px and up */
+@media screen and (min-width: 1200px) {
+
+    #profile-update-form .form-group {
+        margin-left: 0;
+        width: 90%;
+    }
+
+    #order-history {
+        max-height: 464px; /* height of profile form and submit button */
+    }
+}
+
+/* for extra large screen sizes of 1400px and up */
+@media screen and (min-width: 1400px) {
+
+    #order-history {
+        max-height: 511px; /* height of profile form and submit button */
+    }
+}
+
+/* for extra extra large screen sizes of 2500px and up */
+@media screen and (min-width: 2500px) {
+
+    #order-history {
+        max-height: 590px; /* height of profile form and submit button */
+    }
+}
