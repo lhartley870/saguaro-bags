@@ -61,6 +61,12 @@
     .bag-detail-row {
         margin: 0 2em;
     }
+
+    #add-bag-form .form-group {
+        margin-right: auto;
+        margin-left: auto;
+        width: 80%;
+    }
 }
 
 /* for small screen sizes of 550px and up */
@@ -72,6 +78,10 @@
 
     .bag-detail-row {
         margin: 0 4em;
+    }
+
+    #add-bag-form .form-group {
+        width: 70%;
     }
 }
 
@@ -114,6 +124,10 @@
 
     .bag-detail-row {
         margin: 0 2em;
+    }
+
+    #add-bag-form .form-group {
+        width:90%;
     }
 }
 
