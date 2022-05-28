@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.db.models import When, Case, F, Q
 from django.db.models.functions import Lower
 from .models import Bag, Category, Charm
+from .forms import BagForm
 
 
 # Create your views here.
@@ -160,3 +161,16 @@ def bag_detail(request, bag_id):
     }
 
     return render(request, 'products/bag_detail.html', context)
+
+
+def add_bag(request):
+    """ Add a bag to the store """
+
+    form = BagForm()
+
+    template = 'products/add_bag.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
