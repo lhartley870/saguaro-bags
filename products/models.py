@@ -57,8 +57,8 @@ class Discount(models.Model):
 
 
 class Bag(models.Model):
-    name = models.CharField(max_length=25)
-    sku = models.CharField(max_length=15, null=True, blank=True)
+    name = models.CharField(max_length=25, unique=True)
+    sku = models.CharField(max_length=15, null=True, blank=True, unique=True)
     category = models.ForeignKey('Category', null=True, blank=True,
                                  on_delete=models.SET_NULL)
     size = models.ForeignKey('Size', null=True, blank=True,
@@ -132,7 +132,7 @@ class Bag(models.Model):
 
 
 class Charm(models.Model):
-    name = models.CharField(max_length=25)
+    name = models.CharField(max_length=25, unique=True)
     image = models.ImageField()
     image_description = models.TextField()
 
