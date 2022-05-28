@@ -110,7 +110,7 @@
                             <div class="dropdown-menu border-0" aria-labelledby="account-options">
                                 {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                <a href="#" class="dropdown-item">
+                                <a href="{% url 'add_bag' %}" class="dropdown-item">
                                     Product Management
                                     <span><i class="fa-solid fa-bag-shopping ps-1 ps-lg-2"></i></span>
                                 </a>
