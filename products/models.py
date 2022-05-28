@@ -55,7 +55,7 @@ class Discount(models.Model):
 
 class Bag(models.Model):
     name = models.CharField(max_length=25, unique=True)
-    sku = models.CharField(max_length=15, null=True, blank=True, unique=True)
+    sku = models.CharField(max_length=15, unique=True)
     category = models.ForeignKey('Category', null=True, blank=True,
                                  on_delete=models.SET_NULL)
     size = models.ForeignKey('Size', null=True, blank=True,
