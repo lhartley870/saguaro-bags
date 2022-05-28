@@ -166,7 +166,18 @@ def bag_detail(request, bag_id):
 def add_bag(request):
     """ Add a bag to the store """
 
-    form = BagForm()
+    if request.method == 'POST':
+        form = BagForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added bag!')
+            return redirect(reverse('add_bag'))
+        else:
+            messages.error(request, (
+                                    'Failed to add bag. '
+                                    'Please ensure the form is valid.'))
+    else:
+        form = BagForm()
 
     template = 'products/add_bag.html'
     context = {
