@@ -63,3 +63,23 @@ class BagForm(forms.ModelForm, UniqueMixin):
     class Meta:
         model = Bag
         exclude = ['overall_rating']
+
+    def clean_name(self):
+        """
+        Method to clean the bag name field to ensure it is truly unique,
+        ignoring case sensitivity and whitespace.
+        """
+        name = self.cleaned_data.get('name')
+        error_message = 'Bag names must be unique'
+        self.check_form_entry_unique('name', Bag, error_message, name)
+        return name
+
+    def clean_sku(self):
+        """
+        Method to clean the bag sku field to ensure it is truly unique,
+        ignoring case sensitivity and whitespace.
+        """
+        sku = self.cleaned_data.get('sku')
+        error_message = 'Bag skus must be unique'
+        self.check_form_entry_unique('sku', Bag, error_message, sku)
+        return sku
