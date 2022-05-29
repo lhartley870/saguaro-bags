@@ -13,7 +13,16 @@ class UniqueMixin:
         """
         Gets all instances of a model.
         """
-        instances = model.objects.all()
+        # If the model instance is a new instance, self.instance.id will be
+        # None and all existing model instances will be taken into account when
+        # checking the uniqueness of that model instance.
+        if self.instance.id is None:
+            instances = model.objects.all()
+        # If the model instance is being edited, self.instance.id will be
+        # the edited instance's id and that model instance will be excluded
+        # when checking uniqueness.
+        else:
+            instances = model.objects.all().exclude(id=self.instance.id)
         return instances
 
     def _get_lowercase_names_no_whitespace_array(self, model):
