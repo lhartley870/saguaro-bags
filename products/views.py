@@ -169,9 +169,9 @@ def add_bag(request):
     if request.method == 'POST':
         form = BagForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            bag = form.save()
             messages.success(request, 'Successfully added bag!')
-            return redirect(reverse('add_bag'))
+            return redirect(reverse('bag_detail', args=[bag.id]))
         else:
             messages.error(request, (
                                     'Failed to add bag. '
@@ -211,3 +211,11 @@ def edit_bag(request, bag_id):
     }
 
     return render(request, template, context)
+
+
+def delete_bag(request, bag_id):
+    """ Delete a bag from the store """
+    bag = get_object_or_404(Bag, pk=bag_id)
+    bag.delete()
+    messages.success(request, 'Bag deleted!')
+    return redirect(reverse('bags'))
