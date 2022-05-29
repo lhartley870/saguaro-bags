@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.contrib.auth.decorators import login_required
 from django.views.decorators.cache import cache_control
 from django.contrib import messages
 from django.db.models import When, Case, F, Q
@@ -163,8 +164,12 @@ def bag_detail(request, bag_id):
     return render(request, 'products/bag_detail.html', context)
 
 
+@login_required
 def add_bag(request):
     """ Add a bag to the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
 
     if request.method == 'POST':
         form = BagForm(request.POST, request.FILES)
@@ -187,8 +192,13 @@ def add_bag(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_bag(request, bag_id):
     """ Edit a bag in the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     bag = get_object_or_404(Bag, pk=bag_id)
     if request.method == 'POST':
         form = BagForm(request.POST, request.FILES, instance=bag)
@@ -213,8 +223,13 @@ def edit_bag(request, bag_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_bag(request, bag_id):
     """ Delete a bag from the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     bag = get_object_or_404(Bag, pk=bag_id)
     bag.delete()
     messages.success(request, 'Bag deleted!')
