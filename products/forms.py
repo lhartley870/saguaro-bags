@@ -1,5 +1,6 @@
 from django import forms
 from django.core.exceptions import ValidationError
+from .widgets import CustomClearableFileInput
 from .models import Bag, Category, Size, Colour, Charm, Discount
 
 
@@ -88,6 +89,10 @@ class BagForm(forms.ModelForm, UniqueMixin):
     class Meta:
         model = Bag
         exclude = ['overall_rating']
+
+    image = forms.ImageField(label='Image',
+                             required=False,
+                             widget=CustomClearableFileInput)
 
     def clean_name(self):
         """
