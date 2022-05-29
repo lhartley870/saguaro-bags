@@ -29,7 +29,7 @@ class UniqueMixin:
 
     def _get_lowercase_friendly_names_no_whitespace_array(self, model):
         """
-        Gets an array of the friendly_names of all model instances, in 
+        Gets an array of the friendly_names of all model instances, in
         lowercase and removing all whitespace.
         """
         instances = self._get_all_model_instances(model)
@@ -105,8 +105,8 @@ class CategoryForm(forms.ModelForm, UniqueMixin):
 
     class Meta:
         model = Category
-        fields = ('name', 'friendly_name')
-    
+        fields = '__all__'
+
     def clean_name(self):
         """
         Method to clean the category name field to ensure it is truly unique,
@@ -127,3 +127,20 @@ class CategoryForm(forms.ModelForm, UniqueMixin):
         self.check_form_entry_unique('friendly_name', Category, error_message,
                                      friendly_name)
         return friendly_name
+
+
+class SizeForm(forms.ModelForm, UniqueMixin):
+
+    class Meta:
+        model = Size
+        fields = '__all__'
+
+    def clean_name(self):
+        """
+        Method to clean the size name field to ensure it is truly unique,
+        ignoring case sensitivity and whitespace.
+        """
+        name = self.cleaned_data.get('name')
+        error_message = 'Size names must be unique'
+        self.check_form_entry_unique('name', Size, error_message, name)
+        return name
