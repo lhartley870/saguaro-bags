@@ -1,10 +1,12 @@
 from django.contrib import admin
 from .models import Category, Size, Colour, Discount, Bag, Charm
+from .forms import BagForm
 
 
 # Register your models here.
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
+
     list_display = (
         'friendly_name',
         'name',
@@ -16,6 +18,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Size)
 class SizeAdmin(admin.ModelAdmin):
+
     list_display = (
         'name',
         'order_smallest_to_largest',
@@ -33,6 +36,7 @@ class ColourAdmin(admin.ModelAdmin):
 
 @admin.register(Discount)
 class DiscountAdmin(admin.ModelAdmin):
+
     list_display = (
         'name',
         'discount_amount_as_percentage',
@@ -44,6 +48,9 @@ class DiscountAdmin(admin.ModelAdmin):
 
 @admin.register(Bag)
 class BagAdmin(admin.ModelAdmin):
+
+    form = BagForm
+
     list_display = (
         'name',
         'sku',
@@ -73,6 +80,7 @@ class BagAdmin(admin.ModelAdmin):
 
 @admin.register(Charm)
 class CharmAdmin(admin.ModelAdmin):
+
     search_fields = ['name']
 
     ordering = ('name',)
