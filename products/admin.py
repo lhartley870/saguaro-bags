@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Category, Size, Colour, Discount, Bag, Charm
-from .forms import BagForm, CategoryForm, SizeForm, ColourForm
+from .forms import BagForm, CategoryForm, SizeForm, ColourForm, DiscountForm
 
 
 # Register your models here.
@@ -42,6 +42,8 @@ class ColourAdmin(admin.ModelAdmin):
 
 @admin.register(Discount)
 class DiscountAdmin(admin.ModelAdmin):
+
+    form = DiscountForm
 
     list_display = (
         'name',
