@@ -1,6 +1,6 @@
 from django import forms
 from django.core.exceptions import ValidationError
-from .models import Bag
+from .models import Bag, Category, Size, Colour, Charm, Discount
 
 
 class UniqueMixin:
@@ -27,6 +27,18 @@ class UniqueMixin:
         ]
         return lowercase_names_no_whitespace_array
 
+    def _get_lowercase_friendly_names_no_whitespace_array(self, model):
+        """
+        Gets an array of the friendly_names of all model instances, in 
+        lowercase and removing all whitespace.
+        """
+        instances = self._get_all_model_instances(model)
+        lowercase_friendly_names_no_whitespace_array = [
+            instance.friendly_name.lower().replace(' ', '')
+            for instance in instances
+        ]
+        return lowercase_friendly_names_no_whitespace_array
+
     def _get_lowercase_skus_no_whitespace_array(self, model):
         """
         Gets an array of the skus of all model instances, in lowercase
@@ -51,6 +63,10 @@ class UniqueMixin:
         """
         if field == 'sku':
             array = self._get_lowercase_skus_no_whitespace_array(model)
+        elif field == 'friendly_name':
+            array = self._get_lowercase_friendly_names_no_whitespace_array(
+                model
+            )
         else:
             array = self._get_lowercase_names_no_whitespace_array(model)
 
@@ -83,3 +99,31 @@ class BagForm(forms.ModelForm, UniqueMixin):
         error_message = 'Bag skus must be unique'
         self.check_form_entry_unique('sku', Bag, error_message, sku)
         return sku
+
+
+class CategoryForm(forms.ModelForm, UniqueMixin):
+
+    class Meta:
+        model = Category
+        fields = ('name', 'friendly_name')
+    
+    def clean_name(self):
+        """
+        Method to clean the category name field to ensure it is truly unique,
+        ignoring case sensitivity and whitespace.
+        """
+        name = self.cleaned_data.get('name')
+        error_message = 'Category names must be unique'
+        self.check_form_entry_unique('name', Category, error_message, name)
+        return name
+
+    def clean_friendly_name(self):
+        """
+        Method to clean the category friendly_name field to ensure it is truly
+        unique, ignoring case sensitivity and whitespace.
+        """
+        friendly_name = self.cleaned_data.get('friendly_name')
+        error_message = 'Category friendly names must be unique'
+        self.check_form_entry_unique('friendly_name', Category, error_message,
+                                     friendly_name)
+        return friendly_name
