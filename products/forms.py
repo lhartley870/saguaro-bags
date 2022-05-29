@@ -178,3 +178,20 @@ class DiscountForm(forms.ModelForm, UniqueMixin):
         error_message = 'Discount names must be unique'
         self.check_form_entry_unique('name', Discount, error_message, name)
         return name
+
+
+class CharmForm(forms.ModelForm, UniqueMixin):
+
+    class Meta:
+        model = Charm
+        fields = '__all__'
+
+    def clean_name(self):
+        """
+        Method to clean the charm name field to ensure it is truly unique,
+        ignoring case sensitivity and whitespace.
+        """
+        name = self.cleaned_data.get('name')
+        error_message = 'Charm names must be unique'
+        self.check_form_entry_unique('name', Charm, error_message, name)
+        return name
