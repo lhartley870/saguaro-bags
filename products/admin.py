@@ -1,11 +1,13 @@
 from django.contrib import admin
 from .models import Category, Size, Colour, Discount, Bag, Charm
-from .forms import BagForm
+from .forms import BagForm, CategoryForm
 
 
 # Register your models here.
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
+
+    form = CategoryForm
 
     list_display = (
         'friendly_name',
