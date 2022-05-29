@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<!-- Blank header needed to apply top padding where there is a fixed header on desktop screens -->
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container mb-2">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <!-- Page heading -->
+            <h1>Bag Management</h1>
+            <hr class="w-50 mx-auto mb-3 mb-md-4 mb-xl-5">
+        </div>
+    </div>
+
+    <div class="row mx-2 mx-md-0">
+        <!-- Edit a Bag form -->
+        <div class="col col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+            <h2 class="text-center">Edit a Bag</h2>
+            <form action="{% url 'edit_bag' bag.id %}" method="POST" enctype="multipart/form-data" class="management-form">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div class="text-center mb-2">        
+                    <!-- Cancel button -->
+                    <a href="{% url 'bags' %}" class="btn btn-lg rounded-1 text-uppercase page-nav-button mt-2"
+                        aria-label="Go to the all bags page (does not open in a new tab)">
+                        <span class="bold">Cancel</span>
+                    </a>         
+                    <!-- Edit Bag button -->
+                    <button type="submit" class="btn btn-lg rounded-1 text-uppercase submit-button mt-2">
+                        <span class="bold">Edit Bag</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
