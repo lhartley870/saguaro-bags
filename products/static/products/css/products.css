@@ -62,7 +62,7 @@
         margin: 0 2em;
     }
 
-    #add-bag-form .form-group {
+    .management-form .form-group {
         margin-right: auto;
         margin-left: auto;
         width: 80%;
@@ -80,7 +80,7 @@
         margin: 0 4em;
     }
 
-    #add-bag-form .form-group {
+    .management-form .form-group {
         width: 70%;
     }
 }
@@ -126,7 +126,7 @@
         margin: 0 2em;
     }
 
-    #add-bag-form .form-group {
+    .management-form .form-group {
         width:90%;
     }
 }

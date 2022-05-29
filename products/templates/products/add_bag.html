@@ -28,7 +28,7 @@
         <!-- Add a Bag form -->
         <div class="col col-md-8 offset-md-2 col-lg-6 offset-lg-3">
             <h2 class="text-center">Add a Bag</h2>
-            <form action="{% url 'add_bag' %}" method="POST" enctype="multipart/form-data" id="add-bag-form">
+            <form action="{% url 'add_bag' %}" method="POST" enctype="multipart/form-data" class="management-form">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <div class="text-center mb-2">        
