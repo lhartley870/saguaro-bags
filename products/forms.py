@@ -144,3 +144,20 @@ class SizeForm(forms.ModelForm, UniqueMixin):
         error_message = 'Size names must be unique'
         self.check_form_entry_unique('name', Size, error_message, name)
         return name
+
+
+class ColourForm(forms.ModelForm, UniqueMixin):
+
+    class Meta:
+        model = Size
+        fields = '__all__'
+
+    def clean_name(self):
+        """
+        Method to clean the colour name field to ensure it is truly unique,
+        ignoring case sensitivity and whitespace.
+        """
+        name = self.cleaned_data.get('name')
+        error_message = 'Colour names must be unique'
+        self.check_form_entry_unique('name', Colour, error_message, name)
+        return name
