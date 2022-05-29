@@ -155,6 +155,13 @@
                                     {% else %}
                                     <p class="lead mb-0">£{{ bag.original_price }}</p>
                                     {% endif %}
+                                    <!-- Admin links to edit and delete bags -->
+                                    {% if request.user.is_superuser %}
+                                    <small>
+                                        <a href="{% url 'edit_bag' bag.id %}" class="link">Edit</a> | 
+                                        <a href="#" class="link">Delete</a>
+                                    </small>
+                                    {% endif %}
                                     <!-- Bag category, if the bag has one -->
                                     {% if bag.category %}
                                     <small class="d-block">

@@ -44,9 +44,16 @@
                         <h2 class="card-title">{{ bag.name }}</h2>
                         <!-- Bag price -->
                         {% if bag.on_sale and bag.discount != None %}
-                        <p class="lead"><del>£{{ bag.original_price }}</del> £{{ bag.get_discounted_price }}</p>
+                        <p class="lead {% if request.user.is_superuser %}mb-0{% endif %}"><del>£{{ bag.original_price }}</del> £{{ bag.get_discounted_price }}</p>
                         {% else %}
-                        <p class="lead">£{{ bag.original_price }}</p>
+                        <p class="lead {% if request.user.is_superuser %}mb-0{% endif %}">£{{ bag.original_price }}</p>
+                        {% endif %}
+                        <!-- Admin links to edit and delete bags -->
+                        {% if request.user.is_superuser %}
+                        <small class="d-block mb-3">
+                            <a href="{% url 'edit_bag' bag.id %}" class="link">Edit</a> | 
+                            <a href="#" class="link">Delete</a>
+                        </small>
                         {% endif %}
                         <!-- Bag SKU -->
                         <div class="d-inline-block bag-detail-icon-container text-end">
