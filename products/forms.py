@@ -90,10 +90,6 @@ class BagForm(forms.ModelForm, UniqueMixin):
         model = Bag
         exclude = ['overall_rating']
 
-    image = forms.ImageField(label='Image',
-                             required=False,
-                             widget=CustomClearableFileInput)
-
     def clean_name(self):
         """
         Method to clean the bag name field to ensure it is truly unique,
@@ -113,6 +109,13 @@ class BagForm(forms.ModelForm, UniqueMixin):
         error_message = 'Bag skus must be unique'
         self.check_form_entry_unique('sku', Bag, error_message, sku)
         return sku
+
+
+class WebsiteBagForm(BagForm):
+
+    image = forms.ImageField(label='Image',
+                             required=False,
+                             widget=CustomClearableFileInput)
 
 
 class CategoryForm(forms.ModelForm, UniqueMixin):

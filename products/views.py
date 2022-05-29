@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.db.models import When, Case, F, Q
 from django.db.models.functions import Lower
 from .models import Bag, Category, Charm
-from .forms import BagForm
+from .forms import WebsiteBagForm
 
 
 # Create your views here.
@@ -172,7 +172,7 @@ def add_bag(request):
         return redirect(reverse('home'))
 
     if request.method == 'POST':
-        form = BagForm(request.POST, request.FILES)
+        form = WebsiteBagForm(request.POST, request.FILES)
         if form.is_valid():
             bag = form.save()
             messages.success(request, 'Successfully added bag!')
@@ -182,7 +182,7 @@ def add_bag(request):
                                     'Failed to add bag. '
                                     'Please ensure the form is valid.'))
     else:
-        form = BagForm()
+        form = WebsiteBagForm()
 
     template = 'products/add_bag.html'
     context = {
@@ -201,7 +201,7 @@ def edit_bag(request, bag_id):
 
     bag = get_object_or_404(Bag, pk=bag_id)
     if request.method == 'POST':
-        form = BagForm(request.POST, request.FILES, instance=bag)
+        form = WebsiteBagForm(request.POST, request.FILES, instance=bag)
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully updated bag!')
@@ -211,7 +211,7 @@ def edit_bag(request, bag_id):
                            ('Failed to update bag. '
                             'Please ensure the form is valid.'))
     else:
-        form = BagForm(instance=bag)
+        form = WebsiteBagForm(instance=bag)
         messages.info(request, f'You are editing {bag.name}')
 
     template = 'products/edit_bag.html'
