@@ -161,3 +161,20 @@ class ColourForm(forms.ModelForm, UniqueMixin):
         error_message = 'Colour names must be unique'
         self.check_form_entry_unique('name', Colour, error_message, name)
         return name
+
+
+class DiscountForm(forms.ModelForm, UniqueMixin):
+
+    class Meta:
+        model = Discount
+        fields = '__all__'
+
+    def clean_name(self):
+        """
+        Method to clean the discount name field to ensure it is truly unique,
+        ignoring case sensitivity and whitespace.
+        """
+        name = self.cleaned_data.get('name')
+        error_message = 'Discount names must be unique'
+        self.check_form_entry_unique('name', Discount, error_message, name)
+        return name
