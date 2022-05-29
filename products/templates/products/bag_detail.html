@@ -52,7 +52,7 @@
                         {% if request.user.is_superuser %}
                         <small class="d-block mb-3">
                             <a href="{% url 'edit_bag' bag.id %}" class="link">Edit</a> | 
-                            <a href="#" class="link">Delete</a>
+                            <a href="{% url 'delete_bag' bag.id %}" class="link">Delete</a>
                         </small>
                         {% endif %}
                         <!-- Bag SKU -->
