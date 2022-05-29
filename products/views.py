@@ -185,3 +185,29 @@ def add_bag(request):
     }
 
     return render(request, template, context)
+
+
+def edit_bag(request, bag_id):
+    """ Edit a bag in the store """
+    bag = get_object_or_404(Bag, pk=bag_id)
+    if request.method == 'POST':
+        form = BagForm(request.POST, request.FILES, instance=bag)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated bag!')
+            return redirect(reverse('bag_detail', args=[bag.id]))
+        else:
+            messages.error(request,
+                           ('Failed to update bag. '
+                            'Please ensure the form is valid.'))
+    else:
+        form = BagForm(instance=bag)
+        messages.info(request, f'You are editing {bag.name}')
+
+    template = 'products/edit_bag.html'
+    context = {
+        'form': form,
+        'bag': bag,
+    }
+
+    return render(request, template, context)
