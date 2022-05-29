@@ -1,6 +1,8 @@
 from django.contrib import admin
 from .models import Category, Size, Colour, Discount, Bag, Charm
-from .forms import BagForm, CategoryForm, SizeForm, ColourForm, DiscountForm
+from .forms import (
+    BagForm, CategoryForm, SizeForm, ColourForm, DiscountForm, CharmForm
+)
 
 
 # Register your models here.
@@ -88,6 +90,8 @@ class BagAdmin(admin.ModelAdmin):
 
 @admin.register(Charm)
 class CharmAdmin(admin.ModelAdmin):
+
+    form = CharmForm
 
     search_fields = ['name']
 
