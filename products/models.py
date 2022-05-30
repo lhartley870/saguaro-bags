@@ -102,7 +102,6 @@ class Bag(models.Model):
         else:
             return self.original_price
 
-
     def get_number_rating_stars(self):
         """
         Method to work out the number of full stars, half stars
