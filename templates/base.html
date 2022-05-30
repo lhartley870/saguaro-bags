@@ -240,11 +240,13 @@
         function addTitleLogoMediumScreens(e) {
             if (e.matches) {
                 $('.navbar-toggler').after(`
-                <li class="list-inline-item">
-                    <a href="{% url 'home' %}" class="nav-link">
-                        <h2 class="title-logo-link pt-1">Saguaro Bags</h2>
-                    </a>
-                </li>`);
+                <ul id="mobile-medium-screen-title-link">
+                    <li class="list-inline-item">
+                        <a href="{% url 'home' %}" class="nav-link">
+                            <h2 class="title-logo-link pt-1">Saguaro Bags</h2>
+                        </a>
+                    </li>
+                </ul>`);
             } else {
                 evaluateTitleLogoRemoval();
             }

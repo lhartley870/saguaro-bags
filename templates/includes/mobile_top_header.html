@@ -1,87 +1,101 @@
-<!-- Search bar -->
-<li class="list-inline-item">
-    <a href="#" id="mobile-search" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link d-block d-lg-none">
-        <div class="text-center nav-link-container">
-            <div><i class="fa-solid fa-magnifying-glass fa-lg"></i></div>
-            <p class="my-0">Search</p>
-        </div>
-    </a>
-    <div class="dropdown-menu w-100 border-0 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
-        <form method="GET" action="{% url 'bags' %}">
-            <div class="input-group mx-auto search-bar-container">
-                <input type="text" name="q" placeholder="Search" class="form-control" aria-label="Search the site" aria-describedby="submit-search-button-mobile">
-                <button type="submit" class="btn form-appended-button" id="submit-search-button-mobile">
-                    <span class="icon">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </span>
-                </button>
+<ul id="mobile-top-header-menu" class="d-lg-none">
+    <!-- Search bar -->
+    <li class="list-inline-item" id="search-bar-list-item">
+        <a href="#" id="mobile-search" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link d-block">
+            <div class="text-center nav-link-container">
+                <div><i class="fa-solid fa-magnifying-glass fa-lg"></i></div>
+                <p class="my-0">Search</p>
             </div>
-        </form>
-    </div>
-</li>
+        </a>
+        <ul class="dropdown-menu w-100 border-0 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
+            <li>
+                <form method="GET" action="{% url 'bags' %}">
+                    <div class="input-group mx-auto search-bar-container">
+                        <input type="text" name="q" placeholder="Search" class="form-control" aria-label="Search the site" aria-describedby="submit-search-button-mobile">
+                        <button type="submit" class="btn form-appended-button" id="submit-search-button-mobile">
+                            <span class="icon">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </span>
+                        </button>
+                    </div>
+                </form>
+            </li>
+        </ul>
+    </li>
 
-<!-- 'My Account' -->
-<li class="list-inline-item dropdown">
-    <a href="#" id="account-options" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link d-block d-lg-none">
-        <div class="text-center nav-link-container">
-            <div>
+    <!-- 'My Account' -->
+    <li class="list-inline-item dropdown">
+        <a href="#" id="account-options" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link d-block">
+            <div class="text-center nav-link-container">
+                <div>
+                    {% if request.user.is_authenticated %}
+                    <i class="fa-solid fa-user-check fa-lg"></i>
+                    {% else %}
+                    <i class="fa-solid fa-user fa-lg"></i>
+                    {% endif %}
+                </div>
                 {% if request.user.is_authenticated %}
-                <i class="fa-solid fa-user-check fa-lg"></i>
+                <p class="my-0">{{ user.username|truncatechars:7 }}</p>
                 {% else %}
-                <i class="fa-solid fa-user fa-lg"></i>
+                <p class="my-0">My Account</p>
                 {% endif %}
             </div>
+        </a>
+        <ul class="dropdown-menu border-0" aria-labelledby="account-options">
             {% if request.user.is_authenticated %}
-            <p class="my-0">{{ user.username|truncatechars:7 }}</p>
-            {% else %}
-            <p class="my-0">My Account</p>
+            {% if request.user.is_superuser %}
+            <li>
+                <a href="{% url 'add_bag' %}" class="dropdown-item account-item">
+                    Product Management
+                    <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
+                </a>
+            </li>
             {% endif %}
-        </div>
-    </a>
-    <div class="dropdown-menu border-0" aria-labelledby="account-options">
-        {% if request.user.is_authenticated %}
-        {% if request.user.is_superuser %}
-        <a href="{% url 'add_bag' %}" class="dropdown-item account-item">
-            Product Management
-            <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
-        </a>
-        {% endif %}
-        <a href="{% url 'profile' %}" class="dropdown-item account-item">
-            My Profile
-            <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
-        </a>
-        <a href="{% url 'account_logout' %}" class="dropdown-item account-item">
-            Logout
-            <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
-        </a>
-        {% else %}
-        <a href="{% url 'account_signup' %}" class="dropdown-item account-item">
-            Register
-            <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
-        </a>
-        <a href="{% url 'account_login' %}" class="dropdown-item account-item">
-            Login
-            <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
-        </a>
-        {% endif %}
-    </div>
-</li>
+            <li>
+                <a href="{% url 'profile' %}" class="dropdown-item account-item">
+                    My Profile
+                    <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'account_logout' %}" class="dropdown-item account-item">
+                    Logout
+                    <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
+                </a>
+            </li>
+            {% else %}
+            <li>
+                <a href="{% url 'account_signup' %}" class="dropdown-item account-item">
+                    Register
+                    <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'account_login' %}" class="dropdown-item account-item">
+                    Login
+                    <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </li>
 
-<!-- Shopping basket -->
-<li class="list-inline-item">
-    <a href="{% url 'view_basket' %}" aria-label="Go to the shopping basket page (does not open in a new tab)"
-        class="{% if grand_total %}basket-link-items{% else %}basket-link-no-items{% endif %} nav-link basket-link d-block d-lg-none">
-        <div class="text-center">
-            <div>
-                <i class="checkout-logo fa-solid fa-basket-shopping fa-lg"></i>
+    <!-- Shopping basket -->
+    <li class="list-inline-item">
+        <a href="{% url 'view_basket' %}" aria-label="Go to the shopping basket page (does not open in a new tab)"
+            class="{% if grand_total %}basket-link-items{% else %}basket-link-no-items{% endif %} nav-link basket-link d-block">
+            <div class="text-center">
+                <div>
+                    <i class="checkout-logo fa-solid fa-basket-shopping fa-lg"></i>
+                </div>
+                <p class="my-0">
+                    {% if grand_total %}
+                    £{{ grand_total|floatformat:2 }}
+                    {% else %}
+                    £0.00
+                    {% endif %}
+                </p>
             </div>
-            <p class="my-0">
-                {% if grand_total %}
-                £{{ grand_total|floatformat:2 }}
-                {% else %}
-                £0.00
-                {% endif %}
-            </p>
-        </div>
-    </a>
-</li>
+        </a>
+    </li>
+</ul>
