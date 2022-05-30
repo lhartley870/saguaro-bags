@@ -1,0 +1,164 @@
+/* --------------------------------------------------- Home Page */
+
+#hero-container {
+    background: #FFF url('/media/cactus-hero-image.jpg') center center / cover no-repeat;
+    height: 600px;
+}
+
+#cover-text-outer {
+    background-color: rgba(0, 133, 93, 0.5);  
+}
+
+#hero-container h1,
+#hero-container h2 {
+    color: #FFF;
+}
+
+#hero-container h2 {
+    font-size: calc(1.1rem + .9vw);;
+} 
+
+/* Idea and code for the images inside circle containers adapted from the 
+Code Institute 'Love Running' project */
+.circle-container {
+    border-radius: 50%; 
+    height: 200px; 
+    padding: 15px; 
+    width: 200px;
+}
+
+.right-photo-desktop {
+    margin: 0 auto;
+}
+
+#left-photo-desktop {
+    margin: 0 auto;
+}
+
+.green-background {
+    background-color: #9BDEAC;
+}
+
+.circle-container-image {
+    height: 100%; 
+    border-radius: 50%;  
+}
+
+.green-border {
+    border: 5px solid #00855D;
+}
+
+#ethical-philosophy-image {
+    background: url('/media/round-cactus-leaves.jpg') center center / cover no-repeat;
+}
+
+h3 {
+    font-size: calc(1.1rem + .6vw);
+}
+
+.home-page-information {
+    font-size: 0.9em;
+}
+
+.pink-background {
+    background-color: #E199AE;
+}
+
+.pink-border {
+    border: 5px solid #E4117A;
+}
+
+#affordable-style-image {
+    background: url('/media/pink-cactus-in-pot.jpg') center center / cover no-repeat;
+}
+
+#cactus-leather-made-image {
+    background: url('/media/leather-rolls.jpg') center center / cover no-repeat;
+}
+
+.home-page-information-container {
+    width: 90%;
+}
+
+.left-text-desktop,
+#right-text-desktop {
+   text-align: center; 
+}
+
+/* --------------------------------------------------- Media Queries */
+
+/* for small screen sizes of 500px and up */
+@media screen and (min-width:500px) {
+
+    .home-page-information-container {
+        width: 70%;
+    }
+}
+
+/* for large screen sizes of 992px and up */
+@media screen and (min-width:992px) {
+
+    #hero-container {
+        padding: 0;
+    }
+
+    #cover-text-outer {
+        background-color: transparent;
+    }
+
+    #cover-text-inner {
+        background-color: rgba(0, 133, 93, 0.5);  
+        border-radius: .25rem;
+        padding: 2em;
+        width: 75%;
+    }
+
+    .left-text-desktop {
+        text-align: left; 
+    }
+
+    #right-text-desktop {
+        text-align: right;
+    }
+
+    .circle-container {
+        height: 250px; 
+        width: 250px;
+    }
+
+    .right-photo-desktop {
+        margin-left: 0;
+    }
+
+    #left-photo-desktop {
+        margin-right: 0;
+    }
+}
+
+/* for extra extra large screen sizes of 1400px and up */
+@media screen and (min-width:1400px) {
+
+    .circle-container {
+        height: 300px; 
+        width: 300px;
+    }
+}
+
+/* for extra extra large screen sizes of 1700px and up */
+@media screen and (min-width:1700px) {
+    
+    .circle-container {
+        height: 400px; 
+        padding: 25px; 
+        width: 400px;
+    }
+}
+
+/* for extra extra extra large screen sizes of 2500px and up */
+@media screen and (min-width:2500px) {
+
+    .circle-container {
+        height: 500px; 
+        width: 500px;
+    }
+}

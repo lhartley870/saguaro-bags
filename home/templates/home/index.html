@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+{% endblock %}
+
 {% block page_header %}
 <!-- Blank header needed to apply top padding where there is a fixed header on desktop screens -->
 <div class="container header-container">
