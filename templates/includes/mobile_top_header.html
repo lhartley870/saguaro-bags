@@ -25,7 +25,7 @@
 
     <!-- 'My Account' -->
     <li class="list-inline-item dropdown">
-        <a href="#" id="account-options" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link d-block">
+        <a href="#" id="account-options-mobile" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link d-block">
             <div class="text-center nav-link-container">
                 <div>
                     {% if request.user.is_authenticated %}
@@ -41,7 +41,7 @@
                 {% endif %}
             </div>
         </a>
-        <ul class="dropdown-menu border-0" aria-labelledby="account-options">
+        <ul class="dropdown-menu border-0" aria-labelledby="account-options-mobile">
             {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
             <li>
