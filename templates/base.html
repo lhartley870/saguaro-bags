@@ -203,8 +203,8 @@
         {% endblock %}
     </div>
     {% block postloadjs %}
-    <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
-    <script type="text/javascript">
+    <script src="{% static 'js/base.js' %}"></script>
+    <script>
         // Initialising Bootstrap toasts code taken from Boostrap
         let toastElList = [].slice.call($('.toast'))
         let toastList = toastElList.map(function(toastEl) {
@@ -212,7 +212,7 @@
         })
         toastList.forEach(toast => toast.show())
     </script>
-    <script type="text/javascript">
+    <script>
         /*
         Code for utilising media queries in JavaScript taken from this CSS Tricks article
         entitled 'Working with JavaScript Media Queries' by Marko Ilic dated 7 September 2020
