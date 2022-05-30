@@ -374,6 +374,65 @@ h4 {
 }
 
 
+/* --------------------------------------------------- Footer */
+
+footer {
+    border-top: 20px solid #E4117A;
+}
+
+/* Mailchimp form */
+#mc_embed_signup {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9em;
+    font-weight: 400;
+    width: 90%;
+}
+
+#mc_embed_signup form {
+    padding: 0;
+}
+
+#mc_embed_signup .asterisk {
+    color: #E4117A;
+}
+
+#mc_embed_signup input {
+    border: 1px solid #00855D;
+    border-radius: 0.25rem;
+    color: #6C6EC4;
+}
+
+#mc_embed_signup input:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+    outline: 0;
+}
+
+#mc_embed_signup #mc-embedded-subscribe-form input.mce_inline_error {
+    border: 2px solid #dc3545;
+}
+
+#mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error {
+    color: #dc3545;
+}
+
+#mc_embed_signup .button {
+    background-color: #00855D;
+    border: 2px solid transparent;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+
+#mc_embed_signup .button:hover,
+#mc_embed_signup .button:focus {
+    background-color: #FFF;
+    border-color: #00855D;
+    color: #00855D;
+}
+
+#mc_embed_signup .indicates-required {
+    font-size: 0.9em;
+}
 
 /* --------------------------------------------------- Media Queries */
 
@@ -400,6 +459,10 @@ h4 {
     #mobile-top-header-menu .list-inline-item {
         padding: 0 4vw;
     }
+
+    #mc_embed_signup {
+        width: 80%;
+    }
 }
 
 /* for small screen sizes of 500px and up */
@@ -415,6 +478,10 @@ h4 {
 
     #mobile-top-header-menu .list-inline-item {
         padding: 0 7vw;
+    }
+
+    #mc_embed_signup {
+        width: 70%;
     }
 }
 
@@ -442,6 +509,10 @@ h4 {
     #mobile-top-header-menu .list-inline-item {
         padding: 0 3vw;
     }
+
+    #mc_embed_signup .mc-field-group input {
+        width: 80%;
+    }
 }
 
 /* for small screen sizes of 625px and up */
@@ -453,6 +524,10 @@ h4 {
 
     #mobile-top-header-menu .list-inline-item {
         padding: 0 5vw;
+    }
+
+    #mc_embed_signup {
+        width: 60%;
     }
 }
 
@@ -486,6 +561,14 @@ h4 {
     #mobile-medium-screen-title-link {
         margin: 0 auto;
         padding-left: 1rem;
+    }
+
+    #mc_embed_signup {
+        width: 100%;
+    }
+
+    #mc_embed_signup .mc-field-group input {
+        width: 100%;
     }
 }
 
