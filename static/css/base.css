@@ -434,6 +434,17 @@ footer {
     font-size: 0.9em;
 }
 
+/* Footer links */
+footer ul {
+    list-style: none;
+    padding-left: 0;
+    width: 90%;
+}
+
+.footer-link {
+    width: 33.3%;
+}
+
 /* --------------------------------------------------- Media Queries */
 
 /* for extra small screen sizes of 320px to 374px */
@@ -510,7 +521,8 @@ footer {
         padding: 0 3vw;
     }
 
-    #mc_embed_signup .mc-field-group input {
+    #mc_embed_signup .mc-field-group input,
+    footer ul {
         width: 80%;
     }
 }
@@ -564,11 +576,21 @@ footer {
     }
 
     #mc_embed_signup {
-        width: 100%;
+        width: 90%;
     }
 
     #mc_embed_signup .mc-field-group input {
         width: 100%;
+    }
+
+    footer ul {
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    .footer-link {
+        padding-left: 30%;
+        width: initial;
     }
 }
 
@@ -577,6 +599,14 @@ footer {
 
     #mobile-top-header-menu .list-inline-item {
         padding: 0 4vw;
+    }
+
+    #mc_embed_signup {
+        width: 80%;
+    }
+
+    #mc_embed_signup .mc-field-group input {
+        width: 80%;
     }
 }
 
@@ -652,6 +682,15 @@ footer {
     .message-container {
         top: 120px;
     }  
+
+    footer ul {
+        width: 90%;
+    }
+
+    .footer-link {
+        padding-left: 0;
+        width: 33.3%;
+    }
 }
 
 /* for extra extra large screen sizes of 1400px and up */
@@ -676,7 +715,11 @@ footer {
 
     .message-container {
         top: 140px;
-    }    
+    }   
+    
+    footer ul {
+        width: 80%;
+    }
 }
 
 /* for extra extra large screen sizes of 1700px and up */
