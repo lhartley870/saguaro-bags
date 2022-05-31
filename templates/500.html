@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %} - 500 Error{% endblock %}
+
+{% block page_header %}
+<!-- Blank header needed to apply top padding where there is a fixed header on desktop screens -->
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row mb-md-2 mb-lg-3 mb-xxl-4">
+        <div class="col text-center mt-3">
+            <!-- Page heading -->
+            <h1>500 Error!</h1>
+            <hr class="w-50 mx-auto mb-3 mb-md-4">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center mb-5">
+            <!-- 500 error message -->
+            <p>Oops, something has gone wrong!</p>
+            <p>Please click below to go back to the Saguaro Bags home page.</p>
+            <!-- Back to home page button -->
+            <form action="{% url 'home' %}" class="mb-5">
+                <button type="submit" class="btn btn-lg rounded-1 text-uppercase py-2 mt-4 page-nav-button">
+                    <span class="icon">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </span>
+                    <span class="text-uppercase">Back to Home</span>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
