@@ -115,7 +115,11 @@
                                 {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                 <a href="{% url 'add_bag' %}" class="dropdown-item">
-                                    Product Management
+                                    Bag Management
+                                    <span><i class="fa-solid fa-bag-shopping ps-1 ps-lg-2"></i></span>
+                                </a>
+                                <a href="{% url 'admin:index' %}" class="dropdown-item">
+                                    Admin Panel
                                     <span><i class="fa-solid fa-bag-shopping ps-1 ps-lg-2"></i></span>
                                 </a>
                                 {% endif %}
