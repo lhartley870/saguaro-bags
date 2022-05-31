@@ -1,5 +1,9 @@
 /* --------------------------------------------------- Home Page */
 
+strong {
+    font-weight: 500;
+}
+
 #hero-container {
     background: #FFF url('/media/cactus-hero-image.jpg') center center / cover no-repeat;
     height: 600px;
@@ -83,6 +87,12 @@ h3 {
 .left-text-desktop,
 #right-text-desktop {
    text-align: center; 
+}
+
+/* --------------------------------------------------- Privacy Policy Page */
+
+#privacy-policy {
+    font-size: .9em;
 }
 
 /* --------------------------------------------------- Media Queries */
