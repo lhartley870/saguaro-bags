@@ -376,7 +376,7 @@ h4 {
 
 /* --------------------------------------------------- Footer */
 
-footer {
+footer .container-fluid {
     border-top: 20px solid #E4117A;
 }
 
