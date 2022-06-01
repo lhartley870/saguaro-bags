@@ -408,12 +408,38 @@ footer .container-fluid {
     outline: 0;
 }
 
+#mc_embed_signup div#mce-responses {
+    float: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    top: 0;
+    width: 100%;
+}
+
 #mc_embed_signup #mc-embedded-subscribe-form input.mce_inline_error {
     border: 2px solid #dc3545;
 }
 
 #mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error {
     color: #dc3545;
+    font-size: 0.9em;
+    margin: 2px 0 0 0;
+}
+
+#mc_embed_signup #mce-success-response {
+    /* default success message colour did not meet WCAG AA
+    colour contrast requirements for normal text size */
+    color: #00855D;
+    font-size: 1.1em;
+}
+
+#mc_embed_signup div.response {
+    margin: 2px 0 1em 0;
+    padding: 3px;
+    font-weight: 500;
+    float: none;
+    width: 100%;
 }
 
 #mc_embed_signup .button {
@@ -421,6 +447,7 @@ footer .container-fluid {
     border: 2px solid transparent;
     border-radius: 0.25rem;
     font-size: 1rem;
+    line-height: initial;
 }
 
 #mc_embed_signup .button:hover,
@@ -446,6 +473,14 @@ footer ul {
 }
 
 /* --------------------------------------------------- Media Queries */
+
+/* for extra small screen sizes of 353px and up */
+@media screen and (min-width: 353px) {
+    footer ul {
+        font-size: 0.9em;
+        width: 100%;
+    }
+}
 
 /* for extra small screen sizes of 320px to 374px */
 @media screen and (min-width: 320px) and (max-width: 374px) {
@@ -473,6 +508,11 @@ footer ul {
 
     #mc_embed_signup {
         width: 80%;
+    }
+
+    footer ul {
+        font-size: 1em;
+        width: 90%;
     }
 }
 
