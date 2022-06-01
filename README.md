@@ -221,13 +221,60 @@ The entity relationship diagram for the project can be found [here]().
 * [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) programming language for the logic of the application.
 
 ### Frameworks, Libraries and Modules
-* 
+* [Django](https://www.djangoproject.com/) was the python framework used to allow rapid, secure development and the clean, pragmatic design of this application.
+* [Bootstrap](https://getbootstrap.com/) was the framework used to assist in the building of a responsive, mobile-first site.
+* [Gunicorn](https://gunicorn.org/) was used as the python WSGI HTTP Server to run Django on Heroku.
+* [dj_database_url](https://pypi.org/project/dj-database-url/) was used so that database URLs could be used in the Django Application to connect to the Postgres database.
+* [psycopg2](https://pypi.org/project/psycopg2/) was the PostgreSQL database adapter used for the Python programming language.
+* [django-allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) was used for authentication, registration and account management for the application.
+* [django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/) was used to help manage the formatting of forms in the django application.
+* [django-countries](https://pypi.org/project/django-countries/) was used to provide a CountryField for the Order and UserProfile models. 
+* [Pillow](https://pypi.org/project/Pillow/) Python Imaging Library was used to add image processing capabilities to the Python interpreter.
+* [Stripe python library](https://pypi.org/project/stripe/) was used for Stripe's API.
+* [boto3](https://pypi.org/project/boto3/) was used as the Amazon Web Services (AWS) Software Development Kit (SDK) for Python.
+* [django-storages](https://pypi.org/project/django-storages/) was used to connect django to S3.
+* [Jquery](https://jquery.com/) was used to assist with HTML document traversal, manipulation and event handling.
+* The [inbuilt python math module](https://docs.python.org/3/library/math.html) was used to find the largest integer less than or equal to a given number when calculating the number of review stars to display in the Bag model's get_number_rating_stars method in the products app.
+* The [inbuilt python decimal module](https://docs.python.org/3/library/decimal.html) was used to to deal with monetary calculations in the get_discounted_price method of the Bag model in the products app and to calculate delivery costs in the basket app's contexts file.
+* The [inbuilt python uuid module](https://docs.python.org/3/library/uuid.html) was used to generate 32 character random unique order numbers in the checkout app Order model. 
+* The [inbuilt python json module](https://docs.python.org/3/library/json.html) was used to serialize the basket object as a JSON formatted stream for the purposes of including it within the Stripe payment intent metadata.
 
 ### Programs and Resources
+* [Git](https://git-scm.com/) was the version control system used via the Gitpod terminal to commit and push code to GitHub.
+* [GitHub](https://github.com/) was the git repository hosting service used to store code pushed from Git.
+* [Gitpod](https://www.gitpod.io/) was the online IDE (Integrated Development Environment)/editor used to create, modify and preview the project code. 
+* [Heroku](https://www.heroku.com/) was the cloud application platform used to deploy and host the application.
+* [Lucidchart](https://www.lucidchart.com/pages/) was used to prepare the Entity Relationship Diagram. 
+* [The Multi Device Website Mockup Generator](https://techsini.com/multi-mockup/index.php) was used to create the screenshots showing how the website looks on different device types in conjunction with the [Ignore X-Frame headers Google Chrome Extension](https://chrome.google.com/webstore/detail/ignore-x-frame-headers/gleekbfjekiniecknbkamfmkohkpodhe).
+* [Google Fonts](https://fonts.google.com/) was used to import all of the fonts used on the website. 
+* [Font Awesome](https://fontawesome.com/) was used to provide all the icons throughout the site.  
+* [Balsamiq](https://www.balsamiq.com) was used to prepare the Wireframes for the site. 
+* [Chrome DevTools](https://developer.chrome.com/docs/devtools/) was used to inspect the project code throughout creation of the site. 
+* [ColorSpace](https://mycolor.space/) was used to generate the colour palettes from which most of the colours for the website were taken. 
+* [Eye Dropper](https://eyedropper.org/) was used to find out the names of the hex code colours used on the site.
+* [Favicon Generator](https://favicon.io/favicon-generator/) was used to create the favicon for the site. 
+* [Unsplash](https://unsplash.com/), [Pexels](https://www.pexels.com/) and [Pixabay](https://pixabay.com/) provided free photos used throughout the site.
+* [Amazon S3](https://aws.amazon.com/s3/) was used to store the static and media files used by the application.
+* [Stripe](https://stripe.com/gb) was used to provide secure payments for the site.
 * [Gorgias Free SKU Generator](https://www.gorgias.com/tools/sku-generator) was used to generate the sku codes of the bags for sale. 
-* [Privacy Polucy Generator](https://www.privacypolicygenerator.info/) was used to generate the privacy policy.
+* [Privacy Policy Generator](https://www.privacypolicygenerator.info/) was used to generate the privacy policy.
 * [Google](https://www.google.com/) was used for finding keywords for SEO (Search Engine Optimisation) of the site.
 * [Wordtracker](https://www.wordtracker.com/) for finding out volume and competition information for keyword searches.
+* [Fake UK Phone Numbers](https://fakenumber.org/united-kingdom) was used to generate a fake phone number for the site for use on the Facebook Page.
+* [](https://www.xml-sitemaps.com/) was used to generate the sitemap.xml file.
+* [W3 Schools](https://www.w3schools.com/), [Stack Overflow](https://stackoverflow.com/), [CSS-Tricks](https://css-tricks.com/), [MDN Web Docs](https://developer.mozilla.org/en-US/), [Python.org](https://www.python.org/) and [Django documentation](https://docs.djangoproject.com/en/4.0/) were used for general guidance and learning.  
+* [What is my Viewport?](https://whatismyviewport.com/) was used to confirm the viewport screen sizes of my devices for testing the project. 
+* [Can I Use?](https://caniuse.com/) was used for checking browser compatibility.
+* [Compressor](https://compressor.io/) and [Tiny PNG](https://tinypng.com/) were used for compressing photos used on the site. 
+* [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) was used to check the contrast of foreground text colours against their background colours.
+* [The W3C Markup Validation Service](https://validator.w3.org/), [The W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/), [JSHint](https://jshint.com/) and [PEP8 Online](http://pep8online.com/), were used for testing the html, css, javascript and  python code for the site.
+* [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and [Mastering Markdown](https://guides.github.com/features/mastering-markdown/) were used for preparing the README.md and TESTING.md files.
+* [Django Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/) was used to generate secret keys for the development and production environments.
+* [Character Counter Online](https://www.charactercountonline.com/) was used for counting the number of characters in git commit messages.
+* [cdnjs](https://cdnjs.com/) was used to provide CDN links.
+* [Canva](https://www.canva.com/en_gb/) was used for the logo and favicon illustrations used on the site.
+* [Color hex](https://www.color-hex.com/) was used to convert hex colours into rgb colours.
+* [Project management on Github](https://www.topcoder.com/thrive/articles/project-management-on-github), [User Stories and Epics for the Win article](https://www.christianstrunk.com/blog/user-stories-and-epics-for-the-win), [Atlassian Agile epics: definition, examples, and templates article](https://www.atlassian.com/agile/project-management/epics) and [A Complete Guide to Agile Epics article](https://www.wrike.com/agile-guide/agile-epics-guide/) were used in drafting the epics and user stories. 
 
 ## Testing
 
@@ -245,7 +292,7 @@ The steps below set out how to create your own copy of this project and configur
 
 #### Illustrations
 
-All of the store logo illustrations and the favicon used on the website were generated with a Canva Pro subscription at [Canva](https://www.canva.com/en_gb/).
+All of the store logo illustrations, the charm logos and the favicon used on the website were generated with a Canva Pro subscription at [Canva](https://www.canva.com/en_gb/).
 
 #### Photos
 
@@ -322,4 +369,3 @@ With thanks, the photos appearing on the website were taken by the following pho
 
 Many thanks to:
 * My mentor, Brian Macharia, for his help and guidance.
-* The Code Institute tutors for their support. 
