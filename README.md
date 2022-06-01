@@ -283,6 +283,127 @@ Please see the separate [TESTING.md file](TESTING.md) for details of the project
 ## Deployment
 The steps below set out how to create your own copy of this project and configure and deploy the application. 
 
+### Forking the GitHub Repository
+
+Forking the GitHub repository allows you to produce a personal copy of the original repository/someone else's project that you can amend without affecting the original repository. To do this:
+
+1. Log in to GitHub.
+2. Navigate to the repository that you want to fork. In this case https://github.com/lhartley870/saguaro-bags.
+3. In the repository header locate the button that says 'Fork' and click on it.  
+4. When the repository is copied you will be taken to your copy of the repository. 
+
+### Making a Local Clone
+
+In order to work on a repository you have forked, you will need to clone it to your computer. In order to do this: 
+
+1. Log in to GitHub and locate the repository fork you want to make a local clone of. 
+2. Underneath the Settings button at the top of the repository there is a button with a dropdown arrow that says 'Code'. Click on it.  
+3. To clone the repository using HTTPS, undeneath 'Clone' select 'HTTPS' so that there is an orange line underneath 'HTTPS'. Click on this button:
+
+![View of local clone button](/readme-documents/deployment-screenshots/local-clone-button.png)
+
+4. Open the Terminal in your IDE/editor. 
+5. Change the current working directory to the one where you want the cloned directory to be located.  
+6. Type 'git clone' and then paste the URL you copied earlier. It will look like this with your username instead of 'YOUR-USERNAME' and the name of the forked repository you are cloning instead of 'NAME OF REPOSITORY YOU ARE CLONING': 
+
+![View of terminal command to clone fork](/readme-documents/deployment-screenshots/clone-command.png)
+
+7. Press enter and your local clone will be created. 
+8. You will need to install the packages and libraries used by this project. To do this use this command in your terminal: pip install -r requirements.txt
+9. Ensure that DEBUG=True in the settings.py file when you are in the development environment.
+
+For more information on forking and cloning repositories, see [GitHub Docs](https://docs.github.com/en/get-started/quickstart/fork-a-repo) and this [GitHub Guide](https://guides.github.com/activities/forking/). 
+
+### Heroku
+
+The project was deployed according to the following steps: 
+
+1. Log into Heroku at https://www.heroku.com/.
+2. From the Dashboard, Click on the 'New' button and then the dropdown button called 'Create new app'.
+![View of Heroku Dashboard](/readme-documents/deployment-screenshots/heroku-dashboard.png)
+3. Enter a unique App name and select your region as either 'Europe' or 'United States'. If the app name is unique you will get a green tick and a message saying that your chosen name is available, otherwise you will see a red exclamation mark and a message saying that the name is unavailable.
+![View of Create new app page](/readme-documents/deployment-screenshots/create-new-app.png)
+4. Click on 'Create app'.
+5. Click on the 'Resources' tab towards the top of the page. 
+6. In the Add-ons search bar type 'postgres'. 
+7. Select 'Heroku Postgres' and click on 'Submit Order Form' in the pop-up box that appears.
+8. Click on 'Settings' in the bar across the top of the page. You will then be taken to a page that looks like this:
+![View of Settings page](/readme-documents/deployment-screenshots/app-settings.png)
+9. Scroll down to where it says 'Config Vars' down the left hand side of the page and click on 'Reveal Config Vars'.
+10. Check that the DATABASE_URL has automatically been entered as a Config Var.
+11. Add a new Config Var in Heroku called DISABLE_COLLECTSTATIC and give it a value of 1.
+12. Use an online secret key generator to generate a secret key and add another Config Var called SECRET_KEY and copy the secret key generated as the value.
+13. In order to run your application on localhost generate a different secret key to the one you have entered in the Heroku Config Vars and add this to your environment variables. For example, if you are using Gitpod, navigate to your Gitpod Workspaces, click on Settings and then Variables. Click on 'New Variable' and enter the name as SECRET_KEY, the value as the secret key you have generated and the scope as your GitHub username followed by a forward slash and your repository name. Click on 'Add Variable'.
+14. In the settings.py file, ensure your SECRET_KEY value reads as follows:
+![View of secret key setting](readme-documents/deployment-screenshots/secret-key-settings.png)
+15. At the top of the settings.py file import os and dj_database_url.
+16. Temporarily comment out the current DATABASE variable and replace it with this:
+![View of database setting](readme-documents/deployment-screenshots/database-settings.png)
+17. To migrate the database model to the Postgres database, in the command line type: python3 manage.py migrate
+18. To add the content of the fixtures files to the Postgres database, type these commands in the following order in the command line (the command for bags must come last as it depends on the other fixtures files being added to the database first):
+    * python3 manage.py loaddata categories
+    * python3 manage.py loaddata charms
+    * python3 manage.py loaddata colours
+    * python3 manage.py loaddata discounts
+    * python3 manage.py loaddata sizes
+    * python3 manage.py loaddata bags
+19. Set up an admin superuser in the Postgres database using the command: python3 manage.py createsuperuser and follow the prompts, entering an email address, username and password.
+20. To use the Postgres database in production, and the sqlite database locally, ensure the database setting in settings.py is changed to the following:
+![View of final database setting](readme-documents/deployment-screenshots/final-database-settings.png)
+21. To add the fixtures data to your local sqlite database and add an admin superuser, repeat steps 17-19 once you have changed the database setting as per step 20.
+22. Set DEBUG to False in settings.py.
+23. Ensure that your application is included in the settings.py file as an allowed host e.g. ALLOWED_HOSTS = ['saguaro-bags.herokuapp.com', 'localhost']
+24. Make sure the requirements.txt file has all the latest changes by typing: pip3 freeze --local > requirements.txt
+25. Commit and push any changes made locally to GitHub.
+
+### Connect your Heroku App to the GitHub Repository
+1. Login to Heroku and navigate to your application.
+2. Click on 'Deployment' in the bar across the top of the page.
+3. Where it says 'Deployment Method' on the left hand side of the screen click on GitHub.
+4. Where it says 'Connect to GitHub' down the left hand side of the screen, type your repository name and click 'Search'.
+5. Click on 'Connect' next to your repository name.
+6. Scroll down to where it says 'Automatic Deploys' and 'Manual Deploy' down the left hand side of the screen. 
+7. If you want Heroku to rebuild your app every time any new changes to the code are pushed to GitHub, check that the branch you want to deploy is correct and click on 'Enable Automatic Deploys'. You will then need to check that the branch you want to deploy is correct and click on 'Deploy Branch' in the Manual Deploy' section. 
+8. If you only want to manually deploy, check that the branch you want to deploy is correct and click on 'Deploy Branch' in the 'Manual Deploy' section.
+9. Click on 'View' or 'Open app' and you will be taken to the deployed application. 
+10. When your app has successfully deployed, at this stage you should see your application but without any static or media files (so you won't see any styling or photographs for example).
+
+### Configure Amazon Web Services S3
+1. Log in to AWS at https://aws.amazon.com/ or create an account if you do not already have one.
+2. From the dashboard, navigate to the S3 services (e.g. by typing s3 in the search bar).
+3. Click on 'Create bucket'. Name your bucket. It is recommended to give your bucket a name to match your Heroku app name. Choose the region closest to you. Under 'Object Ownership' click the 'ACLs enabled' radio button and then the 'Bucket owner preferred' radio button. Uncheck 'Block all public access' and click the checkbox to ackowledge that the bucket will be public. Click on 'Create bucket'. 
+4. Click on your bucket and then on the 'Properties' tab. Scroll down to 'Static website hosting' and click on 'Edit'. Under 'Static website hosting' click the 'Enable' radio button. Under 'Hosting type' click the 'Host a static website' radio button. Fill in some default values for the index and error documents as these will not be used e.g. index.html under 'Index document' and error.html under 'Error document'. Click 'Save'.
+5. Go to the 'Permissions' tab. 
+    * Scroll down to 'Cross-origin resource sharing (CORS)'. Click on edit, paste in the following, then click 'Save':
+    ![View of CORS configuration](readme-documents/deployment-screenshots/cors-code.png)
+    * Scroll down to 'Bucket policy'. Click on edit and click on 'Policy generator'. A new tab will open. Underneath 'Select Policy Type' choose 'S3 Bucket Policy'. Underneath 'Add Statement(s) in the 'Principal' input box type '*'. From the 'Actions' dropdown select 'GetObject'. Go back to the original tab and copy the 'Bucket ARN' located in the 'Bucket policy' section. Back in the policy generator tab, paste that ARN next to 'Amazon Resource Name (ARN)'. Click 'Add Statement', then 'Generate Policy'. Copy the json from the 'Policy JSON Document' modal that appears and close the AWS Policy Generator tab. Paste that JSON back in your original tab in the 'Bucket Policy' section, adding a forward slash followed by an asterisk at the end of the Resource key value before the closing quotation marks. Click 'Save'. 
+    * Scroll down to the 'Access control list (ACL)' section and click on 'Edit'. Next to 'Everyone (public access)' check the 'List' checkbox and check the warning box. Click 'Save'.
+6. Access the 'IAM' service by finding it via the Services menu or searching for 'IAM' in the search bar.
+    * Under 'Access Management' in the menu on the left hand side, click on 'User groups' and then 'Create group'. Add a 'User group name' e.g. 'manage-saguaro-bags' and click on 'Create group'.
+    * Under 'Access Management' click on 'Policies' and then 'Create Policy'. Go to the 'JSON' tab and click the 'Import managed policy' link. Search for 's3', select 'AmazonS3FullAccess' and click 'Import'. Open your bucket in a new tab, go to the 'Permissions' tab and copy your 'Bucket ARN' located in the 'Bucket policy' section. Replace the 'Resource' key value with an array so that it looks like this (but replacing 'your bucket ARN goes here' with your own bucket ARN, noting the forward slash and asterisk added to the second list item):
+    "Resource": [
+        "YOUR BUCKET ARN GOES HERE",
+        "YOUR BUCKET ARN GOES HERE/*"
+    ]
+    Click 'Next: Tags' and then 'Review policy'. Give the policy a name e.g. 'saguro-bags-policy' and a description e.g. 'Access to S3 bucket for Saguaro Bags static files'. Then click 'Create policy'. This will take you back to the Policies page where you can see that your policy has been created.  
+    * To attach your policy to your group, click on 'User Groups', then click on your group. Go to the 'Permissions' tab, open the 'Add permissions' dropdown and click 'Attach policies'. Select your policy and click 'Add permissions' at the bottom. 
+    * To create a user to put in the group, click on 'Users' in the left hand menu, then 'Add users'. Name the user e.g. saguaro-bags-staticfiles-user and check the 'Access key - Programmatic access' checkbox. Click on 'Next: Permissions' and click the checkbox next to the group you created. Click 'Next: Tags', then 'Next: Review', then 'Create user'. 
+    * Download and save the generated csv file NB. it is VERY IMPORTANT the you download and save this csv file as once you've gone through this process you will not be able to download it again. 
+7. In your settings.py file, change the value of the 'AWS_STORAGE_BUCKET_NAME' variable to your bucket name and the 'AWS_S3_REGION_NAME' to your bucket region. 
+8. In Heroku, go to your app Settings tab and your Config Vars.
+    * Add a Config Var with a key of 'USE_AWS' and a value of 'True'.
+    * Add a Config Var with a key of 'AWS_ACCESS_KEY_ID' and the corresponding value from the cvs file you downloaded.
+    * Add a Config Var with a key of 'AWS_SECRET_ACCESS_KEY' and the corresponding value from the cvs file you downloaded.
+9. Delete the 'DISABLE_COLLECTSTATIC' Config Var - Django will now use S3 to store static and media files when it runs python3 manage.py collectstatic during the build process.
+10. Commit and push your changes to the settings.py file (as mentioned in step 7) to GitHub. All other settings for AWS configuration are already in the existing settings.py file.
+11. If you have set up Heroku to automatically deploy every time you push to GitHub, when an automatic deployment occurs after step 10, the static files should be stored in S3 so you should see e.g. all your styling included in your css files on the deployed site. If you are deploying manually you will need to deploy manually again to see the styling on your deployed site.
+12. Go to the S3 dashboard and create a file called 'media' in your new bucket. Inside the media folder click 'Upload', download all the media files from the repository and drag and drop them into the bucket media folder. Under the 'Permissions' dropdown, in 'Access control list (ACL)', under 'Predefined ACLs' select the 'Grant public-read access' radio button. Check the warning checkbox and click 'Upload'. You should then see your media files displayed on your deployed site.
+
+### Verify Superuser Email Address
+1. Attempt to login as the superuser on the deployed site itself. When you get to the email verification page, login to the admin panel (this can be accessed by adding '/admin' to the end of the home page url) and enter the superuser username and password you created earlier.
+2. Click on 'Email Addresses' and select the superuser email address. Check the checkboxes for 'Verified' and 'Primary' and click 'Save'. 
+3. You should now be able to login to the deployed site as an admin. 
+
 ## Credits 
 
 ### Code
