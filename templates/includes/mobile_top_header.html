@@ -46,7 +46,13 @@
             {% if request.user.is_superuser %}
             <li>
                 <a href="{% url 'add_bag' %}" class="dropdown-item account-item">
-                    Product Management
+                    Bag Management
+                    <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'admin:index' %}" class="dropdown-item account-item">
+                    Admin Panel
                     <span><i class="fa-solid fa-bag-shopping ps-1"></i></span>
                 </a>
             </li>
