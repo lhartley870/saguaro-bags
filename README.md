@@ -380,7 +380,7 @@ The project was deployed according to the following steps:
     * Scroll down to 'Cross-origin resource sharing (CORS)'. Click on edit, paste in the following, then click 'Save':
 
         <img src="readme-documents/deployment-screenshots/cors-code.png" width="300" height="300" alt="View of CORS configuration">
-        
+
     * Scroll down to 'Bucket policy'. Click on edit and click on 'Policy generator'. A new tab will open. Underneath 'Select Policy Type' choose 'S3 Bucket Policy'. Underneath 'Add Statement(s) in the 'Principal' input box type '*'. From the 'Actions' dropdown select 'GetObject'. Go back to the original tab and copy the 'Bucket ARN' located in the 'Bucket policy' section. Back in the policy generator tab, paste that ARN next to 'Amazon Resource Name (ARN)'. Click 'Add Statement', then 'Generate Policy'. Copy the json from the 'Policy JSON Document' modal that appears and close the AWS Policy Generator tab. Paste that JSON back in your original tab in the 'Bucket Policy' section, adding a forward slash followed by an asterisk at the end of the Resource key value before the closing quotation marks. Click 'Save'. 
     * Scroll down to the 'Access control list (ACL)' section and click on 'Edit'. Next to 'Everyone (public access)' check the 'List' checkbox and check the warning box. Click 'Save'.
 6. Access the 'IAM' service by finding it via the Services menu or searching for 'IAM' in the search bar.
@@ -431,7 +431,7 @@ The project was deployed according to the following steps:
 10. Click 'Generate' and you will be given a 16 character password. Copy it.
 11. In Heroku, add a Config Var key called EMAIL_HOST_PASS and paste your Gmail app password in as its value.
 12. Add another Config Var with a key of EMAIL_HOST_USER and enter your gmail email address as its value.
-13. All of the relevant settings are already included in the settings.py file although you may want to update the DEFAULT_FROM_EMAIL variable for the development environment to another email address.
+13. All of the relevant settings are already included in the settings.py file although you may want to update the DEFAULT_FROM_EMAIL variable for the development environment to another email address. You will also need to set an environment variable of DEVELOPMENT with a value of True as referred to in the Heroku section, step 13 above, to use the development email configuration settings.
 14. If you do make any changes to settings.py these should be committed and pushed to GitHub. If you are not set up for automatic deployment, you should deploy manually again.
 
 ## Credits 
