@@ -16,6 +16,7 @@ incrementer (+) button are not rounded on shopping basket page */
 
 /* --------------------------------------------------- Media Queries */
 
+/* for extra small screen sizes of 320px to 450px */
 @media (min-width: 320px) and (max-width: 450px) {
 
     .bag-list-basket img{
@@ -23,6 +24,7 @@ incrementer (+) button are not rounded on shopping basket page */
     }
 }
 
+/* for small screen sizes of 450px and up */
 @media (min-width: 450px) {
 
     #shopping-basket-mobile .item-quantity {
@@ -30,6 +32,7 @@ incrementer (+) button are not rounded on shopping basket page */
     }
 }
 
+/* for small screen sizes of 451px to 599px */
 @media (min-width: 451px) and (max-width: 599px) {
 
     .bag-list-basket img{
@@ -37,6 +40,7 @@ incrementer (+) button are not rounded on shopping basket page */
     }
 }
 
+/* for small screen sizes of 600px to 649px */
 @media (min-width: 600px) and (max-width: 649px) {
 
     .bag-list-basket img{
@@ -44,6 +48,7 @@ incrementer (+) button are not rounded on shopping basket page */
     }
 }
 
+/* for small screen sizes of 650px to 767px */
 @media (min-width: 650px) and (max-width: 767px) {
 
     .bag-list-basket img{
