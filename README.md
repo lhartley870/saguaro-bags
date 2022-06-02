@@ -437,6 +437,8 @@ The project was deployed according to the following steps:
 ## Credits 
 
 ### Code
+The Code Institute Boutique Ado project was heavily relied upon throughout the building of this project. In addition:
+
 * **Profiles forms.py file**
     * Code for the CustomSignUpForm class is based upon code included in an article entitled ['The complete django-allauth guide' by Gajesh](https://dev.to/gajesh/the-complete-django-allauth-guide-la3).
     * Code for validating the first_name and last_name fields in the CustomSignUpForm class so that only letters are allowed was adapted from an answer given by Martijn Pieters and edited by Lord Elrond on [this Stack Overflow post](https://stackoverflow.com/questions/17165147/how-can-i-make-a-django-form-field-contain-only-alphanumeric-characters).
@@ -450,6 +452,21 @@ The project was deployed according to the following steps:
 * **Products models.py file**
     * Use of the Decimal module and the quantize method to calculate the discounted price and return it to 2 decimal places in the Bag model get_discounted_price method was taken from [the Python documentation](https://docs.python.org/3/library/decimal.html#decimal-faq).
     * Use of divmod to find out the integer and decimal parts of a float in the Bag model get_number_rating_stars method taken from an answer given by utdemir on [this Stack Overflow post](https://stackoverflow.com/questions/6681743/splitting-a-number-into-the-integer-and-decimal-parts).
+
+* **base.html file**
+    * Code for adding a favicon to a Django project taken from an answer given by hanleyhansen and edited by FlipperPA on [this Stack Overflow post](https://stackoverflow.com/questions/21938028/how-can-i-get-a-favicon-to-show-up-in-my-django-app).
+    * Code for utilising media queries in JavaScript taken from [this CSS Tricks article entitled 'Working with JavaScript Media Queries' by Marko Ilic dated 7 September 2020
+    (and updated on 12 May 2021)](https://css-tricks.com/working-with-javascript-media-queries/).
+
+* **base.css file**
+    * Code for making the pink shopping bag icon within a first tier navigation dropdown item and a purple tag icon within a second tier navigation dropdown item visible only when 
+    hovering over or focussing on that item adapted from an answer given by Curtis on [this Stack Overflow post](https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover). 
+
+* **products.css file**
+    * Code to make all the bag images the same height within the cards taken from an answer given by sepuckett86 on [this Stack Overflow post](https://stackoverflow.com/questions/37287153/how-to-get-images-in-bootstraps-card-to-be-the-same-height-width).
+
+* **stripe_elements.js file**
+    * Code for dynamically changing the styles of an element adapted from the [Stripe documentation](https://stripe.com/docs/js/element/other_methods/update?type=card).
 
 ### Media
 
