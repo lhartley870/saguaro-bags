@@ -699,6 +699,10 @@ footer ul {
     .allauth-form-inner-content .form-control {
         width: 75%;
     }
+
+    .title-logo-link {
+        font-size: 2.4em;
+    }
 }
 
 /* for extra large screen sizes of 1200px and up */
