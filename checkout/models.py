@@ -73,7 +73,7 @@ class OrderLineItem(models.Model):
                               related_name='lineitems')
     bag = models.ForeignKey(Bag, on_delete=models.CASCADE)
     bag_charm = models.ForeignKey(Charm, null=True, blank=True,
-                                  on_delete=models.CASCADE)   
+                                  on_delete=models.CASCADE)
     quantity = models.IntegerField(default=0)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2,
                                          editable=False)
@@ -84,8 +84,8 @@ class OrderLineItem(models.Model):
         and update the order total.
         """
         if self.bag.on_sale and self.bag.discount is not None:
-            self.lineitem_total = (self.bag.get_discounted_price()
-                                   * self.quantity)
+            self.lineitem_total = (self.bag.get_discounted_price() *
+                                   self.quantity)
         else:
             self.lineitem_total = self.bag.original_price * self.quantity
         super().save(*args, **kwargs)
