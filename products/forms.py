@@ -94,7 +94,7 @@ class BagForm(forms.ModelForm, UniqueMixin):
 
     class Meta:
         model = Bag
-        exclude = ['overall_rating']
+        fields = '__all__'
 
     def clean_name(self):
         """
