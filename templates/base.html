@@ -290,11 +290,11 @@
     <script src="{% static 'js/base.js' %}"></script>
     <script>
         // Initialising Bootstrap toasts code taken from Boostrap
-        let toastElList = [].slice.call($('.toast'))
+        let toastElList = [].slice.call($('.toast'));
         let toastList = toastElList.map(function(toastEl) {
-            return new bootstrap.Toast(toastEl)
-        })
-        toastList.forEach(toast => toast.show())
+            return new bootstrap.Toast(toastEl);
+        });
+        toastList.forEach(toast => toast.show());
     </script>
     <script>
         /*
@@ -351,7 +351,7 @@
         function evaluateTitleLogoRemoval() {
             if ($('.title-logo-link').length === 2) {
                 removeTitleLogo();
-            };
+            }
         }
 
         /**

@@ -39,7 +39,7 @@ Runs the changeCardFontSize function on page load
 and every time the window is resized.
 */
 changeCardFontSize();
-window.addEventListener('resize', changeCardFontSize)
+window.addEventListener('resize', changeCardFontSize);
 
 /**
  * Checks the window's inner width and changes the
@@ -58,7 +58,7 @@ function changeCardFontSize() {
     } else {
         card.update({style: {base: {fontSize: '16px'}}});
     }
-};
+}
 
 // Handle realtime validation errors on the card element
 card.addEventListener('change', function (event) {
@@ -135,7 +135,7 @@ form.addEventListener('submit', function(ev) {
                     <span>${result.error.message}</span>`;
                 $(errorDiv).html(html);
                 $('#payment-form').fadeToggle(100);
-                $('#loading-overlay').fadeToggle(100)
+                $('#loading-overlay').fadeToggle(100);
                 card.update({ 'disabled': false});
                 $('#submit-button').attr('disabled', false);
             } else {
@@ -147,5 +147,5 @@ form.addEventListener('submit', function(ev) {
     }).fail(function () {
         // just reload the page, the error will be in django messages
         location.reload();
-    })
+    });
 });
