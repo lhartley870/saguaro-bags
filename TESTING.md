@@ -2,6 +2,33 @@
 
 ## Validators
 
+### CSS
+[The W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used for testing the css code for the site. The following results show that no errors have been found:
+* [base.css file](readme-documents/validation-results/clear-results/css/clear-result-base-css.png)
+* [profile.css file](readme-documents/validation-results/clear-results/css/clear-result-profile-css.png)
+* [products.css file](readme-documents/validation-results/clear-results/css/clear-result-products-css.png)
+* [home.css file](readme-documents/validation-results/clear-results/css/clear-result-home-css.png)
+* [checkout.css file](readme-documents/validation-results/clear-results/css/clear-result-checkout-css.png)
+* [basket.css file](readme-documents/validation-results/clear-results/css/clear-result-basket-css.png)
+
+### JavaScript
+[The JSHint Validator](https://jshint.com/) was used for testing the javascript code for the site. For the JavaScript contained within script tags in html files, this was extracted and run throgh the JSHint validator. The following results show that no errors have been found:
+* [base.js file](readme-documents/validation-results/clear-results/js/clear-result-base-js.png)
+* [title logo js in base.html](readme-documents/validation-results/clear-results/js/clear-result-base-title-logo-script-js.png)
+* [countryfield.js file](readme-documents/validation-results/clear-results/js/clear-result-countryfield-js.png)
+* [js in quantity_input_script.html](readme-documents/validation-results/clear-results/js/clear-result-quantity-input-script-js.png)
+* [js in add_bag.html and edit_bag.html script tags](readme-documents/validation-results/clear-results/js/clear-result-add-edit-bag-script-js.png)
+* [scroll to top button js in bags.html script tag](readme-documents/validation-results/clear-results/js/clear-result-scroll-top-js.png)
+* [js for sorting functionality in bags.html script tag](readme-documents/validation-results/clear-results/js/clear-result-sorting-js.png)
+* [js in the script tag in basket.html](readme-documents/validation-results/clear-results/js/clear-result-basket-js.png)
+
+An error was found in the toast JS in base.html with the error being that bootstrap is an undefined variable. However, this code was taken from the Bootstrap documentation and thus relies on the bootstrap framework variable:
+* [toast js in base.html](readme-documents/validation-results/errors/js/result-base-toast-script-js.png)
+Errors were found in the Mailchimp JS in base.html. However, this code was provided directly by Mailchimp:
+* [mailchimp js in base.html](readme-documents/validation-results/errors/js/result-base-mailchimp-script-js.png)
+An error was found in the stripe_elements.js file with the error being that Stripe is an undefined variable. However, as with bootstrap, this code relies upon Stripe:
+* [stripe_elements.js](readme-documents/validation-results/errors/js/result-stripe-elements-js.png)
+
 ### Python
 [The PEP8 Online Validator Service](http://pep8online.com/) was used for testing the python code for the application. The following results show that no errors have been found: 
 
@@ -43,6 +70,7 @@
 * [contexts.py file result](readme-documents/validation-results/clear-results/python/clear-result-basket-contexts.png)
 * [urls.py file result](readme-documents/validation-results/clear-results/python/clear-result-basket-urls.png)
 * [views.py file result](readme-documents/validation-results/clear-results/python/clear-result-basket-views.png)
+* [bag_tools.py file result](readme-documents/validation-results/clear-results/python/clear-result-bag-tools.png)
 
 * [urls.py file in booking app result](readme-documents/validation-results/clear-result-booking-urls.png)
 * [views.py file result](readme-documents/validation-results/clear-result-views.png)
