@@ -16,7 +16,7 @@ class UniqueMixin:
         """
         # If the model instance is a new instance, self.instance.id will be
         # None and all existing model instances will be taken into account when
-        # checking the uniqueness of that model instance.
+        # checking the uniqueness of that new model instance.
         if self.instance.id is None:
             instances = model.objects.all()
         # If the model instance is being edited, self.instance.id will be
@@ -69,7 +69,8 @@ class UniqueMixin:
         Checks whether the form entry in lowercase and with all whitespace
         removed can be found in the array of model instance names/skus that
         are also in lowercase with whitespace removed. If so, an appropriate
-        ValidationError is raised, else the form entry data is returned.
+        ValidationError is raised, else the form entry data is returned in
+        the application clean method.
         """
         if field == 'sku':
             array = self._get_lowercase_skus_no_whitespace_array(model)
@@ -85,6 +86,11 @@ class UniqueMixin:
 
 
 class BagForm(forms.ModelForm, UniqueMixin):
+    """
+    Provides the default form and additional form validation for adding
+    and editing bags used in the admin panel and by the WebsiteBagForm
+    subclass.
+    """
 
     class Meta:
         model = Bag
@@ -112,6 +118,10 @@ class BagForm(forms.ModelForm, UniqueMixin):
 
 
 class WebsiteBagForm(BagForm):
+    """
+    Subclasses the BagForm class to provide the default form for adding
+    and editing bags used on the site including a custom image field widget.
+    """
 
     image = forms.ImageField(label='Image',
                              required=False,
@@ -119,6 +129,10 @@ class WebsiteBagForm(BagForm):
 
 
 class CategoryForm(forms.ModelForm, UniqueMixin):
+    """
+    Provides the form and additional form validation for adding
+    and editing categories used in the admin panel.
+    """
 
     class Meta:
         model = Category
@@ -147,6 +161,10 @@ class CategoryForm(forms.ModelForm, UniqueMixin):
 
 
 class SizeForm(forms.ModelForm, UniqueMixin):
+    """
+    Provides the form and additional form validation for adding
+    and editing sizes used in the admin panel.
+    """
 
     class Meta:
         model = Size
@@ -164,6 +182,10 @@ class SizeForm(forms.ModelForm, UniqueMixin):
 
 
 class ColourForm(forms.ModelForm, UniqueMixin):
+    """
+    Provides the form and additional form validation for adding
+    and editing colours used in the admin panel.
+    """
 
     class Meta:
         model = Size
@@ -181,6 +203,10 @@ class ColourForm(forms.ModelForm, UniqueMixin):
 
 
 class DiscountForm(forms.ModelForm, UniqueMixin):
+    """
+    Provides the form and additional form validation for adding
+    and editing discounts used in the admin panel.
+    """
 
     class Meta:
         model = Discount
@@ -198,6 +224,10 @@ class DiscountForm(forms.ModelForm, UniqueMixin):
 
 
 class CharmForm(forms.ModelForm, UniqueMixin):
+    """
+    Provides the form and additional form validation for adding
+    and editing charms used in the admin panel.
+    """
 
     class Meta:
         model = Charm
