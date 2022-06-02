@@ -19,10 +19,10 @@ from .forms import OrderForm
 from .models import Order, OrderLineItem
 
 
-# Create your views here.
 @require_POST
 def cache_checkout_data(request):
     """ View to add additional metadata to payment intent object """
+
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -41,6 +41,7 @@ def cache_checkout_data(request):
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def checkout(request):
+
     """ View to render the checkout page """
 
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
@@ -184,6 +185,7 @@ def checkout_success(request, order_number):
     """
     Handle successful checkouts
     """
+
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
 

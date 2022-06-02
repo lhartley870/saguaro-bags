@@ -13,13 +13,13 @@ from .models import Order, OrderLineItem
 
 
 class StripeWH_Handler:
-    """Handle Stripe webhooks"""
+    """ Handle Stripe webhooks """
 
     def __init__(self, request):
         self.request = request
 
     def _send_confirmation_email(self, order):
-        """Send the user a confirmation email"""
+        """ Send the user a confirmation email """
         cust_email = order.email
         subject = render_to_string(
             'checkout/confirmation_emails/confirmation_email_subject.txt',
@@ -62,7 +62,7 @@ class StripeWH_Handler:
             if value == "":
                 shipping_details.address[field] = None
 
-        # Update profile information if save_info was checked
+        # Update profile information if save_info was checked.
         profile = None
         username = intent.metadata.username
         if username != 'AnonymousUser':
@@ -188,7 +188,7 @@ class StripeWH_Handler:
 
     def handle_payment_intent_payment_failed(self, event):
         """
-        Handle the payment_intent.payment_failed webhook from Stripe
+        Handle the payment_intent.payment_failed webhook from Stripe.
         """
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',
