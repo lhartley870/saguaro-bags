@@ -125,12 +125,12 @@
                             <input class="form-check-input ms-0 me-2" type="checkbox" id="id-save-info" name="save-info" checked>
                             <label class="form-check-label small" for="id-save-info">Save this delivery information to my profile</label>
                         {% else %}
-                            <label class="form-check-label" for="id-save-info">
+                            <div>
                                 <a href="{% url 'account_signup' %}" aria-label="Go to the account signup page (does not open in a new tab)"
                                     class="link">Create an account</a> or 
                                 <a href="{% url 'account_login' %}" aria-label="Go to the account login page (does not open in a new tab)"
                                     class="link">login</a> to save this information
-                            </label>
+                            </div>
                         {% endif %}
                     </div>
                 </fieldset>
@@ -174,11 +174,11 @@
     </div>
 </div>
 <div id="loading-overlay">
-    <h2 class="text-white d-flex justify-content-center align-items-center h-100 m-0">
+    <div class="text-white d-flex justify-content-center align-items-center h-100 m-0">
         <span class="icon">
             <i class="fa-3x fa-solid fa-spinner fa-spin-pulse"></i>
         </span>
-    </h2>
+    </div>
 </div>
 {% endblock %}
 
