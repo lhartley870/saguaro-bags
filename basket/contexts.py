@@ -12,7 +12,7 @@ def basket_contents(request):
     basket = request.session.get('basket', {})
 
     for item_id, item_data in basket.items():
-        # If the item_data is an integer, the bag has no charm option
+        # If the item_data is an integer, the bag has no charm option.
         if isinstance(item_data, int):
             bag = get_object_or_404(Bag, pk=item_id)
             # If the bag is on sale, use the discounted price.
@@ -27,10 +27,10 @@ def basket_contents(request):
                 'quantity': item_data,
                 'bag': bag,
             })
-        # If the item_data is not an integer, so the bag has a charm option
+        # If the item_data is not an integer, so the bag has a charm option.
         else:
             bag = get_object_or_404(Bag, pk=item_id)
-            for charm, quantity in item_data['items_by_charm_option'].items():        
+            for charm, quantity in item_data['items_by_charm_option'].items():
                 # If the bag is on sale, use the discounted price.
                 if bag.on_sale and bag.discount is not None:
                     total += quantity * bag.get_discounted_price()

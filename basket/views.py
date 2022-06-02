@@ -6,16 +6,15 @@ from django.views.decorators.cache import cache_control
 from products.models import Bag, Charm
 
 
-# Create your views here.
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def view_basket(request):
-    """ View to render the basket contents page """
+    """ View to render the basket contents page. """
 
     return render(request, 'basket/basket.html')
 
 
 def add_to_basket(request, item_id):
-    """ Add a quantity of the chosen bag to the shopping basket """
+    """ Add a quantity of the chosen bag to the shopping basket. """
 
     bag = get_object_or_404(Bag, pk=item_id)
     quantity = int(request.POST.get('quantity'))
