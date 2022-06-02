@@ -48,7 +48,7 @@ def profile(request):
 @login_required
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def order_history(request, order_number):
-    """ Display the order details for a user's past order """
+    """ Display the order details for a user's past order. """
 
     order = get_object_or_404(Order, order_number=order_number)
 
