@@ -4,7 +4,6 @@ from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 
-# Create your models here.
 class Category(models.Model):
     name = models.CharField(max_length=25, unique=True)
     friendly_name = models.CharField(max_length=25, unique=True)
@@ -79,7 +78,7 @@ class Bag(models.Model):
         """
         Method to calculate the discounted price of a bag if it is on sale.
 
-        A check is performed in the bags.html template to check for bags where
+        A check is performed in the applicable template to check for bags where
         on_sale is True but the discount is None (to cover any human error
         where the admin may have marked the bag as on_sale but has failed to
         complete the discount field) to ensure such bags are not displayed as
@@ -93,8 +92,8 @@ class Bag(models.Model):
             # the discounted price and return it to 2 decimal places taken from
             # the Python documentation -
             # https://docs.python.org/3/library/decimal.html#decimal-faq
-            discount = (Decimal(self.discount.amount / 100)
-                        * self.original_price)
+            discount = (Decimal(self.discount.amount / 100) *
+                        self.original_price)
             discounted_price = self.original_price - discount
             two_places = Decimal(10) ** -2
 
