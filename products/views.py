@@ -8,10 +8,10 @@ from .models import Bag, Category, Charm
 from .forms import WebsiteBagForm
 
 
-# Create your views here.
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def all_bags(request):
-    """ A view to show all bags, including sorting and search queries """
+    """ A view to show all bags, including sorting and search queries. """
+
     bags = Bag.objects.all()
     query = None
     categories = None
@@ -105,7 +105,10 @@ def all_bags(request):
         # Applies if the 'Special Offers' dropdown of 'All Special Offers' in
         # the main navbar has been selected.
         if 'all_special_offers' in request.GET:
-            filters = Q(has_charm_option=True) | (Q(on_sale=True) & ~Q(discount=None))
+            filters = (
+                        Q(has_charm_option=True) |
+                        (Q(on_sale=True) & ~Q(discount=None))
+                    )
             bags = bags.filter(filters)
             sale = True
             free_charm = True
@@ -135,11 +138,14 @@ def all_bags(request):
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def bag_detail(request, bag_id):
-    """ A view to show individual bag details """
+    """ A view to show individual bag details. """
+
     bag = get_object_or_404(Bag, pk=bag_id)
     rating_stars = bag.get_number_rating_stars()
     charms = Charm.objects.all()
 
+    # Deals with the number of full stars, half stars and empty stars
+    # to be displayed for the bag's rating (if the bag has a rating).
     if isinstance(rating_stars, list):
         whole_stars = rating_stars[0]
         whole_stars_list = list(range(1, rating_stars[0] + 1))
@@ -166,7 +172,10 @@ def bag_detail(request, bag_id):
 
 @login_required
 def add_bag(request):
-    """ Add a bag to the store """
+    """ Add a bag to the store. """
+
+    # If statement prevents non-admin users from being able to
+    # add bags to the store.
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -194,7 +203,10 @@ def add_bag(request):
 
 @login_required
 def edit_bag(request, bag_id):
-    """ Edit a bag in the store """
+    """ Edit a bag in the store. """
+
+    # If statement prevents non-admin users from being able to
+    # edit bags in the store.
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -225,7 +237,10 @@ def edit_bag(request, bag_id):
 
 @login_required
 def delete_bag(request, bag_id):
-    """ Delete a bag from the store """
+    """ Delete a bag from the store. """
+
+    # If statement prevents non-admin users from being able to
+    # delete bags from the store.
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
