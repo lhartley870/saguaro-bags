@@ -437,7 +437,19 @@ The project was deployed according to the following steps:
 ## Credits 
 
 ### Code
-* 
+* **Profiles forms.py file**
+    * Code for the CustomSignUpForm class is based upon code included in an article entitled ['The complete django-allauth guide' by Gajesh](https://dev.to/gajesh/the-complete-django-allauth-guide-la3).
+    * Code for validating the first_name and last_name fields in the CustomSignUpForm class so that only letters are allowed was adapted from an answer given by Martijn Pieters and edited by Lord Elrond on [this Stack Overflow post](https://stackoverflow.com/questions/17165147/how-can-i-make-a-django-form-field-contain-only-alphanumeric-characters).
+
+* **Profiles views.py file**
+    * The solution of using the @cache_control and @login_required decorators to control what happens if a user logs out of their account and then presses the back button was taken from an answer given by Mahmood on [this Stack Overflow post](https://stackoverflow.com/questions/28000981/django-user-re-entering-session-by-clicking-browser-back-button-after-logging?noredirect=1&lq=1).
+
+* **Products forms.py file**
+    * Use of the replace function to remove all whitespace in the UniqueMixin class _get_lowercase_skus_no_whitespace_array method taken from an answer given by Mark Byers and edited by Randall Cook on [this Stack Overflow post](https://stackoverflow.com/questions/8270092/remove-all-whitespace-in-a-string).
+
+* **Products models.py file**
+    * Use of the Decimal module and the quantize method to calculate the discounted price and return it to 2 decimal places in the Bag model get_discounted_price method was taken from [the Python documentation](https://docs.python.org/3/library/decimal.html#decimal-faq).
+    * Use of divmod to find out the integer and decimal parts of a float in the Bag model get_number_rating_stars method taken from an answer given by utdemir on [this Stack Overflow post](https://stackoverflow.com/questions/6681743/splitting-a-number-into-the-integer-and-decimal-parts).
 
 ### Media
 
