@@ -300,7 +300,7 @@ In order to work on a repository you have forked, you will need to clone it to y
 2. Underneath the Settings button at the top of the repository there is a button with a dropdown arrow that says 'Code'. Click on it.  
 3. To clone the repository using HTTPS, undeneath 'Clone' select 'HTTPS' so that there is an orange line underneath 'HTTPS'. Click on this button:
 
-![View of local clone button](/readme-documents/deployment-screenshots/local-clone-button.png)
+    ![View of local clone button](/readme-documents/deployment-screenshots/local-clone-button.png)
 
 4. Open the Terminal in your IDE/editor. 
 5. Change the current working directory to the one where you want the cloned directory to be located.  
@@ -335,10 +335,12 @@ The project was deployed according to the following steps:
 12. Use an online secret key generator to generate a secret key and add another Config Var called SECRET_KEY and copy the secret key generated as the value.
 13. In order to run your application on localhost generate a different secret key to the one you have entered in the Heroku Config Vars and add this to your environment variables. For example, if you are using Gitpod, navigate to your Gitpod Workspaces, click on Settings and then Variables. Click on 'New Variable' and enter the name as SECRET_KEY, the value as the secret key you have generated and the scope as your GitHub username followed by a forward slash and your repository name. Click on 'Add Variable'.
 14. In the settings.py file, ensure your SECRET_KEY value reads as follows:
-![View of secret key setting](readme-documents/deployment-screenshots/secret-key-settings.png)
+
+    ![View of secret key setting](readme-documents/deployment-screenshots/secret-key-settings.png)
 15. At the top of the settings.py file import os and dj_database_url.
 16. Temporarily comment out the current DATABASE variable and replace it with this:
-![View of database setting](readme-documents/deployment-screenshots/database-settings.png)
+
+    ![View of database setting](readme-documents/deployment-screenshots/database-settings.png)
 17. To migrate the database model to the Postgres database, in the command line type: python3 manage.py migrate
 18. To add the content of the fixtures files to the Postgres database, type these commands in the following order in the command line (the command for bags must come last as it depends on the other fixtures files being added to the database first):
     * python3 manage.py loaddata categories
@@ -365,7 +367,8 @@ The project was deployed according to the following steps:
 6. Scroll down to where it says 'Automatic Deploys' and 'Manual Deploy' down the left hand side of the screen. 
 7. If you want Heroku to rebuild your app every time any new changes to the code are pushed to GitHub, check that the branch you want to deploy is correct and click on 'Enable Automatic Deploys'. You will then need to check that the branch you want to deploy is correct and click on 'Deploy Branch' in the Manual Deploy' section. 
 8. If you only want to manually deploy, check that the branch you want to deploy is correct and click on 'Deploy Branch' in the 'Manual Deploy' section.
-9. Click on 'View' or 'Open app' and you will be taken to the deployed application. 
+9. Alternatively, you can manually deploy from the command line interface (CLI). Assuming you do not have MFA/2DA enabled, to log into Heroku from your terminal type: heroku login -i, then enter your Heroku username and password when prompted. You can get your app name from Heroku by typing the following command: heroku apps. To set the Heroku remote enter the following command in the terminal (but replacing APP_NAME with your actual app name): heroku git:remote -a APP_NAME. Then to manually deploy enter the command: git push heroku main. This step 9 assumes you have already pushed all your latest changes to GitHub beforehand.
+10. Click on 'View' or 'Open app' in Heroku and you will be taken to the deployed application. 
 10. When your app has successfully deployed, at this stage you should see your application but without any static or media files (so you won't see any styling or photographs for example).
 
 ### Configure Amazon Web Services S3
@@ -375,7 +378,9 @@ The project was deployed according to the following steps:
 4. Click on your bucket and then on the 'Properties' tab. Scroll down to 'Static website hosting' and click on 'Edit'. Under 'Static website hosting' click the 'Enable' radio button. Under 'Hosting type' click the 'Host a static website' radio button. Fill in some default values for the index and error documents as these will not be used e.g. index.html under 'Index document' and error.html under 'Error document'. Click 'Save'.
 5. Go to the 'Permissions' tab. 
     * Scroll down to 'Cross-origin resource sharing (CORS)'. Click on edit, paste in the following, then click 'Save':
-    ![View of CORS configuration](readme-documents/deployment-screenshots/cors-code.png)
+
+        <img src="readme-documents/deployment-screenshots/cors-code.png" width="300" height="300" alt="View of CORS configuration">
+        
     * Scroll down to 'Bucket policy'. Click on edit and click on 'Policy generator'. A new tab will open. Underneath 'Select Policy Type' choose 'S3 Bucket Policy'. Underneath 'Add Statement(s) in the 'Principal' input box type '*'. From the 'Actions' dropdown select 'GetObject'. Go back to the original tab and copy the 'Bucket ARN' located in the 'Bucket policy' section. Back in the policy generator tab, paste that ARN next to 'Amazon Resource Name (ARN)'. Click 'Add Statement', then 'Generate Policy'. Copy the json from the 'Policy JSON Document' modal that appears and close the AWS Policy Generator tab. Paste that JSON back in your original tab in the 'Bucket Policy' section, adding a forward slash followed by an asterisk at the end of the Resource key value before the closing quotation marks. Click 'Save'. 
     * Scroll down to the 'Access control list (ACL)' section and click on 'Edit'. Next to 'Everyone (public access)' check the 'List' checkbox and check the warning box. Click 'Save'.
 6. Access the 'IAM' service by finding it via the Services menu or searching for 'IAM' in the search bar.
@@ -403,6 +408,31 @@ The project was deployed according to the following steps:
 1. Attempt to login as the superuser on the deployed site itself. When you get to the email verification page, login to the admin panel (this can be accessed by adding '/admin' to the end of the home page url) and enter the superuser username and password you created earlier.
 2. Click on 'Email Addresses' and select the superuser email address. Check the checkboxes for 'Verified' and 'Primary' and click 'Save'. 
 3. You should now be able to login to the deployed site as an admin. 
+
+### Stripe Configuration
+1. Login to your Stripe account at https://stripe.com/gb.
+2. Click on 'Developers' near the top right of the screen.
+3. In Heroku add two more Config Vars to your application with keys of STRIPE_PUBLIC_KEY and STRIPE_SECRET_KEY.
+4. Click on 'API Keys' in the Stripe left hand menu, copy the Publishable key and paste it as the value for STRIPE_PUBLIC_KEY in the Config Vars. Copy the Secret Key in Stripe and paste it as the value for STRIPE_SECRET_KEY in the Config Vars. In this case, the test keys were used for this purpose.
+5. To create a new webhook endpoint, click on 'Webhooks' in the Stripe left hand menu and click on the 'Add endpoint' button. Under 'Endpoint URL' paste your deployed application url with '/checkout/wh/' added onto the end. Under 'Select events to listen to' click the 'Select events' button, check the 'Select all events' checkbox and click 'Add events'. Then click 'Add endpoint'. 
+6. Click on your newly created webhook endpoint and under 'Signing secret' click on 'Reveal'. Copy the signing secret.
+7. In Heroku add another Config Var with a key of STRIPE_WH_SECRET and paste the signing secret from Stripe as its value.
+
+### Configuring Django to Send Real Emails
+1. The email configuration steps below assume that you are using a gmail account. If you are not, the procedure will differ depending on which provider you use.
+2. Login to your Gmail account and click on Settings in the upper right. 
+3. Go to the 'Accounts and Import' tab and next to 'Change account settings' click on 'Other Google Account settings'. 
+4. Click on the 'Security' tab down the left hand side and click on '2 Step Verification'. This will allow you to create an app password specific to your django app that will allow it to authenticate and use your Gmail account to send emails.
+5. Click 'Get Started', enter your password and select a verification method.
+6. Once you have verified, turn on 2 step verification by clicking 'TURN ON'.
+7. Go back to your Gmail dashboard and click on 'Security' down the left hand side. 
+8. You should now have an option called 'App passwords' under the 'Signing in to Google' heading. Click on it and enter your Gmail password.
+9. On the 'App passwords' screen, from the 'Select app' dropdown choose 'Mail', and for the 'Select device' dropdown choose 'Other (Custom name)'. You can set whatever you want here e.g. Django.
+10. Click 'Generate' and you will be given a 16 character password. Copy it.
+11. In Heroku, add a Config Var key called EMAIL_HOST_PASS and paste your Gmail app password in as its value.
+12. Add another Config Var with a key of EMAIL_HOST_USER and enter your gmail email address as its value.
+13. All of the relevant settings are already included in the settings.py file although you may want to update the DEFAULT_FROM_EMAIL variable for the development environment to another email address.
+14. If you do make any changes to settings.py these should be committed and pushed to GitHub. If you are not set up for automatic deployment, you should deploy manually again.
 
 ## Credits 
 
