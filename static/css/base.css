@@ -89,7 +89,7 @@ https://stackoverflow.com/questions/9617641/css-link-to-an-icon-visible-on-hover
 }
 
 #mobile-top-header-menu .list-inline-item {
-    padding: 0 1vw;
+    padding: 0;
 }
 
 .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
@@ -501,7 +501,7 @@ footer ul {
     }
 
     #mobile-top-header-menu .list-inline-item {
-        padding: 0 3vw;
+        padding: 0 2vw;
     }
 }
 
@@ -533,7 +533,7 @@ footer ul {
     }
 
     #mobile-top-header-menu .list-inline-item {
-        padding: 0 7vw;
+        padding: 0 5vw;
     }
 
     #mc_embed_signup {
@@ -612,7 +612,7 @@ footer ul {
     }
 
     #mobile-top-header-menu .list-inline-item {
-        padding: 0 3vw;
+        padding: 0 2vw;
     }
 
     #mobile-medium-screen-title-link {
@@ -643,7 +643,7 @@ footer ul {
 @media screen and (min-width:850px) {
 
     #mobile-top-header-menu .list-inline-item {
-        padding: 0 4vw;
+        padding: 0 3vw;
     }
 
     #mc_embed_signup {
