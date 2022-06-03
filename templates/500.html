@@ -27,14 +27,12 @@
             <p>Oops, something has gone wrong!</p>
             <p>Please click below to go back to the Saguaro Bags home page.</p>
             <!-- Back to home page button -->
-            <form action="{% url 'home' %}" class="mb-5">
-                <button type="submit" class="btn btn-lg rounded-1 text-uppercase py-2 mt-4 page-nav-button">
-                    <span class="icon">
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </span>
-                    <span class="text-uppercase">Back to Home</span>
-                </button>
-            </form>
+            <a href="{% url 'home' %}" class="mb-5 btn btn-lg rounded-1 text-uppercase py-2 mt-4 page-nav-button">
+                <span class="icon">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </span>
+                <span class="text-uppercase">Back to Home</span>
+            </a>
         </div>
     </div>
 </div>

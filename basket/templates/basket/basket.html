@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col text-center">
             {% if basket_items %}
             <!-- Shopping basket items on mobile screens -->
             <div id="shopping-basket-mobile" class="d-block d-md-none">
@@ -133,14 +133,12 @@
             {% else %}
             <!-- Empty shopping basket -->
             <p class="lead my-3 text-center">Your basket is empty.</p>
-            <form action="{% url 'bags' %}" class="text-center">
-                <button type="submit" class="btn btn-lg rounded-1 text-uppercase py-2 mt-4 page-nav-button">
-                    <span class="icon">
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </span>
-                    <span class="text-uppercase">Keep Shopping</span>
-                </button>
-            </form>
+            <a href="{% url 'bags' %}" class="btn btn-lg rounded-1 text-uppercase py-2 mt-4 page-nav-button">
+                <span class="icon">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </span>
+                <span class="text-uppercase">Keep Shopping</span>
+            </a>
             {% endif %}
         </div>
     </div>
