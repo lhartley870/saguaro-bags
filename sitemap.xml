@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/accounts/login/</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/basket/</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/?sort=price&amp;direction=asc</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/?sort=rating&amp;direction=desc</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/?sort=category&amp;direction=asc</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/?sort=size&amp;direction=asc</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/?sort=colour&amp;direction=asc</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/?category=handbags</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/?category=tote_bags</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/?category=crossbody_bags</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/?category=backpacks</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/?category=bucket_bags</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/?category=clutch_bags</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/?category=pouches</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/?category=laptop_bags</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/?category=holdalls</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/?category=handbags,tote_bags,crossbody_bags,backpacks,bucket_bags,clutch_bags,pouches,laptop_bags,holdalls</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/?sale</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/?free_charm</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/?all_special_offers</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/privacy_policy/</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/29</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/38</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/30</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/12</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/34</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/24</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/7</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/36</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/31</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/18</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/22</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/45</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/17</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/5</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/8</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/2</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/9</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/37</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/33</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/42</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/48</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/49</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/43</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/40</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/15</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/3</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/39</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/10</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/16</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/47</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/46</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/44</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/26</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/20</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/1</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/27</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/11</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/21</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/41</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/50</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/14</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/35</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/19</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/6</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/13</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/4</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/23</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/28</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/25</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://saguaro-bags.herokuapp.com/bags/32</loc>
+  <lastmod>2022-06-03T19:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
