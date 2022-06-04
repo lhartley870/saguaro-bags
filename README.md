@@ -81,9 +81,14 @@ Colour Name | Hexadecimal Code
 
 ### Entity Relationship Diagram
 
-The entity relationship diagram for the project can be found [here]().
+The entity relationship diagram for the project can be found [here](readme-documents/entity-relationship-diagram/DBMS ER diagram Saguaro Bags.png).
+
+This diagram shows the multiple foreign key relationships between models and the one to one relationship between the User and UserProfile models. There are no many to many relationships. 
 
 ## Agile Methodology
+A GitHub project with issues acting as the Product Backlog was used as the Agile tool for this project. Epics and linked user stories were created as issues and linked to milestones. There were 2 iterations of 2 weeks long with their own kanban boards. The first iteration had a total of 56 story points with 55% being must have user stories (31 points), 29% being should have user stories (16 points) and 16% being could have user stories (9 points). All were completed and moved along the kanban board. The second iteration had a total of 46 story points with 59% (27 points) being must have user stories, 22% being should have user stories (10 points) and 19% being could have user stories (9 points). All were completed and moved along the kanban board. The acceptance criteria for all user stories was tested in the Manual Testing document referenced in the TESTING.md file. 
+
+The Product Backlog, Epics, User Stories and the 2 Iteration Boards can be accessed here: [Saguaro Bags Agile Tool](https://github.com/lhartley870/saguaro-bags/projects?type=beta).
 
 ## Search Engine Optimisation (SEO)
 
