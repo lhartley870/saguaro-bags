@@ -16,27 +16,123 @@ The live project can be viewed [here](https://saguaro-bags.herokuapp.com/).
 
 ## UX (User Experience) 
 ### User Stories
-* 1: 
-* 2: 
-* 3:
-* 4: 
-* 5:
-* 6:
-* 7:
-* 8: 
-* 9: 
-* 10: 
-* 11:
-* 12: 
-* 13: 
-* 14: 
-* 15:
-* 16:
-* 17:
-* 18:
-* 19:
-* 20:
-* 21:
+
+<details><summary>EPIC 01: Viewing and Navigation</summary>
+
+* USER STORY 01: View a List of Bags for Sale
+
+    * As a **site user** I can **view a list of bags for sale** so that **I can choose some to purchase**
+* USER STORY 2: View Individual Bag Details
+
+    * As a **site user** I can **view individual bag details** so that **I can find out more information about the bag to inform my purchasing decision**
+* USER STORY 3: Quickly Identify Bags on Sale and Bags with Free Charms
+
+    * As a **site user** I can **quickly identify which bags are on sale and which bags come with a free charm** so that **I can take advantage of special savings and offers on bags I would like to purchase**
+* USER STORY 4: View Bags by Style
+
+    * As a **site user** I can **view a list of bags by style** so that **I can quickly find the type of bag I want to purchase**
+* USER STORY 5: View Shopping Basket Total
+
+    * As a **site user** I can **view my shopping basket total at any time** so that **I can keep track of what I'm spending and not overspend**
+* USER STORY 6: Easily See the Purpose of the Website
+
+    * As a **site user** I can **easily see the purpose of the website** so that **I clearly understand what the website is selling and the principles of the company selling the items **
+* USER STORY 7: Site Navigation
+
+    * As a **site user** I can **easily navigate the site** so that **I can find exactly what I want quickly**
+* USER STORY 8: Errors
+
+    * As a **site user** I can **see an error response page that is in keeping with the style of the website and can easily navigate back to the home page** so that **I am reassured that I am still navigating within the website and can easily get back to exploring the site**
+</details>
+
+<details><summary>EPIC 02: Searching and Sorting</summary>
+
+* USER STORY 9: Sort the List of Available Bags
+
+    * As a **site user** I can **sort the list of available bags** so that **I can easily see the bags I want according to price, rating, style, size, name and colour**
+* USER STORY 10: Sort a Specific Category of Bag
+
+    * As a **site user** I can **sort a specific category of bag** so that **I can easily see the bags in that category according to price, rating, name, style, size and colour**
+* USER STORY 11: Searching for a Bag
+
+    * As a **site user** I can **search for a bag by name** so that **I can find a specific bag I would like to purchase**
+* USER STORY 12: Review Search Results
+
+    * As a **site user** I can **easily see what I've searched for and the number of results** so that **I can quickly see if the bag that I want is available**
+</details>
+
+<details><summary>EPIC 03: Registration and User Accounts</summary>
+
+* USER STORY 13: User Can Register for an Account
+
+    * As a **site user** I can **register to create an account** so that **I have a personal account, can view my profile and can view my order history**
+* USER STORY 14: Account Login and Logout
+
+    * As a **site user with a registered account** I can **easily log in or out of my account** so that **I can access my personal account information**
+* USER STORY 15: Reset Account Password
+
+    * As a **site user with a registered account** I can **easily reset my account password if I forget it** so that **I can gain access to my account**
+* USER STORY 16: Email Confirmation on Registration
+
+    * As a **site user with a registered account** I can **receive an email confirmation after registering my account** so that **I can verify that my account registration was successful**
+* USER STORY 17: Personal User Profile
+
+    * As a **site user with a registered account** I can **have a personalised user profile** so that **I can view my personal order history and order confirmations and save my delivery information**
+</details>
+
+<details><summary>EPIC 04: Purchasing and Checkout</summary>
+
+* USER STORY 18: Add Items to Shopping Basket
+
+    * As a **site user** I can **easily select the quantity of a bag when adding it to my shopping basket and (if applicable) the free charm option I want** so that **I can choose the items I want to purchase**
+* USER STORY 19: View Items in Basket
+
+    * As a **site user** I can **view the bags (and if applicable charms) in my basket to be purchased** so that **I can see the total cost of my purchase and all of the items I will receive**
+* USER STORY 20: Adjust Shopping Basket Item Quantities
+
+    * As a **site user** I can **increase the quantity of items in my shopping basket or delete items** so that **I can easily make changes to my purchase before checkout**
+* USER STORY 21: Complete Order Through Checkout Page
+
+    * As a **site user** I can **complete my order via the checkout page** so that **I can see my final order details, enter or adjust my delivery address and enter my payment information**
+* USER STORY 22: Secure Payment Process
+
+    * As a **site user** I can **feel reassured that my payment information is safe and secure** so that **I can confidently provide the required information to make a purchase**
+* USER STORY 23: Order Confirmation After Checkout
+
+    * As a **site user** I can **view an order confirmation after checkout** so that **I can check what I ordered, total costs and see that the order has been successfully completed**
+* USER STORY 24: Email Confirmation After Checkout
+
+    *As a **site user** I can **receive an email confirmation after completing a purchase** so that **I can keep the confirmation of what I've purchased for my records**
+</details>
+
+<details><summary>EPIC 05: Admin and Store Management</summary>
+
+* USER STORY 25: Add a Bag
+
+    * As a **site admin** I can **add a bag** so that **I can add new items to my store**
+* USER STORY 26: Edit/Update a Bag
+
+    * As a **site admin** I can **edit/update a bag product** so that **I can change the bag name, image, size, colour, price and other criteria**
+* USER STORY 27: Delete a Bag
+
+    * As a **site admin** I can **delete a bag** so that **I can remove bags that are no longer for sale**
+</details>
+
+<details><summary>EPIC 06: SEO and Web Marketing</summary>
+
+* USER STORY 28: Newsletter Subscription
+
+    * As a **site user** I can **provide my email address to subscribe to newsletters** so that **I can keep up to date with the store's latest news**
+* USER STORY 29: View Facebook Page
+
+    * As a **site user** I can **visit the store's facebook page** so that **I can keep up with the site's latest news**
+* USER STORY 30: SEO
+
+    * As a **site user** I can **find the store site through searches** so that **I can easily access the site**
+* USER STORY 31: Privacy Policy
+
+    * As a **site user** I can **read the company's privacy policy** so that **I can be confident that the company is complying with GDPR laws**
+</details>
 
 ## Features
 ### Existing Features
@@ -77,6 +173,15 @@ The colour scheme used on the site is as follows:
 
 Colour Name | Hexadecimal Code
 ------------| ---------
+White | #FFFFFF
+Spanish Viridian | #00855D
+Green Sheen | #6DBAA1
+Mexican Pink | #E4117A
+Toolbox | #6C6EC4
+Space Cadet | #1F2551
+Rusty Red | #DC3545
+Teal Deer | #9BDEAC
+Charm Pink | #E199AE
 
 
 ### Entity Relationship Diagram
