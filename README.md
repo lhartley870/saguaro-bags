@@ -138,13 +138,95 @@ The live project can be viewed [here](https://saguaro-bags.herokuapp.com/).
 ### Existing Features
 * Navigation Bar
 
-* 
+    The navigation bar has the same appearance across all pages of the application and allows for easy user navigation. 
+    
+    On medium sized screens it contains the store name logo, Saguaro being a type of cactus and fitting in with the cactus theme. On larger screens it also has a cactus logo. Either of these can be clicked on to take the user back to the Home page which is a predictable and standard website convention. On larger screens the main navigation links appear horizontally under the full sized search bar. On smaller screens the main navigation links collapse into a burger menu and the search bar collapses into a magnifying glass logo. The burger menu also has a Home dropdown so the user can get back the Home page. The user can then click on the burger icon to see the stacked navigation links and can click on the magnifying glass to see the full search bar.
 
-* User Authentication
+    A user who has not logged in to the site can see all the main navigation links relating to the bags but can only navigate to the register and login pages under 'My Account'. Any logged in user cannot see the login or register links but can see logout and my profile links. Admin users can in addition see Bag Management and Admin Panel links.
 
-* 
+    A pink handbag icon appears next to all of the first tier main navigation links (relating to the bags) when a user hovers over or focusses on them. When a user hovers over or focusses on second tier navigation links, a purple tag icon appears next to those links.
 
-* 
+    The navbar is fixed on larger screens to allow for easy navigation.
+
+    ![Large screen view of navbar](readme-documents/feature-screenshots/large-screen-navbar.png)
+    ![Medium screen view of navbar](readme-documents/feature-screenshots/medium-screen-navbar.png)
+    ![Mobile screen view of navbar](readme-documents/feature-screenshots/mobile-screen-navbar.png)
+
+* Indicator of User Being Logged In
+
+    The user can easily see at a glance whether or not they are logged in. If a user is not logged in, the user icon does not have a tick and 'My Account' appears underneath the icon. Logged in users can see a user icon with a tick and their username underneath. Usernames are truncated to 6 characters (plus …) on screens up to 991px wide and to 14 characters (plus …) on screens of 992px wide and larger. This keeps the navbar looking neat. 
+
+    ![Large screen view of navbar non-admin user logged in](readme-documents/feature-screenshots/large-navbar-non-admin-user.png)
+    ![Mobile screen view of navbar admin user logged in](readme-documents/feature-screenshots/mobile-navbar-admin-user.png)
+
+* Shopping Basket Link
+
+    The shopping basket link is a green basket when empty. When a user hovers over or focusses on the icon, it changes to a purple trolley, providing a visual indication to users for accessibility purposes. The basket turns pink when the user has something in their shopping basket, so they can tell at a glance, making the shopping experience easier.
+
+    ![Basket icon when nothing is in the basket](readme-documents/feature-screenshots/empty-basket.png)
+    ![Trolley icon when user is hovering/focussing on the basket](readme-documents/feature-screenshots/hover-focus-trolley.png)
+    ![Basket icon when something is in the basket](readme-documents/feature-screenshots/full-basket.png)
+
+* Home Page & Store Ethos
+    
+    The Home page sets the scene for the store. The user is greeted with lots of cactus imagery relevant to the cactus leather theme of the store and a strong colour theme mimicking the green colour of a cactus and the bright pink colour of its flowers. There is a cactus favicon logo and, on larger screens, a cactus logo next to the store name. There is a big hero close up image of cactus leaves in keeping with the colour scheme. The user can immediately see what the store is selling from the hero image cover text and there is a call to action to Shop the Collection.
+
+    Further down the page are three brief, easily digestable and informative pargraphs highlighting the benefits of cactus leather, the affordability of bags on the site and some educational information about how cactus leather is made. This helps the user understand what sets this store apart from other leather bag shops and the benefits to them of owning a cactus leather bag. It appeals to the current vegan and eco-conscious culture. The paragraphs each have a relevant image in an attractive circular border.
+
+    ![Home page hero image](readme-documents/feature-screenshots/home-page-hero.png)
+    ![Home page information sections](readme-documents/feature-screenshots/home-page-info.png)
+
+* View Bags
+
+    The user can easily see all of the bags for sale on one page by clicking the All Bags option in the main navigation bar and then the next All Bags dropdown. Each bag has an image, its price, style, size, colour and rating shown. Additionally if the bag is on sale, the user can easily see this as the original price will be struck through and the reduced price shown. Any bags that have a free charm option also have a pink banner in the top left of the image. The bags are shown stacked on mobile screens, 2 per row on medium screens and 3 per row on larger screens. All bag images have the same height, keeping the rows looking neat and easy to scan through. There is a 'back to top' button that quickly and easily takes the user back to the top of the page. This button sits on top of anything underneath it so the user can see it at all times. 
+
+    ![All bags page on medium screen](readme-documents/feature-screenshots/all-bags-pg-med-screen.png)
+
+* Filter, Search and Sorting Options
+
+    The navigation bar allows users to filter the bags they can see by style so that they can see just the style of bag they are interested in e.g. backpacks. Additionally, the user can filter the bags to just those with special offers (on sale and/or with a free charm option) or just those on sale or just those with a free charm option. 
+
+    ![Bags page showing just handbags](readme-documents/feature-screenshots/handbags-only.png)
+    ![Bags page just showing sale bags](readme-documents/feature-screenshots/sale-bags-only.png)
+
+    The user can also search the bag names to restrict the bags they see to just those containing that search term. The number of items returned and the search term used are also displayed to the user. 
+
+    ![Bags page with a search result](readme-documents/feature-screenshots/search-results.png)
+
+    The user can also order all the bags by price (low to high), rating (high to low), size (S-L), style (A-Z) or colour (A-Z) using the options on the All Bags navigation dropdown. Also, the user can sort whatever bags are currently showing on the page by: 
+
+    * Price (low to high)
+    * Price (high to low)
+    * Style (A-Z)
+    * Style (Z-A)
+    * Colour (A-Z)
+    * Colour (Z-A)
+    * Rating (low to high)
+    * Rating (high to low)
+    * Bag name (A-Z)
+    * Bag name (Z-A)
+    * Size (S-L)
+    * Size (L-S)
+
+    All of these features assist the user to quickly find what they want on the site. 
+
+    ![Bags page showing the ordering options](readme-documents/feature-screenshots/bag-ordering-options.png)
+
+* Print Details Page
+
+    The user can click on a bag to navigate to the details page which shows the user the bag image, name, sku, price, style, size, colour and rating. For bags without a charm option, the user can adjust the quantity easily using the plus and minus buttons before adding the bag to their basket. 
+
+    ![Bag details page for a bag without a charm option](readme-documents/feature-screenshots/bag-detail-no-charm.png)
+
+    For bags with a charm option, the user is shown all of the above details together with 3 radio button options for a free charm. Each charm has a small image and a name. The user can choose to select a charm, or if they do not want one, they can add the bag to their basket without a charm.
+
+    ![Bag details page for a bag with a charm option](readme-documents/feature-screenshots/bag-detail-with-charm.png)
+
+* Custom 404 and 500 Error Pages
+
+    To keep consistent styling across the site, custom pages are displayed for any 404 or 500 HTTP response codes. If something goes wrong, the user is assured that they are still on the site and can easily navigate back to the home page.
+
+    ![Custom 404 error page](readme-documents/feature-screenshots/error-404-pg.png)
 
 ### Further Feature Ideas
 * At the moment, the reviews for bags relies on the store owners manually collecting ratings (between 1 and 5) and entering the average score in the database. It would be good to have a system where registered users could leave ratings and reviews for items purchased. There would be a 'Leave a Review' button on each bag detail page only visible to registered users. If the user clicked on the button, they would only be able to proceed to the review page after a check was performed to make sure that user had purchased that bag. The form would be prepopulated with the user's name and purchase date, but the user could adjust their name if they wished for privacy reasons. The user would have to leave a rating between 1 and 5 (inclusive). If the user chose to leave a rating only and not a written review, their rating would appear immediately on the website. It would also be used to re-calculate the overall rating for the bag. If the user additionally wanted to leave a written review, the review would consist of a title and a body and the rating and review would require approval by the store admin before appearing on the site to filter out any inappropriate language. Again, once approved, the rating would be taken into account in updating the bag's overall rating. There would also be a chance to win a £100 store voucher by leaving a rating or review to encourage user registration.
