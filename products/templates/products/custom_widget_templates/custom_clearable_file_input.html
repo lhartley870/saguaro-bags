@@ -2,7 +2,7 @@
     {% if widget.is_initial %}
     <p>{{ widget.initial_text }}:</p>
     <a href="{{ widget.value.url }}">
-        <img class="rounded shadow-sm" src="{{ widget.value.url }}">
+        <img class="rounded shadow-sm" src="{{ widget.value.url }}" alt="{{ widget.value.name }}">
     </a>
     {% if not widget.required %}
     <div class="form-check mt-2" id="select-image">
