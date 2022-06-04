@@ -37,3 +37,10 @@
     </div>
 </div>
 {% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script>
+        $('.cactus-logo-link').remove();
+    </script>
+{% endblock %}
