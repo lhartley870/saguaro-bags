@@ -306,11 +306,174 @@ The live project can be viewed [here](https://saguaro-bags.herokuapp.com/).
 
     Being able to manage bags on the site itself means that admin users do not have to rely on the admin panel for this.
 
-* SEO
+* Site Engine Optimisation(SEO)
+    The following steps were taken to address SEO:
 
-* Marketing
+    * Initial list of short-tail keywords:
 
-* GDPR & Privacy
+        * Vegan leather
+        * Vegan leather bags
+        * Cactus leather
+        * Cactus leather bags
+        * Eco leather 
+        * Eco leather bags
+        * Sustainable bags
+
+    * Additional keywords found by Google searching the initial list:
+
+        * Keyword Searched: Vegan leather 
+            * Vegan leather made from plants
+            * Vegan leather bags
+            * Vegan leather handbags
+            * Vegan leather made from
+        
+        * Keyword Searched: Vegan leather bags
+            * Affordable vegan handbags uk
+            * Vegan leather handbags uk
+            * Vegan leather bags uk
+            * Vegan leather bags cactus
+            * Vegan leather bags designer
+
+        * Keyword Searched: Cactus leather
+            * Where to buy cactus leather
+            * Cactus leather uk
+            * Cactus leather fabric
+            * Is cactus leather biodegradable
+            * Desserto cactus leather
+            * Cactus leather manufacturers
+
+        * Keyword Searched: Cactus leather bags
+            * Vegan cactus bags
+            * Handbags made from cactus
+            * Cactus leather weekend bag
+            * Where to buy cactus leather
+
+        * Keyword Searched: Eco leather
+            * Eco leather vs real leather
+            * Eco leather vs faux leather
+            * Does eco leather last
+
+        * Keyword Searched: Eco leather bags
+            * Sustainable bags uk
+            * Sustainable bags
+            * Sustainable handbag brands
+            * Sustainable tote bags
+
+        * Keyword Searched: Sustainable bags
+            * Sustainable bags uk
+            * Sustainable bag brands
+
+        * Keyword Searched: Sustainable handbags
+            * Sustainable handbags uk
+            * Sustainable bag brands
+            * Sustainable leather bags
+            * Vegan sustainable handbags 
+
+    * Considering relevance
+        * List of keywords narrowed down to exclude the following:
+            * The website probably doesn't meet the need behind the following keyword searches as they appear to be more to do with people wanting to buy the cactus leather itself, possible for manufacturing their own products:
+                * Where to buy cactus leather
+                * Cactus leather fabric
+                * Cactus leather manufacturers
+            * While the website does mention that cactus leather is partially biodegradable, the site's purpose does not include a detailed account of the properties of cactus leather:
+                * Is cactus leather biodegradable
+                * Does eco leather last
+            * As the site offers a variety of bags, it is perhaps not that helpful to use keywords for specific bag types:
+                * Cactus leather weekend bag
+                * Sustainable tote bags
+            * These keywords are going to be too generic:
+                * Vegan leather made from plants
+                * Cactus leather uk
+                * Vegan leather made from
+                * Eco leather vs real leather
+                * Eco leather vs faux leather
+                * Sustainable bags uk
+                * Sustainable bags
+                * Sustainable handbag brands
+                * Sustainable bags uk
+                * Sustainable bag brands
+                * Sustainable handbags uk
+                * Sustainable bag brands
+                
+        * Desserto cactus leather has been left in as a relevant keywords because the home page specifically mentions them as a cactus leather manufacturer and includes a link to their website.
+
+    * Considering authority
+        * Saguaro bags can speak from a place of authority about the following keywords as it is a store selling vegan cactus leather designer bags at an affordable price:
+            * Vegan leather bags
+            * Vegan leather handbags
+            * Affordable vegan handbags uk
+            * Vegan leather handbags uk
+            * Vegan leather bags uk
+            * Vegan leather bags cactus
+            * Vegan leather bags designer        
+            * Vegan cactus bags
+            * Handbags made from cactus
+            * Sustainable leather bags
+            * Vegan sustainable handbags 
+        * Also, being as the site includes information about Desserto's cactus leather and a link to their home page, it can also speak from a place of authority about Desserto:
+            * Desserto cactus leather
+            
+    * Considering volume
+        * Using the [Wordtracker](https://www.wordtracker.com/) website for searching a number of the above keywords, the following helpful results were found where the balance between a high volume of searches and a reasonable volume of competition was good:
+
+            Keyword | Volume | Competition
+            ------------| --------- | ---------
+            Vegan designer bags | 1,650 | 5.63
+            Cactus leather bag | 383 | -
+            Cactus leather handbags | 114 | -
+            Desserto leather | 619 | -
+
+    * The final keywords list chosen is:
+        * Vegan leather bags
+        * Vegan designer bags
+        * Affordable vegan handbags uk
+        * Vegan leather bags cactus
+        * Cactus leather
+        * Cactus leather bag
+        * Cactus leather handbags
+        * Desserto cactus leather
+        * Desserto leather
+        * Sustainable leather bags
+                
+    * The keywords were implemented in the site as follows:
+        * Putting h1 and h2 tags in the overlay to the home page hero image and using keywords within these tags.
+        * Using keywords in the home page information section headings and in strong tags within the information paragraphs themselves.
+        * Adding an external link to the home page to a Guardian article on living more sustainably.
+        * Including a footer link to a vegan charity and using the word vegan in the link text and aria-label.
+        * Including a link to Desserto's homepage, a leading manufacturer of cactus leather who rank well in keyword searches.
+        * Including all the keywords in the meta keywords tag content attribute.
+        * All of the alt attributes for the 50 bags being sold on the site include the words 'cactus leather'.
+
+    * Ideally I would have liked to refer to Desserto as a partner on the home page, but being as the site is not a real e-commerce site and has not partnered with Desserto, I have refrained from doing this. However, were this a real site that had partnered with Desserto, then I would include further references to them to improve the SEO.
+
+    * sitemap.xml and robots.txt files have also been added to the project to aid search engine crawling.
+
+* Email Marketing - Newsletter
+
+    Any user to the site is able to subscribe to the store's newsletter by joining a mailing list. The mailing list is managed by [Mailchimp](https://mailchimp.com/en-gb/). 
+
+    The user only has to provide an email address. The Mailchimp form has been styled in line with the rest of the site and appears in the footer of every page.
+
+    ![Mailchimp newsletter signup form in the footer](readme-documents/feature-screenshots/newsletter-signup-form.png)
+
+    ![Mailchimp subscriber list](readme-documents/feature-screenshots/mailchimp-subscribers.png)
+
+* Organic Social Media Marketing - Facebook Page
+
+    Saguaro Bags also has a ![Facebook page](https://www.facebook.com/Saguaro-Bags-107967631934580/?ref=pages_you_manage) to reach customers. The page includes a link to the website, contact details, imagery from the site and details about the type of business. 
+
+    ![Part 1 of the Saguaro Bags Facebook page](readme-documents/feature-screenshots/facebook-page-1.png)
+    ![Part 2 of the Saguaro Bags Facebook page](readme-documents/feature-screenshots/facebook-page-2.png)
+    ![Part 3 of the Saguaro Bags Facebook page](readme-documents/feature-screenshots/facebook-page-3.png)
+    ![Part 4 of the Saguaro Bags Facebook page](readme-documents/feature-screenshots/facebook-page-4.png)
+
+* Privacy Policy
+
+    To reassure users that Saguaro Bags takes their privacy seriously and is compliant with GDPR requirements, a privacy policy was generated using [Privacy Policy Generator](https://www.privacypolicygenerator.info/). The html provided was then pasted into a privacy page in the project. There is a link to the privacy page in the footer on each page of the site.
+
+    ![Privacy policy page footer link](readme-documents/feature-screenshots/privacy-policy-link.png)
+
+    ![Privacy policy page](readme-documents/feature-screenshots/privacy-policy-page.png)
 
 ### Further Feature Ideas
 * At the moment, the reviews for bags relies on the store owners manually collecting ratings (between 1 and 5) and entering the average score in the database. It would be good to have a system where registered users could leave ratings and reviews for items purchased. There would be a 'Leave a Review' button on each bag detail page only visible to registered users. If the user clicked on the button, they would only be able to proceed to the review page after a check was performed to make sure that user had purchased that bag. The form would be prepopulated with the user's name and purchase date, but the user could adjust their name if they wished for privacy reasons. The user would have to leave a rating between 1 and 5 (inclusive). If the user chose to leave a rating only and not a written review, their rating would appear immediately on the website. It would also be used to re-calculate the overall rating for the bag. If the user additionally wanted to leave a written review, the review would consist of a title and a body and the rating and review would require approval by the store admin before appearing on the site to filter out any inappropriate language. Again, once approved, the rating would be taken into account in updating the bag's overall rating. There would also be a chance to win a £100 store voucher by leaving a rating or review to encourage user registration.
@@ -323,15 +486,17 @@ I used [Balsamiq](https://www.balsamiq.com) to create Wireframe mock-ups for lap
 
 ## Design
 
-### Page Designs
-
 ### Fonts
 
 I used [Google Fonts](https://fonts.google.com/) for the website fonts. The selected fonts and their fallbacks, should they not import into the site correctly, are as follows:
 
 Selected Font | Fallback Font
 ------------- | --------------
+Montez | Cursive
+Oregano | Cursive
+Roboto | Sans serif
 
+I chose the Montez and Oregano fonts as they have a retail look and the Montez font creates a nice logo for the store name. Roboto is a clear and easily readable font for use throughout the majority of the website.
 
 ### Colours
 
@@ -349,6 +514,7 @@ Rusty Red | #DC3545
 Teal Deer | #9BDEAC
 Charm Pink | #E199AE
 
+The Mexican pink colour was taken from a cactus flower photo using [Eye Dropper](https://eyedropper.org/). The green and purple colours were found by entering the Mexican Pink into [ColorSpace](https://mycolor.space/) and seeing the colour palettes it generated. The initial colours were darkened to ensure effective contrast with the white background. The Green Sheen, Teal Deer and Charm Pink were lighter colours taken from the colour palettes to complement the main bright colours. The Space Cadet was a navy blue from one of the palettes significantly darkened for effective link colour contrast with the white background and surrounding text colours.
 
 ### Entity Relationship Diagram
 
@@ -360,145 +526,6 @@ This diagram shows the multiple foreign key relationships between models and the
 A GitHub project with issues acting as the Product Backlog was used as the Agile tool for this project. Epics and linked user stories were created as issues and linked to milestones. There were 2 iterations of 2 weeks long with their own kanban boards. The first iteration had a total of 56 story points with 55% being must have user stories (31 points), 29% being should have user stories (16 points) and 16% being could have user stories (9 points). All were completed and moved along the kanban board. The second iteration had a total of 46 story points with 59% (27 points) being must have user stories, 22% being should have user stories (10 points) and 19% being could have user stories (9 points). All were completed and moved along the kanban board. The acceptance criteria for all user stories was tested in the Manual Testing document referenced in the TESTING.md file. 
 
 The Product Backlog, Epics, User Stories and the 2 Iteration Boards can be accessed here: [Saguaro Bags Agile Tool](https://github.com/lhartley870/saguaro-bags/projects?type=beta).
-
-## Search Engine Optimisation (SEO)
-
-* Initial list of short-tail keywords:
-
-    * Vegan leather
-    * Vegan leather bags
-    * Cactus leather
-    * Cactus leather bags
-    * Eco leather 
-    * Eco leather bags
-    * Sustainable bags
-
-* Additional keywords found by Google searching the initial list:
-
-    * Keyword Searched: Vegan leather 
-        * Vegan leather made from plants
-        * Vegan leather bags
-        * Vegan leather handbags
-        * Vegan leather made from
-    
-    * Keyword Searched: Vegan leather bags
-        * Affordable vegan handbags uk
-        * Vegan leather handbags uk
-        * Vegan leather bags uk
-        * Vegan leather bags cactus
-        * Vegan leather bags designer
-
-    * Keyword Searched: Cactus leather
-        * Where to buy cactus leather
-        * Cactus leather uk
-        * Cactus leather fabric
-        * Is cactus leather biodegradable
-        * Desserto cactus leather
-        * Cactus leather manufacturers
-
-    * Keyword Searched: Cactus leather bags
-        * Vegan cactus bags
-        * Handbags made from cactus
-        * Cactus leather weekend bag
-        * Where to buy cactus leather
-
-    * Keyword Searched: Eco leather
-        * Eco leather vs real leather
-        * Eco leather vs faux leather
-        * Does eco leather last
-
-    * Keyword Searched: Eco leather bags
-        * Sustainable bags uk
-        * Sustainable bags
-        * Sustainable handbag brands
-        * Sustainable tote bags
-
-    * Keyword Searched: Sustainable bags
-        * Sustainable bags uk
-        * Sustainable bag brands
-
-    * Keyword Searched: Sustainable handbags
-        * Sustainable handbags uk
-        * Sustainable bag brands
-        * Sustainable leather bags
-        * Vegan sustainable handbags 
-
-* Considering relevance
-    * List of keywords narrowed down to exclude the following:
-        * The website probably doesn't meet the need behind the following keyword searches as they appear to be more to do with people wanting to buy the cactus leather itself, possible for manufacturing their own products:
-            * Where to buy cactus leather
-            * Cactus leather fabric
-            * Cactus leather manufacturers
-        * While the website does mention that cactus leather is partially biodegradable, the site's purpose does not include a detailed account of the properties of cactus leather:
-            * Is cactus leather biodegradable
-            * Does eco leather last
-        * As the site offers a variety of bags, it is perhaps not that helpful to use keywords for specific bag types:
-            * Cactus leather weekend bag
-            * Sustainable tote bags
-        * These keywords are going to be too generic:
-            * Vegan leather made from plants
-            * Cactus leather uk
-            * Vegan leather made from
-            * Eco leather vs real leather
-            * Eco leather vs faux leather
-            * Sustainable bags uk
-            * Sustainable bags
-            * Sustainable handbag brands
-            * Sustainable bags uk
-            * Sustainable bag brands
-            * Sustainable handbags uk
-            * Sustainable bag brands
-            
-    * Desserto cactus leather has been left in as a relevant keywords because the home page specifically mentions them as a cactus leather manufacturer and includes a link to their website.
-
-* Considering authority
-    * Saguaro bags can speak from a place of authority about the following keywords as it is a store selling vegan cactus leather designer bags at an affordable price:
-        * Vegan leather bags
-        * Vegan leather handbags
-        * Affordable vegan handbags uk
-        * Vegan leather handbags uk
-        * Vegan leather bags uk
-        * Vegan leather bags cactus
-        * Vegan leather bags designer        
-        * Vegan cactus bags
-        * Handbags made from cactus
-        * Sustainable leather bags
-        * Vegan sustainable handbags 
-    * Also, being as the site includes information about Desserto's cactus leather and a link to their home page, it can also speak from a place of authority about Desserto:
-        * Desserto cactus leather
-        
-* Considering volume
-    * Using the [Wordtracker](https://www.wordtracker.com/) website for searching a number of the above keywords, the following helpful results were found where the balance between a high volume of searches and a reasonable volume of competition was good:
-
-        Keyword | Volume | Competition
-        ------------| --------- | ---------
-        Vegan designer bags | 1,650 | 5.63
-        Cactus leather bag | 383 | -
-        Cactus leather handbags | 114 | -
-        Desserto leather | 619 | -
-
-* The final keywords list chosen is:
-    * Vegan leather bags
-    * Vegan designer bags
-    * Affordable vegan handbags uk
-    * Vegan leather bags cactus
-    * Cactus leather
-    * Cactus leather bag
-    * Cactus leather handbags
-    * Desserto cactus leather
-    * Desserto leather
-    * Sustainable leather bags
-              
-* The keywords were implemented in the site as follows:
-    * Putting h1 and h2 tags in the overlay to the home page hero image and using keywords within these tags.
-    * Using keywords in the home page information section headings and in strong tags within the information paragraphs themselves.
-    * Adding an external link to the home page to a Guardian article on living more sustainably.
-    * Including a footer link to a vegan charity and using the word vegan in the link text and aria-label.
-    * Including a link to Desserto's homepage, a leading manufacturer of cactus leather who rank well in keyword searches.
-    * Including all the keywords in the meta keywords tag content attribute.
-    * All of the alt attributes for the 50 bags being sold on the site include the words 'cactus leather'.
-
-* Ideally I would have liked to refer to Desserto as a partner on the home page, but being as the site is not a real e-commerce site and has not partnered with Desserto, I have refrained from doing this. However, were this a real site that had partnered with Desserto, then I would include further references to them to improve the SEO.
     
 ## Technologies Used
 
