@@ -228,6 +228,90 @@ The live project can be viewed [here](https://saguaro-bags.herokuapp.com/).
 
     ![Custom 404 error page](readme-documents/feature-screenshots/error-404-pg.png)
 
+* Toasts
+
+    Toasts provide user interaction throughout the application so the user can be assured that their actions have been acknowledged by the site. The toasts are also important in relaying any errors to the user as well as success messages. 
+
+    For example, logging in and out, adding to or removing items from the shopping basket and completing a purchase all relay toasts to the user. 
+
+    ![Login success toast](readme-documents/feature-screenshots/login-success-toast.png)
+    ![Add to shopping basket success toast](readme-documents/feature-screenshots/add-to-basket-toast.png)
+    ![Access denied error toast](readme-documents/feature-screenshots/error-toast.png)
+
+* User Authentication
+
+     A user coming to the site for the first time can access the Register page via the navigation bar. The user needs to provide their email address, a username, their first and last names and a password to create an account. The email, first name and last name are required to contact a user e.g. to confirm purchases, and the first and last names are required for the checkout form. If the email address or username entered are already taken, the user will receive an error message. The user is asked to verify their email address to activate their account.
+
+    ![View of Register page](readme-documents/feature-screenshots/register-page.png)
+
+    Once a user has registered they can log in via the login page with their username or email and password.
+
+    ![View of Login page](readme-documents/feature-screenshots/login-page.png)
+
+    When a user wants to log out they simply navigate to the logout page where they are asked to confirm that they are sure they would like to log out. If the user clicks that they are sure, they are logged out.
+
+    ![View of Logout page](readme-documents/feature-screenshots/logout-page.png)
+
+* Registered User Privileges
+
+    If a registered user is logged in they can enter their default delivery information in their profile. These delivery details are then used to pre-populate the checkout form, allowing the user to check out much quicker. If the user wants to change their default delivery information, they can update it on the 'My Profile' page or they can enter their new delivery details on the checkout page and check the checkbox confirming that they would like to save those details to their profile. 
+
+    In addition, once a logged in user has made a purchase, their previous orders appear in the 'My Profile' page. The user can click on any of the order number links to find out the full confirmation details for that order. The checkout success page has a toast to confirm to the user that the page they are looking at relates to an order in the past. This is of benefit to the user because they can quickly see all of the key information for past orders on the 'My Profile' page and can quickly find out the full details for an order via the order number link. This saves the user having to scroll back through emails to find out past order details. 
+
+    ![My Profile page with default delivery information and past orders](readme-documents/feature-screenshots/profile-page.png)
+    ![Checkout success page showing a past order's details](readme-documents/feature-screenshots/past-order-confirmation-page.png)
+
+* Shopping Basket
+
+    Whether or not a user is a registered user, they can purchase bags on the site. The shopping basket icon is in the top right of the screen. When hovered over or focussed on, the basket turns to a trolley. Users are familiar with a 'shopping basket' or 'shopping trolley' reprenting their shopping cart online. As the site is selling bags, the term shopping basket is used throughout the site and a bag icon is not used to avoid confusion. 
+
+    As a user adds items to their shopping basket, the basket turns from green to pink and the basket total is udpated underneath the basket icon. By clicking on the basket, the user is taken to the Shopping Basket page where the user can update the quantity of each bag or bag/charm combination or delete a bag or bag/charm combination from the basket. The user also receives a toast every time they add to, edit or delete an item from their basket. 
+
+    The user can choose to navigate to the Checkout page straight from an add/update/delete basket toast by clicking the Checkout button or by clicking the Checkout button on the Shopping Basket page. 
+
+    The toasts relating to the user's basket and the Shopping Basket page, both let the user know how much more they will need to spend to get free delivery if they are below the free delivery threshold. 
+
+    ![View of a bag detail page with a toast confirming the user has added a bag to their basket](readme-documents/feature-screenshots/add-bag-toast.png)
+    ![View of the Shopping Basket page](readme-documents/feature-screenshots/basket-page.png)
+
+* Checkout
+
+    To purchase the items in their basket, the user must navigate to the Checkout page. They can enter their contact and delivery details, or, if the user is registered and has already saved their delivery details to their profile, the checkout form is prepopulated. 
+
+    Payments are handled by Stripe and so are secure. Webhooks ensure that purchases are completed, even if an error were to occur, e.g. the user closing the browser window before the checkout success page is shown. 
+
+    ![View of the checkout page](readme-documents/feature-screenshots/checkout-page.png)
+
+    ![View of Stripe webhooks](readme-documents/feature-screenshots/webhooks.png)
+
+    As long as there are no errors, once the user's checkout has completed, they are taken to an 'Order Successful' page showing the details of their order.
+
+    ![View of checkout success page](readme-documents/feature-screenshots/order-successful-page.png)
+
+    As the webhook handler creates an order if the checkout view has not, the user should receive an order confirmation email for a successful checkout even if they close the browser before the checkout success page is displayed.
+
+    ![Email confirmation of order](readme-documents/feature-screenshots/order-confirmation-email.png)
+
+* Bag Management
+
+    Only site admins are able to manage the bags for sale on the site. They can add new bags by navigating to the Bag Management dropdown from their user icon. The admin can fill out the form details to create a new bag. Once created the admin is taken to the bag's detail page and a toast confirms the bag has been successfully created. If the admin searches for the bag in the search bar it should appear in the results. If the admin tries to add a bag with the same name as another bag on the site or the same sku as another bag on the site, the admin will be prevented from doing so and an error message will appear underneath the relevant field. The check of the name and sku against those for existing bags ignores any uppercase/lowercase and spaces to ensure truly unique details. 
+
+    ![View of add a bag page with errors](readme-documents/feature-screenshots/add-bag-page.png)
+
+    Admins can also edit bags by navigating to the relevant bag detail page and clicking the 'edit' link. The admin is then taken to the edit form which will show any current image for that bag in a thumbnail. The admin can edit the bag details and will then be taken to the bag detail page showing the updated details together with an edit success toast.
+
+    ![View of edit a bag page](readme-documents/feature-screenshots/edit-bag-page.png)
+
+    In order to delete a bag, the admin can navigate to the relevant bag's bag detail page and click the 'delete' link. They will then be taken to the all bags page with a success toast confirming the bag has been deleted. 
+
+    Being able to manage bags on the site itself means that admin users do not have to rely on the admin panel for this.
+
+* SEO
+
+* Marketing
+
+* GDPR & Privacy
+
 ### Further Feature Ideas
 * At the moment, the reviews for bags relies on the store owners manually collecting ratings (between 1 and 5) and entering the average score in the database. It would be good to have a system where registered users could leave ratings and reviews for items purchased. There would be a 'Leave a Review' button on each bag detail page only visible to registered users. If the user clicked on the button, they would only be able to proceed to the review page after a check was performed to make sure that user had purchased that bag. The form would be prepopulated with the user's name and purchase date, but the user could adjust their name if they wished for privacy reasons. The user would have to leave a rating between 1 and 5 (inclusive). If the user chose to leave a rating only and not a written review, their rating would appear immediately on the website. It would also be used to re-calculate the overall rating for the bag. If the user additionally wanted to leave a written review, the review would consist of a title and a body and the rating and review would require approval by the store admin before appearing on the site to filter out any inappropriate language. Again, once approved, the rating would be taken into account in updating the bag's overall rating. There would also be a chance to win a £100 store voucher by leaving a rating or review to encourage user registration.
 * It would also be good if new registered users received a discount code in their signup email that they could redeeem against a first purchase. The code would be added on the checkout page and the appropriate percentage would be deducted from the user's first purchase total cost (excluding delivery). The code could also appear in their user profile. A check would need to be made to ensure that once used, the user could not used the same discount code again. Also, once the user used the discount code, it would need to disappear from their user profile. 
