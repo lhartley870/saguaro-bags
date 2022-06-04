@@ -162,7 +162,26 @@ The manual testing results can be found [here](readme-documents/manual-testing-r
 
 The foreground text colours and their background colours were tested using the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/). The following combinations were tested and all received at least a WCAG AA pass. The results are as follows: 
 
-* 
+* The Spanish Viridian colour (#00855D) was tested against the white colour (#FFFFFF):
+    * [results](readme-documents/colour-contrast-results/contrast-spanish-veridian-against-white.png) 
+* The white colour (#FFFFFF) was tested against the Spanish Viridian colour (#00855D):
+    * [results](readme-documents/colour-contrast-results/contrast-white-against-spanish-veridian.png) 
+* The Mexican pink colour (#E4117A) was tested against the white colour (#FFFFFF):
+    * [results](readme-documents/colour-contrast-results/contrast-mexican-pink-against-white.png) 
+* The white colour (#FFFFFF) was tested against the Mexican pink colour (#E4117A):
+    * [results](readme-documents/colour-contrast-results/contrast-white-against-mexican-pink.png) 
+* The Toolbox colour (#6C6EC4) was tested against the white colour (#FFFFFF):
+    * [results](readme-documents/colour-contrast-results/contrast-toolbox-against-white.png) 
+* The white colour (#FFFFFF) was tested against the Toolbox colour (#6C6EC4):
+    * [results](readme-documents/colour-contrast-results/contrast-white-against-toolbox.png) 
+* The Rusty Red colour (#DC3545) used by Bootstrap for errors was tested against white (#FFFFFF):
+    * [results](readme-documents/colour-contrast-results/contrast-rusty-red-against-white.png) 
+* The allauth error messages of Antique Ruby (#842029) were tested against their background of Pale Pink (#F8D7DA):
+    * [results](readme-documents/colour-contrast-results/contrast-antique-ruby-against-pale-pink.png) 
+* The Space Cadet link colour (#1F2551) was tested against the white background colour (#FFFFFF) and each of the text colours:
+    * [results for body text colour Spanish Viridian](readme-documents/colour-contrast-results/contrast-link-colour-against-spanish-viridian-body.png)
+    * [results for body text colour Mexican Pink](readme-documents/colour-contrast-results/contrast-link-colour-against-mexican-pink-body.png)
+    * [results for body text colour Toolbox](readme-documents/colour-contrast-results/contrast-link-colour-against-toolbox-body.png)
 
 ## Fixed Bugs
 1. Initially, clicking on the basket in the hover/focus state (when it has turned into a purple trolley) was not actually taking the user to the basket page, so the link was broken. This was because the whole i element was being added and removed with JavaScript in a separate javascript file linked to base.html via a script tag. This issue was resolved by leaving the i element in the html page and just changing its class in the JavaScript file to change it from a basket to a trolley when being hovered over/focussed on and back to a basket when not being hovered over/focussed on.
