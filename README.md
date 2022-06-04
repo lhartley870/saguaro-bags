@@ -1,8 +1,18 @@
 # Saguaro Bags
 
-The live project can be viewed [here](). 
+Saguaro Bags is a business to consumer e-commerce application selling luxury vegan cactus leather women's bags. The site sells to members of the public. The site presents users with a colourful cactus theme and aims to entice users back with a strong sustainable ethos, a user profile for registered users that allows them to view previous orders and save delivery details, a newsletter, facebook posts, sale items and items that come with a free charm.
 
-![Responsive view of live website Home page]()
+The site operates as a retail store. Users can view the bags for sale, search for a particular bag name, filter bags by category or special offer type and place the bags in a particular order accordingly to various criteria. Once the user has selected the bags (and charms) they want, they can add them to a shopping basket and then purchase them securely via a single payment. 
+
+Non-registered users can view all the bags for sale and find out more about them on the bag details pages and can sign up to the store's newsletter. In addition, registered users have a profile page which displays their order history and contains a link for each order for the user to find out the full detail (this saves them tracking back through their emails to find order confirmations) and can save their delivery information for quicker checkouts. 
+
+Admin users can manage the bags for sale in the store by adding, editing and deleting bags. This includes being able to change the seasonal discounts that apply to sale items and adjusting which bags are on sale and which have a free charm option. 
+
+The Web Marketing strategies used include Search Engine Optimisation (SEO), described in more detail below, organic social media marketing in the form of a business facebook page, email marketing via a mailchimp newsletter subscription and some content marketing in the sense of providing information on the sustainability of cactus leather and how it's made and appropriate links to a leading cactus leather manufacturer, a vegan charity and an article on living more sustainably. This information helps to set the store apart from competitors by providing fashionable and quality bags that are also sustainable.
+
+The live project can be viewed [here](https://saguaro-bags.herokuapp.com/). 
+
+![Responsive view of live website Home page](readme-documents/responsive-screenshots/responsive-screenshot.png)
 
 ## UX (User Experience) 
 ### User Stories
@@ -41,7 +51,8 @@ The live project can be viewed [here]().
 * 
 
 ### Further Feature Ideas
-* 
+* At the moment, the reviews for bags relies on the store owners manually collecting ratings (between 1 and 5) and entering the average score in the database. It would be good to have a system where registered users could leave ratings and reviews for items purchased. There would be a 'Leave a Review' button on each bag detail page only visible to registered users. If the user clicked on the button, they would only be able to proceed to the review page after a check was performed to make sure that user had purchased that bag. The form would be prepopulated with the user's name and purchase date, but the user could adjust their name if they wished for privacy reasons. The user would have to leave a rating between 1 and 5 (inclusive). If the user chose to leave a rating only and not a written review, their rating would appear immediately on the website. It would also be used to re-calculate the overall rating for the bag. If the user additionally wanted to leave a written review, the review would consist of a title and a body and the rating and review would require approval by the store admin before appearing on the site to filter out any inappropriate language. Again, once approved, the rating would be taken into account in updating the bag's overall rating. There would also be a chance to win a £100 store voucher by leaving a rating or review to encourage user registration.
+* It would also be good if new registered users received a discount code in their signup email that they could redeeem against a first purchase. The code would be added on the checkout page and the appropriate percentage would be deducted from the user's first purchase total cost (excluding delivery). The code could also appear in their user profile. A check would need to be made to ensure that once used, the user could not used the same discount code again. Also, once the user used the discount code, it would need to disappear from their user profile. 
 
 ## Wireframes
 I used [Balsamiq](https://www.balsamiq.com) to create Wireframe mock-ups for laptop/large monitor, tablet and mobile devices. 
@@ -195,6 +206,7 @@ The entity relationship diagram for the project can be found [here]().
     * Vegan designer bags
     * Affordable vegan handbags uk
     * Vegan leather bags cactus
+    * Cactus leather
     * Cactus leather bag
     * Cactus leather handbags
     * Desserto cactus leather
@@ -251,7 +263,7 @@ The entity relationship diagram for the project can be found [here]().
 * [Balsamiq](https://www.balsamiq.com) was used to prepare the Wireframes for the site. 
 * [Chrome DevTools](https://developer.chrome.com/docs/devtools/) was used to inspect the project code throughout creation of the site. 
 * [ColorSpace](https://mycolor.space/) was used to generate the colour palettes from which most of the colours for the website were taken. 
-* [Eye Dropper](https://eyedropper.org/) was used to find out the names of the hex code colours used on the site.
+* [Color Name](https://www.color-name.com/) was used to find out the names of the hex code colours used on the site.
 * [Favicon Generator](https://favicon.io/favicon-generator/) was used to create the favicon for the site. 
 * [Unsplash](https://unsplash.com/), [Pexels](https://www.pexels.com/) and [Pixabay](https://pixabay.com/) provided free photos used throughout the site.
 * [Amazon S3](https://aws.amazon.com/s3/) was used to store the static and media files used by the application.
@@ -261,7 +273,7 @@ The entity relationship diagram for the project can be found [here]().
 * [Google](https://www.google.com/) was used for finding keywords for SEO (Search Engine Optimisation) of the site.
 * [Wordtracker](https://www.wordtracker.com/) for finding out volume and competition information for keyword searches.
 * [Fake UK Phone Numbers](https://fakenumber.org/united-kingdom) was used to generate a fake phone number for the site for use on the Facebook Page.
-* [](https://www.xml-sitemaps.com/) was used to generate the sitemap.xml file.
+* [XML Sitemaps](https://www.xml-sitemaps.com/) was used to generate the sitemap.xml file.
 * [W3 Schools](https://www.w3schools.com/), [Stack Overflow](https://stackoverflow.com/), [CSS-Tricks](https://css-tricks.com/), [MDN Web Docs](https://developer.mozilla.org/en-US/), [Python.org](https://www.python.org/) and [Django documentation](https://docs.djangoproject.com/en/4.0/) were used for general guidance and learning.  
 * [What is my Viewport?](https://whatismyviewport.com/) was used to confirm the viewport screen sizes of my devices for testing the project. 
 * [Can I Use?](https://caniuse.com/) was used for checking browser compatibility.
