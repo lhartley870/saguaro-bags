@@ -12,7 +12,6 @@ from .forms import WebsiteBagForm
 def all_bags(request):
     """ A view to show all bags, including sorting and search queries. """
 
-    bags = Bag.objects.all()
     query = None
     categories = None
     sale = False
