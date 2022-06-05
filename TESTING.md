@@ -77,8 +77,10 @@ The section lacks heading was resolved by adding a heading of 'Introduction'.
 
 An error was found in the toast JS in base.html with the error being that bootstrap is an undefined variable. However, this code was taken from the Bootstrap documentation and thus relies on the bootstrap framework variable:
 * [toast js in base.html](readme-documents/validation-results/errors/js/result-base-toast-script-js.png)
+
 Errors were found in the Mailchimp JS in base.html. However, this code was provided directly by Mailchimp:
 * [mailchimp js in base.html](readme-documents/validation-results/errors/js/result-base-mailchimp-script-js.png)
+
 An error was found in the stripe_elements.js file with the error being that Stripe is an undefined variable. However, as with bootstrap, this code relies upon Stripe:
 * [stripe_elements.js](readme-documents/validation-results/errors/js/result-stripe-elements-js.png)
 
@@ -124,10 +126,6 @@ An error was found in the stripe_elements.js file with the error being that Stri
 * [urls.py file result](readme-documents/validation-results/clear-results/python/clear-result-basket-urls.png)
 * [views.py file result](readme-documents/validation-results/clear-results/python/clear-result-basket-views.png)
 * [bag_tools.py file result](readme-documents/validation-results/clear-results/python/clear-result-bag-tools.png)
-
-* [urls.py file in booking app result](readme-documents/validation-results/clear-result-booking-urls.png)
-* [views.py file result](readme-documents/validation-results/clear-result-views.png)
-* [urls.py file in nightgarden project result](readme-documents/validation-results/clear-result-nightgarden-urls.png)
 
 Initially when the project was run through the validator an error was raised in relation to the products app models.py file as shown:
 + [products app models.py file initial result](readme-documents/validation-results/errors/python/error-result-products-models.png).
