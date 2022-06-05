@@ -526,7 +526,7 @@ The Mexican pink colour was taken from a cactus flower photo using [Eye Dropper]
 
 ### Entity Relationship Diagram
 
-The entity relationship diagram for the project can be found ![here](readme-documents/entity-relationship-diagram/DBMS ER diagram Saguaro Bags.png).
+The entity relationship diagram for the project can be found ![here](readme-documents/entity-relationship-diagram/entity-relationship-diagram.png).
 
 This diagram shows the multiple foreign key relationships between models and the one to one relationship between the User and UserProfile models. There are no many to many relationships. 
 
@@ -582,7 +582,7 @@ The Product Backlog, Epics, User Stories and the 2 Iteration Boards can be acces
 * [Gorgias Free SKU Generator](https://www.gorgias.com/tools/sku-generator) was used to generate the sku codes of the bags for sale. 
 * [Privacy Policy Generator](https://www.privacypolicygenerator.info/) was used to generate the privacy policy.
 * [Google](https://www.google.com/) was used for finding keywords for SEO (Search Engine Optimisation) of the site.
-* [Wordtracker](https://www.wordtracker.com/) for finding out volume and competition information for keyword searches.
+* [Wordtracker](https://www.wordtracker.com/) was used to find out volume and competition information for keyword searches.
 * [Fake UK Phone Numbers](https://fakenumber.org/united-kingdom) was used to generate a fake phone number for the site for use on the Facebook Page.
 * [XML Sitemaps](https://www.xml-sitemaps.com/) was used to generate the sitemap.xml file.
 * [W3 Schools](https://www.w3schools.com/), [Stack Overflow](https://stackoverflow.com/), [CSS-Tricks](https://css-tricks.com/), [MDN Web Docs](https://developer.mozilla.org/en-US/), [Python.org](https://www.python.org/) and [Django documentation](https://docs.djangoproject.com/en/4.0/) were used for general guidance and learning.  
