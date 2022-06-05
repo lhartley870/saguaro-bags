@@ -482,7 +482,14 @@ The live project can be viewed [here](https://saguaro-bags.herokuapp.com/).
 ## Wireframes
 I used [Balsamiq](https://www.balsamiq.com) to create Wireframe mock-ups for laptop/large monitor, tablet and mobile devices. 
 
-*  [Wireframe]()
+* [Wireframe for Home Page](readme-documents/wireframes/home-page-wireframe.pdf)
+* [Wireframe for All Bags Page](readme-documents/wireframes/all-bags-wireframe.pdf)
+* [Wireframe for Bag Detail Page](readme-documents/wireframes/bag-detail-wireframe.pdf)
+* [Wireframe for Basket Page](readme-documents/wireframes/basket-wireframe.pdf)
+* [Wireframe for Checkout Page](readme-documents/wireframes/checkout-wireframe.pdf)
+* [Wireframe for Add a Bag Page](readme-documents/wireframes/add-bag-wireframe.pdf)
+
+Other pages such as login, logout, register, edit a bag largely follow the structure of the Add a Bag page.
 
 ## Design
 
@@ -518,7 +525,7 @@ The Mexican pink colour was taken from a cactus flower photo using [Eye Dropper]
 
 ### Entity Relationship Diagram
 
-The entity relationship diagram for the project can be found [here](readme-documents/entity-relationship-diagram/DBMS ER diagram Saguaro Bags.png).
+The entity relationship diagram for the project can be found ![here](readme-documents/entity-relationship-diagram/DBMS ER diagram Saguaro Bags.png).
 
 This diagram shows the multiple foreign key relationships between models and the one to one relationship between the User and UserProfile models. There are no many to many relationships. 
 
