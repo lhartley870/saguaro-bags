@@ -36,7 +36,7 @@ The live project can be viewed [here](https://saguaro-bags.herokuapp.com/).
     * As a **site user** I can **view my shopping basket total at any time** so that **I can keep track of what I'm spending and not overspend**
 * USER STORY 6: Easily See the Purpose of the Website
 
-    * As a **site user** I can **easily see the purpose of the website** so that **I clearly understand what the website is selling and the principles of the company selling the items **
+    * As a **site user** I can **easily see the purpose of the website** so that **I clearly understand what the website is selling and the principles of the company selling the items**
 * USER STORY 7: Site Navigation
 
     * As a **site user** I can **easily navigate the site** so that **I can find exactly what I want quickly**
@@ -102,7 +102,7 @@ The live project can be viewed [here](https://saguaro-bags.herokuapp.com/).
     * As a **site user** I can **view an order confirmation after checkout** so that **I can check what I ordered, total costs and see that the order has been successfully completed**
 * USER STORY 24: Email Confirmation After Checkout
 
-    *As a **site user** I can **receive an email confirmation after completing a purchase** so that **I can keep the confirmation of what I've purchased for my records**
+    * As a **site user** I can **receive an email confirmation after completing a purchase** so that **I can keep the confirmation of what I've purchased for my records**
 </details>
 
 <details><summary>EPIC 05: Admin and Store Management</summary>
@@ -140,7 +140,7 @@ The live project can be viewed [here](https://saguaro-bags.herokuapp.com/).
 
     The navigation bar has the same appearance across all pages of the application and allows for easy user navigation. 
     
-    On medium sized screens it contains the store name logo, Saguaro being a type of cactus and fitting in with the cactus theme. On larger screens it also has a cactus logo. Either of these can be clicked on to take the user back to the Home page which is a predictable and standard website convention. On larger screens the main navigation links appear horizontally under the full sized search bar. On smaller screens the main navigation links collapse into a burger menu and the search bar collapses into a magnifying glass logo. The burger menu also has a Home dropdown so the user can get back the Home page. The user can then click on the burger icon to see the stacked navigation links and can click on the magnifying glass to see the full search bar.
+    On medium sized screens it contains the store name logo, Saguaro being a type of cactus and fitting in with the cactus theme. On larger screens it also has a cactus logo. Either of these can be clicked on to take the user back to the Home page which is a predictable and standard website convention. On larger screens the main navigation links appear horizontally under the full sized search bar. On smaller screens the main navigation links collapse into a burger menu and the search bar collapses into a magnifying glass logo. The burger menu also has a Home dropdown so the user can get back to the Home page. The user can then click on the burger icon to see the stacked navigation links and can click on the magnifying glass to see the full search bar.
 
     A user who has not logged in to the site can see all the main navigation links relating to the bags but can only navigate to the register and login pages under 'My Account'. Any logged in user cannot see the login or register links but can see logout and my profile links. Admin users can in addition see Bag Management and Admin Panel links.
 
@@ -178,7 +178,7 @@ The live project can be viewed [here](https://saguaro-bags.herokuapp.com/).
 
 * View Bags
 
-    The user can easily see all of the bags for sale on one page by clicking the All Bags option in the main navigation bar and then the next All Bags dropdown. Each bag has an image, its price, style, size, colour and rating shown. Additionally if the bag is on sale, the user can easily see this as the original price will be struck through and the reduced price shown. Any bags that have a free charm option also have a pink banner in the top left of the image. The bags are shown stacked on mobile screens, 2 per row on medium screens and 3 per row on larger screens. All bag images have the same height, keeping the rows looking neat and easy to scan through. There is a 'back to top' button that quickly and easily takes the user back to the top of the page. This button sits on top of anything underneath it so the user can see it at all times. 
+    The user can easily see all of the bags for sale on one page by clicking the All Bags option in the main navigation bar and then the next All Bags dropdown. Each bag has an image and its price, style, size, colour and rating are shown. Additionally if the bag is on sale, the user can easily see this as the original price will be struck through and the reduced price shown. Any bags that have a free charm option also have a pink banner in the top left of the image. The bags are shown stacked on mobile screens, 2 per row on medium screens and 3 per row on larger screens. All bag images have the same height, keeping the rows looking neat and easy to scan through. There is a 'back to top' button that quickly and easily takes the user back to the top of the page. This button sits on top of anything underneath it so the user can see it at all times. 
 
     ![All bags page on medium screen](readme-documents/feature-screenshots/all-bags-pg-med-screen.png)
 
@@ -214,7 +214,7 @@ The live project can be viewed [here](https://saguaro-bags.herokuapp.com/).
 
 * Print Details Page
 
-    The user can click on a bag to navigate to the details page which shows the user the bag image, name, sku, price, style, size, colour and rating. For bags without a charm option, the user can adjust the quantity easily using the plus and minus buttons before adding the bag to their basket. 
+    The user can click on a bag to navigate to the details page which shows the user the bag image, name, sku, price, style, size, colour and rating. The user can adjust the quantity easily using the plus and minus buttons before adding the bag to their basket. 
 
     ![Bag details page for a bag without a charm option](readme-documents/feature-screenshots/bag-detail-no-charm.png)
 
@@ -230,7 +230,7 @@ The live project can be viewed [here](https://saguaro-bags.herokuapp.com/).
 
 * Toasts
 
-    Toasts provide user interaction throughout the application so the user can be assured that their actions have been acknowledged by the site. The toasts are also important in relaying any errors to the user as well as success messages. 
+    Toasts provide user interaction confirmation throughout the application so the user can be assured that their actions have been acknowledged by the site. The toasts are also important in relaying any errors to the user as well as success messages. 
 
     For example, logging in and out, adding to or removing items from the shopping basket and completing a purchase all relay toasts to the user. 
 
@@ -240,7 +240,7 @@ The live project can be viewed [here](https://saguaro-bags.herokuapp.com/).
 
 * User Authentication
 
-     A user coming to the site for the first time can access the Register page via the navigation bar. The user needs to provide their email address, a username, their first and last names and a password to create an account. The email, first name and last name are required to contact a user e.g. to confirm purchases, and the first and last names are required for the checkout form. If the email address or username entered are already taken, the user will receive an error message. The user is asked to verify their email address to activate their account.
+     A user coming to the site for the first time can access the Register page via the navigation bar. The user needs to provide their email address, a username, their first and last names and a password to create an account. The email address is required to contact a user e.g. to confirm purchases, and the first and last names are required for the checkout form. If the email address or username entered are already taken, the user will receive an error message. The user is asked to verify their email address to activate their account.
 
     ![View of Register page](readme-documents/feature-screenshots/register-page.png)
 
@@ -265,13 +265,14 @@ The live project can be viewed [here](https://saguaro-bags.herokuapp.com/).
 
     Whether or not a user is a registered user, they can purchase bags on the site. The shopping basket icon is in the top right of the screen. When hovered over or focussed on, the basket turns to a trolley. Users are familiar with a 'shopping basket' or 'shopping trolley' reprenting their shopping cart online. As the site is selling bags, the term shopping basket is used throughout the site and a bag icon is not used to avoid confusion. 
 
-    As a user adds items to their shopping basket, the basket turns from green to pink and the basket total is udpated underneath the basket icon. By clicking on the basket, the user is taken to the Shopping Basket page where the user can update the quantity of each bag or bag/charm combination or delete a bag or bag/charm combination from the basket. The user also receives a toast every time they add to, edit or delete an item from their basket. 
+    As a user adds items to their shopping basket, the basket turns from green to pink and the basket total is updated underneath the basket icon. By clicking on the basket, the user is taken to the Shopping Basket page where the user can update the quantity of each bag or bag/charm combination or delete a bag or bag/charm combination from the basket. The user also receives a toast every time they add to, edit or delete an item from their basket. 
 
     The user can choose to navigate to the Checkout page straight from an add/update/delete basket toast by clicking the Checkout button or by clicking the Checkout button on the Shopping Basket page. 
 
     The toasts relating to the user's basket and the Shopping Basket page, both let the user know how much more they will need to spend to get free delivery if they are below the free delivery threshold. 
 
     ![View of a bag detail page with a toast confirming the user has added a bag to their basket](readme-documents/feature-screenshots/add-bag-toast.png)
+
     ![View of the Shopping Basket page](readme-documents/feature-screenshots/basket-page.png)
 
 * Checkout
@@ -307,6 +308,7 @@ The live project can be viewed [here](https://saguaro-bags.herokuapp.com/).
     Being able to manage bags on the site itself means that admin users do not have to rely on the admin panel for this.
 
 * Site Engine Optimisation(SEO)
+
     The following steps were taken to address SEO:
 
     * Initial list of short-tail keywords:
@@ -371,7 +373,7 @@ The live project can be viewed [here](https://saguaro-bags.herokuapp.com/).
 
     * Considering relevance
         * List of keywords narrowed down to exclude the following:
-            * The website probably doesn't meet the need behind the following keyword searches as they appear to be more to do with people wanting to buy the cactus leather itself, possible for manufacturing their own products:
+            * The website probably doesn't meet the need behind the following keyword searches as they appear to be more to do with people wanting to buy the cactus leather itself, possibly for manufacturing their own products:
                 * Where to buy cactus leather
                 * Cactus leather fabric
                 * Cactus leather manufacturers
@@ -383,7 +385,6 @@ The live project can be viewed [here](https://saguaro-bags.herokuapp.com/).
                 * Sustainable tote bags
             * These keywords are going to be too generic:
                 * Vegan leather made from plants
-                * Cactus leather uk
                 * Vegan leather made from
                 * Eco leather vs real leather
                 * Eco leather vs faux leather
@@ -395,7 +396,7 @@ The live project can be viewed [here](https://saguaro-bags.herokuapp.com/).
                 * Sustainable handbags uk
                 * Sustainable bag brands
                 
-        * Desserto cactus leather has been left in as a relevant keywords because the home page specifically mentions them as a cactus leather manufacturer and includes a link to their website.
+        * Desserto cactus leather has been left in as a relevant keyword because the home page specifically mentions them as a cactus leather manufacturer and includes a link to their website.
 
     * Considering authority
         * Saguaro bags can speak from a place of authority about the following keywords as it is a store selling vegan cactus leather designer bags at an affordable price:
@@ -460,7 +461,7 @@ The live project can be viewed [here](https://saguaro-bags.herokuapp.com/).
 
 * Organic Social Media Marketing - Facebook Page
 
-    Saguaro Bags also has a ![Facebook page](https://www.facebook.com/Saguaro-Bags-107967631934580/?ref=pages_you_manage) to reach customers. The page includes a link to the website, contact details, imagery from the site and details about the type of business. 
+    Saguaro Bags also has a [Facebook page](https://www.facebook.com/Saguaro-Bags-107967631934580/?ref=pages_you_manage) to reach customers. The page includes a link to the website, contact details, imagery from the site and details about the type of business. 
 
     ![Part 1 of the Saguaro Bags Facebook page](readme-documents/feature-screenshots/facebook-page-1.png)
     ![Part 2 of the Saguaro Bags Facebook page](readme-documents/feature-screenshots/facebook-page-2.png)
