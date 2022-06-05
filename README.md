@@ -526,7 +526,7 @@ The Mexican pink colour was taken from a cactus flower photo using [Eye Dropper]
 
 ### Entity Relationship Diagram
 
-The entity relationship diagram for the project can be found ![here](readme-documents/entity-relationship-diagram/entity-relationship-diagram.png).
+The entity relationship diagram for the project can be found [here](readme-documents/entity-relationship-diagram/entity-relationship-diagram.png).
 
 This diagram shows the multiple foreign key relationships between models and the one to one relationship between the User and UserProfile models. There are no many to many relationships. 
 
